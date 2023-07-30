@@ -9,7 +9,7 @@
         <div class="logo position-relative">
             <a href="index.html">
             <!-- Logo can be added directly -->
-            <img src="{{ asset('images/razen-politik/logo/642b9aa063e73-230404.png') }}" alt="logo" />
+            <img src="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}" alt="logo" />
 
             <!-- Or added via css to provide different ones for different color themes -->
             {{-- <div class="img"></div> --}}

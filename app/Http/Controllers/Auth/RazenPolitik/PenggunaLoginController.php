@@ -27,7 +27,7 @@ class PenggunaLoginController extends Controller
         ]);
         // Attempt to log the user in
         if (Auth::guard('pengguna')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended(route('pengguna.admin.dashboard.index'));
+            return redirect()->intended(route('pengguna.dashboard.index'));
         }
         // if unsuccessful, then redirect back to the login with the form data
         return redirect()->back()->withInput($request->only('email', 'remember'));

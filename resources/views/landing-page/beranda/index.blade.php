@@ -274,304 +274,705 @@
             <div class="grid items-center grid-cols-1 lg:grid-cols-4">
             <div class="lg:pr-10 lg:border-r-2 lg:border-r-logan ">
                 <div class="flex flex-wrap items-center justify-center w-full gap-2 py-10 bg-flashWhite lg:flex-col lg:items-stretch lg:justify-between px-9 lg:space-y-6">
-                <button class="lg:text-left text-center text-primary font-bold lg:border-r-4 lg:border-r-primary lg:border-b-0 lg:border-b-primary border-b-4 border-b-primary">DPR RI</button>
-                <button class="lg:text-left text-center ">DPRD</button>
-                <button class="lg:text-left text-center ">DPD RI</button>
-                <button class="lg:text-left text-center ">BUPATI</button>
-                <button class="lg:text-left text-center ">WALIKOTA</button>
-                <button class="lg:text-left text-center ">GUBERNUR</button>
+                    <button class="lg:text-left text-center text-primary font-bold lg:border-r-4 lg:border-r-primary lg:border-b-0 lg:border-b-primary border-b-4 border-b-primary border-0">DPR RI</button>
+                    <button class="lg:text-left text-center border-0">DPRD</button>
+                    <button class="lg:text-left text-center border-0">DPD RI</button>
+                    <button class="lg:text-left text-center border-0">BUPATI</button>
+                    <button class="lg:text-left text-center border-0">WALIKOTA</button>
+                    <button class="lg:text-left text-center border-0">GUBERNUR</button>
                 </div>
             </div>
             <div class="flex flex-wrap col-span-3 px-8">
                 <div class="sm:p-4 px-0 py-4 lg:w-1/2 w-full mx-auto card">
-                <div class="h-full py-8 px-11 rounded-2xl bg-white card-outline flex flex-col justify-between relative overflow-hidden">
-                    <div class="flex flex-col justify-center">
-                    <h1 class="text-black text-2xl font-bold tracking-wide mb-3 text-center">Standard</h1>
-                    <p class="text-xl tracking-wide flex flex-wrap justify-center items-center font-semibold text-center text-medium-black mb-10">
-                        <span>Rp&nbsp;49.000.000</span>
-                        <span class="text-xs ml-2.5 font-normal price-month price-month">/6 Bulan</span>
-                    </p>
-                    <div class="price-list-3-7">
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
+                    <div class="h-full py-8 px-11 rounded-2xl bg-white card-outline flex flex-col justify-between relative overflow-hidden">
+                        <div class="flex flex-col justify-center">
+                            <h1 class="text-black text-2xl font-bold tracking-wide mb-3 text-center">Standard</h1>
+                            <p class="text-xl tracking-wide flex flex-wrap justify-center items-center font-semibold text-center text-medium-black mb-10">
+                                <span>Rp&nbsp;49.000.000</span>
+                                <span class="text-xs ml-2.5 font-normal price-month price-month">/6 Bulan</span>
+                            </p>
+                            <div class="price-list-3-7">
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                    <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                        <div class="ant-image">
+                                        <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                        <div class="ant-image-mask">
+                                            <div class="ant-image-mask-info">
+                                            <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                                <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                                </svg>
+                                            </span>Preview
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </span>50.000 maksimum relawan
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                    <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                        <div class="ant-image">
+                                        <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                        <div class="ant-image-mask">
+                                            <div class="ant-image-mask-info">
+                                            <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                                <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                                </svg>
+                                            </span>Preview
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </span> Dasbor
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Master Data TPS dan DPT
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Pasangan Calon
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Donasi
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                        <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                        <div class="ant-image-mask" >
+                                            <div class="ant-image-mask-info">
+                                            <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                                <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" fill="currentColor" aria-hidden="true">
+                                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                                </svg>
+                                            </span>Preview
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>Manajemen Koordinator
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/unchecked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Partai
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Relawan Terbatas
+                                </p>
                             </div>
-                            </div>
-                        </span>50.000 maksimum relawan
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Dasbor
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Master Data TPS dan DPT
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Pasangan Calon
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Donasi
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Koordinator
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/unchecked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Partai
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Relawan Terbatas
-                        </p>
+                            {{-- <button class="text-primary2 w-full text-center mb-6 border-0 mt-3">Lihat semua fitur</button> --}}
+                        </div>
+                        <button class="items-center py-3 px-8 focus:outline-none rounded-xl transition-all duration-150 text-base font-normal w-full border-0 bg-primary text-white undefined mt-5">Beli Paket</button>
                     </div>
-                    <button class="text-primary2 w-full text-center mb-6 hover:text-red">Lihat semua fitur</button>
-                    </div>
-                    <button class="items-center py-3 px-8 focus:outline-none rounded-xl transition-all duration-150 text-base font-normal w-full border-0 bg-primary text-white undefined">Beli Paket</button>
-                </div>
                 </div>
                 <div class="sm:p-4 px-0 py-4 lg:w-1/2 w-full mx-auto card">
-                <div class="h-full py-8 px-11 rounded-2xl bg-primary card-outline flex flex-col justify-between relative overflow-hidden">
-                    <div>
-                    <h1 class="text-white text-2xl font-bold tracking-wide mb-3 text-center">Pro</h1>
-                    <p class="text-xl tracking-wide flex flex-wrap justify-center items-center font-semibold text-center text-medium-black mb-10 text-white">
-                        <span>Rp&nbsp;69.000.000</span>
-                        <span class="text-xs ml-2.5 font-normal price-month price-month">/6 Bulan</span>
-                    </p>
-                    <div class="price-list-3-7">
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
-                                </div>
-                            </div>
-                            </div>
-                        </span>100.000 maksimum relawan
+                    <div class="h-full py-8 px-11 rounded-2xl bg-primary card-outline flex flex-col justify-between relative overflow-hidden">
+                        <div>
+                        <h1 class="text-white text-2xl font-bold tracking-wide mb-3 text-center">Pro</h1>
+                        <p class="text-xl tracking-wide flex flex-wrap justify-center items-center font-semibold text-center text-medium-black mb-10 text-white">
+                            <span>Rp&nbsp;69.000.000</span>
+                            <span class="text-xs ml-2.5 font-normal price-month price-month">/6 Bulan</span>
                         </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
+                        <div class="price-list-3-7">
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </span>Quick Count
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
                                 </div>
-                            </div>
-                            </div>
-                        </span>Real Count
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
+                            </span>
+                            <span class="text-white">100.000 maksimum relawan</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                            <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                                <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                                </svg>
+                                            </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>
+                                <span class="text-white">Quick Count</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Donasi
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
                                 </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Saksi
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
+                            </span>
+                            <span class="text-white">Real Count</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </span>Rekapitulasi
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
                                 </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Partai
-                        </p>
-                        <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
-                        <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
-                            <div class="ant-image">
-                            <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png">
-                            <div class="ant-image-mask">
-                                <div class="ant-image-mask-info">
-                                <span role="img" aria-label="eye" class="anticon anticon-eye">
-                                    <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
-                                    </svg>
-                                </span>Preview
+                            </span>
+                            <span class="text-white">Manajemen Donasi</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </span>Manajemen Relawan Unlimited
-                        </p>
+                                </div>
+                            </span>
+                            <span class="text-white">Manajemen Saksi</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
+                                </div>
+                                </div>
+                            </span>
+                            <span class="text-white">Rekapitulasi</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
+                                </div>
+                                </div>
+                            </span>
+                            <span class="text-white">Manajemen Partai</span>
+                            </p>
+                            <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-white">
+                            <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                <div class="ant-image">
+                                <img alt="me" class="ant-image-img" src="https://polapoli.id/checked.png" style="height: 2em !important;" class="align-self-center justify-content-center">
+                                <div class="ant-image-mask">
+                                    <div class="ant-image-mask-info">
+                                    <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                        <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                        </svg>
+                                    </span>Preview
+                                    </div>
+                                </div>
+                                </div>
+                            </span>
+                            <span class="text-white">Manajemen Relawan Unlimited</span>
+                            </p>
+                        </div>
+                        {{-- <button class="text-viola w-full text-center mb-6 border-0 mt-3">Lihat semua fitur</button> --}}
+                        </div>
+                        <button class="items-center py-3 px-8 focus:outline-none rounded-xl transition-all duration-150 text-base font-normal w-full border-0 bg-rose text-white undefined mt-5">Beli Paket</button>
                     </div>
-                    <button class="text-viola w-full text-center mb-6 hover:text-white">Lihat semua fitur</button>
-                    </div>
-                    <button class="items-center py-3 px-8 focus:outline-none rounded-xl transition-all duration-150 text-base font-normal w-full border-0 bg-rose text-white undefined">Beli Paket</button>
-                </div>
                 </div>
             </div>
             </div>
         </div>
         </div>
     </section>
+
+    <div>
+        <div class="ant-modal-root">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap" role="dialog" style="">
+                <div role="document" class="ant-modal" style="width: 520px; transform-origin: 209.8px 99px;">
+                    <div tabindex="0" aria-hidden="true" style="width: 0px; height: 0px; overflow: hidden; outline: none;"></div>
+                    <div class="ant-modal-content">
+                        <button type="button" aria-label="Close" class="ant-modal-close">
+                            <span class="ant-modal-close-x">
+                                <span role="img" aria-label="close" class="anticon anticon-close ant-modal-close-icon">
+                                <svg viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                    <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+                                </svg>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="ant-modal-body">
+                            <div class="border-b pb-2 border-b-grey3 mb-6 flex flex-col items-center space-y-4">
+                                <h2 class="text-center text-xl font-bold">Paket Standard</h2>
+                                <p class="text-center text-sm text-grey1">Berikut merupakan fitur yang akan anda dapatkan jika mengaktifkan paket Standard untuk kebutuhan politik anda.</p>
+                            </div>
+                            <div>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>100.000 maksimum relawan
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Dasbor
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Master Data TPS dan DPT
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Pasangan Calon
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Donasi
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Koordinator
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/unchecked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Partai
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Relawan
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Saksi
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Feed
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Data DPT
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Data Pemilih
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Simulasi Kemenangan
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/unchecked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Input Survei
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Monitoring Isu
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Manajemen Logistik
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Rekapitulasi
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Quick Count
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Real Count
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>User &amp; Hak Akses
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Web Kemenangan
+                                </p>
+                                <p class="flex tracking-wide items-center text-sm mb-7 check-3-7 text-black">
+                                <span class="w-4 h-4 mr-3 inline-flex items-center justify-center flex-shrink-0">
+                                    <div class="ant-image">
+                                    <img alt="me" class="ant-image-img" src="/checked.png">
+                                    <div class="ant-image-mask">
+                                        <div class="ant-image-mask-info">
+                                        <span role="img" aria-label="eye" class="anticon anticon-eye">
+                                            <svg viewBox="64 64 896 896" focusable="false" data-icon="eye" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path>
+                                            </svg>
+                                        </span>Preview
+                                        </div>
+                                    </div>
+                                    </div>
+                                </span>Pengaturan Tim
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="0" aria-hidden="true" style="width: 0px; height: 0px; overflow: hidden; outline: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('.ant-modal-mask').addClass(['ant-fade-leave', 'ant-fade-leave-active', 'ant-fade'])
+            $('.ant-modal-wrap').css('display', 'none');
+        });
+    </script>
 @endsection

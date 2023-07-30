@@ -18,10 +18,10 @@
                             <div class="w-100 w-lg-75 w-xxl-50">
                                 <div>
                                     <div class="mb-5">
-                                        <h1 class="display-3 text-white">Razen Blog</h1>
+                                        <h1 class="display-3 text-white">Razen Politik</h1>
                                     </div>
                                     <p class="h6 text-white lh-1-5 mb-5">
-                                        Bidang Teknologi Semacam softwarehouse yang fokus mebangun solusi produk sistem informasi pemerintahan dan pengadaan Hardware bagi pemerintahan
+                                        Razen Politik memahami, menjangkau, dan melibatkan konstituen Anda melalui berbagai platform sosial media dengan tujuan meningkatkan hubungan baik, kepercayaan, mengukur kinerja Anda sebagai wakil rakyat, sehingga dapat Terpilih Kembali pada Pemilihan Umum selanjutnya
                                     </p>
                                     <div class="mb-5">
                                         <a class="btn btn-lg btn-outline-white" href="{{ url('/') }}">Kembali</a>

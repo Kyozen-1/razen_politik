@@ -1,3 +1,8 @@
+@php
+    use App\Models\Profil;
+
+    $profil = Profil::first();
+@endphp
 <!DOCTYPE html>
 <html lang="id">
     <head>
@@ -8,13 +13,13 @@
             <header class="navbar sticky top-0 z-40">
                 <div class="mx-auto flex flex-wrap flex-row items-center justify-between xl:px-26 lg:px-20 md:px-20 px-8 py-8">
                 <a class="flex font-medium items-center">
-                    <a href="/">
+                    <a href="{{ route('beranda') }}">
                     <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
                         <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
                         <img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20
                                             xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%2745%27/%3e" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
                         </span>
-                        <img alt="Logo PolaPoli" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpolapoli_logo.0eb9583e.png&amp;w=640&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpolapoli_logo.0eb9583e.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpolapoli_logo.0eb9583e.png&amp;w=640&amp;q=75 2x">
+                        <img alt="Logo Razen Politik" src="{{ asset('images/razen-politik/logo/'.$profil->logo) }}" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;">
                         <noscript></noscript>
                     </span>
                     </a>
@@ -79,10 +84,10 @@
                             <div class="grid lg:grid-cols-3 sm:grid-cols-2 lg:gap-0 gap-y-6">
                             <div class="pr-16">
                                 <div class="mb-5">
-                                <img src="/_next/static/media/polapoli_logo_bottom.42692c3e.png" alt="" class="w-auto h-40 object-contain">
+                                <img src="{{ asset('images/razen-politik/logo/'.$profil->logo) }}" alt="" class="w-auto h-40 object-contain">
                                 </div>
                                 <nav class="list-none list-footer space-y-5">
-                                <p style="color: rgb(112, 112, 146); line-height: 1.8;">Description</p>
+                                <p style="color: rgb(112, 112, 146); line-height: 1.8;">Deskrispi</p>
                                 </nav>
                             </div>
                             <div class="">
@@ -177,7 +182,7 @@
                             </div>
                             <nav class="mx-auto flex flex-wrap items-center text-base justify-center space-x-5"></nav>
                             <nav class="flex lg:flex-row flex-col items-center text-base justify-center">
-                                <p>Copyright © 2023 PolaPoli</p>
+                                <p>Copyright © 2023 Razen Politik</p>
                             </nav>
                             </div>
                         </div>

@@ -1,3 +1,8 @@
+@php
+    use App\Models\Profil;
+
+    $profil = Profil::first();
+@endphp
 <style rc-util-key="@ant-design-icons">
     .anticon {
         display: inline-block;
@@ -55,30 +60,30 @@
 </style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon-logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-logo.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-logo.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-logo.png">
+<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon-logo.png">
+<meta name="msapplication-TileImage" content="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}">
 <meta name="theme-color" content="#ffffff">
 <title>@yield('title', 'Beranda | PolaPoli')</title>
 <meta name="next-head-count" content="19">
 <noscript data-n-css=""></noscript>
 {{-- <script defer="" nomodule="" src="https://polapoli.id/_next/static/chunks/polyfills.js?ts=1690500440583"></script> --}}
 {{-- <script src="https://polapoli.id/_next/static/chunks/webpack.js?ts=1690500440583" defer=""></script> --}}
-<script src="https://polapoli.id/_next/static/chunks/main.js?ts=1690500440583" defer=""></script>
-<script src="https://polapoli.id/_next/static/chunks/pages/_app.js?ts=1690500440583" defer=""></script>
-<script src="https://polapoli.id/_next/static/chunks/pages/index.js?ts=1690500440583" defer=""></script>
+{{-- <script src="https://polapoli.id/_next/static/chunks/main.js?ts=1690500440583" defer=""></script> --}}
+{{-- <script src="https://polapoli.id/_next/static/chunks/pages/_app.js?ts=1690500440583" defer=""></script> --}}
+{{-- <script src="https://polapoli.id/_next/static/chunks/pages/index.js?ts=1690500440583" defer=""></script> --}}
 {{-- <script src="https://polapoli.id/_next/static/development/_buildManifest.js?ts=1690500440583" defer=""></script>
 <script src="https://polapoli.id/_next/static/development/_ssgManifest.js?ts=1690500440583" defer=""></script>
 <script src="https://polapoli.id/_next/static/development/_middlewareManifest.js?ts=1690500440583" defer=""></script> --}}

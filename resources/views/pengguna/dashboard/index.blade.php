@@ -1,6 +1,16 @@
 @extends('pengguna.layouts.app')
 @section('title', 'Pengguna | Dashboard')
 
+@section('css')
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="{{ asset('leaflet/js/leaflet.textpath.js') }}"></script>
+
+    <style>
+        #map { height: 35rem; }
+    </style>
+@endsection
+
 @section('content')
 <!-- Title and Top Buttons Start -->
 <div class="page-title-container">
@@ -129,7 +139,7 @@
 </section>
 
 <h2 class="small-title mt-5">Hasil Quick Count dan Real Count</h2>
-<div class="row mt-3">
+<div class="row mt-3 mb-3">
     <!-- Line Chart Start -->
     <div class="col-12 col-xl-6">
         <section class="scroll-section" id="lineChartTitle">
@@ -161,9 +171,42 @@
     </div>
     <!-- Area Chart End -->
 </div>
+
+<div id="map"></div>
 <!-- Content End -->
 @endsection
 
 @section('js')
+<script>
+    const map = L.map('map').setView([-7.6565089,111.5463433], 15);
+    var popup = L.popup();
+            googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',{
+                maxZoom: 20,
+                subdomains:['mt0','mt1','mt2','mt3']
+            }).addTo(map);
+    var marker;
+    var konten_html;
 
+    $(document).ready(function(){
+        marker = L.marker([-7.6565089, 111.5463433], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+    });
+</script>
 @endsection

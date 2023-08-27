@@ -6,10 +6,10 @@
 <div id="nav" class="nav-container d-flex">
     <div class="nav-content d-flex">
         <!-- Logo Start -->
-        <div class="logo position-relative">
+        <div class="position-relative">
             <a href="index.html">
             <!-- Logo can be added directly -->
-            <img src="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}" alt="logo" />
+            <img src="{{ asset('images/razen-politik/logo/'.$profil->logo_kecil) }}" alt="logo" height="40rem"/>
 
             <!-- Or added via css to provide different ones for different color themes -->
             {{-- <div class="img"></div> --}}

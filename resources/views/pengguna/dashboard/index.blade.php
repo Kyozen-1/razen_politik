@@ -32,7 +32,7 @@
 <!-- Content Start -->
 <section class="scroll-section">
     <div class="card w-100 sh-25 sh-sm-19">
-        <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" />
+        {{-- <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" /> --}}
         <div class="card-img-overlay d-flex flex-column justify-content-between bg-transparent">
             <div class="row">
                 <div class="col-8">
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-md-8 col-12">
             <div class="card w-100 h-100">
-                <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" />
+                {{-- <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" /> --}}
                 <div class="card-img-overlay d-flex flex-column justify-content-between bg-transparent">
                     <div class="row">
                         <div class="col-8">
@@ -86,7 +86,7 @@
                 <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
                     <i data-acorn-icon="user" class="text-primary mb-3"></i>
                     <p class="heading mb-1">Jumlah DPT</p>
-                    <p class="heading mb-1">0</p>
+                    <p class="heading mb-1">3789</p>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
                     <i data-acorn-icon="arrow-bottom" class="text-primary mb-3"></i>
                     <p class="heading mb-1">Jumlah TPS</p>
-                    <p class="heading mb-1">0</p>
+                    <p class="heading mb-1">2455</p>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
                 <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
                     <i data-acorn-icon="user" class="text-primary mb-3"></i>
                     <p class="heading mb-1">Jumlah Relawan</p>
-                    <p class="heading mb-1">0</p>
+                    <p class="heading mb-1">1000</p>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
                 <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
                     <i data-acorn-icon="user" class="text-primary mb-3"></i>
                     <p class="heading mb-1">Jumlah Pendukung</p>
-                    <p class="heading mb-1">0</p>
+                    <p class="heading mb-1">903</p>
                 </div>
             </div>
         </div>
@@ -126,12 +126,12 @@
 
 <section class="scroll-section">
     <div class="card w-100 sh-25 sh-sm-19">
-        <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" />
+        {{-- <img src="{{ asset('acorn/acorn-elearning-portal/img/banner/cta-wide-2.webp') }}" class="card-img h-100" alt="card image" /> --}}
         <div class="card-img-overlay d-flex flex-column justify-content-between bg-transparent">
             <div class="row">
                 <div class="col-8">
                     <div class="cta-3 text-primary">Total Donasi Masuk</div>
-                    <div class="cta-3 text-primary mt-5">Rp 0</div>
+                    <div class="cta-3 text-primary mt-5">Rp. 139.000.000, 00</div>
                 </div>
             </div>
         </div>
@@ -146,8 +146,7 @@
             <h2 class="small-title">Hasil Quick Count</h2>
             <div class="card mb-5">
                 <div class="card-body">
-                    <div class="sh-35">
-                    <canvas id="lineChart"></canvas>
+                    <div class="sh-35" id="grafik_quick_count">
                     </div>
                 </div>
             </div>
@@ -162,8 +161,7 @@
             <h2 class="small-title">Hasil Real Count</h2>
             <div class="card mb-5">
                 <div class="card-body">
-                    <div class="sh-35">
-                    <canvas id="areaChart"></canvas>
+                    <div class="sh-35" id="grafik_real_count">
                     </div>
                 </div>
             </div>
@@ -177,10 +175,11 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('js/apexcharts.js') }}"></script>
 <script>
     const map = L.map('map').setView([-7.6565089,111.5463433], 15);
     var popup = L.popup();
-            googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',{
+            googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
                 maxZoom: 20,
                 subdomains:['mt0','mt1','mt2','mt3']
             }).addTo(map);
@@ -188,7 +187,330 @@
     var konten_html;
 
     $(document).ready(function(){
+        var grafik_quick_count = {
+            series: [100, 700, 555],
+            chart: {
+                type: 'donut',
+            },
+            labels: ['PDIP', 'GOLKAR', 'NASDEM'],
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        };
+
+        var chart_grafik_quick_count = new ApexCharts(document.querySelector("#grafik_quick_count"), grafik_quick_count);
+        chart_grafik_quick_count.render();
+
+        var grafik_real_count = {
+            series: [100, 700, 555],
+            chart: {
+                type: 'donut',
+            },
+            labels: ['PDIP', 'GOLKAR', 'NASDEM'],
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        };
+
+        var chart_grafik_real_count = new ApexCharts(document.querySelector("#grafik_real_count"), grafik_real_count);
+        chart_grafik_real_count.render();
+
         marker = L.marker([-7.6565089, 111.5463433], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.655488, 111.537739], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.650214, 111.546279], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.647875, 111.539370], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.647875, 111.539370], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.663995, 111.561728], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.647364, 111.558124], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.643545, 111.531203], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.637100, 111.543928], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.663935, 111.521281], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.613493, 111.554129], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.606371, 111.522032], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.626937, 111.524651], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+
+        marker = L.marker([-7.626204, 111.528344], {icon:L.icon({
+            iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
+            iconSize:     [30, 35], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        })}).addTo(map).on('click', function(e){
+            konten_html = '<div>';
+                konten_html += '<p>PDIP</p>';
+                konten_html += '<p>Kelurahan/Desa: Munggut</p>';
+                konten_html += '<p>Laki - Laki: 1000</p>';
+                konten_html += '<p>Laki - Laki: 1100</p>';
+            konten_html += '</div>';
+            popup
+                .setLatLng(e.latlng)
+                .setContent(konten_html)
+                .openOn(map);
+        });
+        marker = L.marker([-7.643109, 111.519481], {icon:L.icon({
             iconUrl: "{{asset('images/logo-partai/636ce094d18e6-221110.png')}}",
             iconSize:     [30, 35], // size of the icon
             shadowSize:   [50, 64], // size of the shadow

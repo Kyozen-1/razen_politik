@@ -78,6 +78,57 @@
                         <span class="label">Profil</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('razen-politik.master-data.provinsi.index') ||
+                    request()->routeIs('razen-politik.master-data.kabupaten-kota.index') ||
+                    request()->routeIs('razen-politik.master-data.kecamatan.index') ||
+                    request()->routeIs('razen-politik.master-data.kelurahan.index'))
+                    <a href="#master_data" class="active">
+                    @else
+                    <a href="#master_data">
+                    @endif
+                        <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Master Data</span>
+                    </a>
+                    <ul id="master_data">
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.provinsi.index'))
+                                <a href="{{ route('razen-politik.master-data.provinsi.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.provinsi.index') }}">
+                            @endif
+                                <span class="label">Provinsi</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.kabupaten-kota.index'))
+                                <a href="{{ route('razen-politik.master-data.kabupaten-kota.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.kabupaten-kota.index') }}">
+                            @endif
+                                <span class="label">Kabupaten / Kota</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.kecamatan.index'))
+                                <a href="{{ route('razen-politik.master-data.kecamatan.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.kecamatan.index') }}">
+                            @endif
+                                <span class="label">Kecamatan</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.kelurahan.index'))
+                                <a href="{{ route('razen-politik.master-data.kelurahan.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.kelurahan.index') }}">
+                            @endif
+                                <span class="label">Kelurahan</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Menu End -->

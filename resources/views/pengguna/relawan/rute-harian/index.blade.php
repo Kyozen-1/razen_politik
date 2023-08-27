@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/fullcalendar.min.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/bootstrap-datepicker3.standalone.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
@@ -58,14 +60,44 @@
             <div class="tab-pane fade" id="second" role="tabpanel">
                 <div class="data-table-rows slim">
                     <!-- Table Start -->
-                    <div class="data-table-responsive-wrapper">
-                        <table id="data_tps_table" class="data-table w-100">
+                    <div class="table-responsive">
+                        <table id="data_tps_table" class="table table-striped table-bordered text-center">
                             <thead>
                                 <tr>
                                     <th>Tanggal Kunjungan</th>
                                     <th>Wilayah</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td>26 Juli 2023</td>
+                                    <td>Kebonsari</td>
+                                </tr>
+                                <tr>
+                                    <td>27 Juli 2023</td>
+                                    <td>Geger</td>
+                                </tr>
+                                <tr>
+                                    <td>28 Juli 2023</td>
+                                    <td>Dolopo</td>
+                                </tr>
+                                <tr>
+                                    <td>29 Juli 2023</td>
+                                    <td>Dagangan</td>
+                                </tr>
+                                <tr>
+                                    <td>30 Juli 2023</td>
+                                    <td>Wungu</td>
+                                </tr>
+                                <tr>
+                                    <td>31 Juli 2023</td>
+                                    <td>Kare</td>
+                                </tr>
+                                <tr>
+                                    <td>1 Agustus 2023</td>
+                                    <td>Gemarang</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <!-- Table End -->
@@ -78,7 +110,9 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/fullcalendar.min.css') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.css') }}"></script>
-<script src="{{ asset('js/moment.min.css') }}"></script>
+    <script src="{{ asset('js/fullcalendar.min.css') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.css') }}"></script>
+    <script src="{{ asset('js/moment.min.css') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

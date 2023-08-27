@@ -1,6 +1,11 @@
 @extends('pengguna.layouts.app')
 @section('title', 'Data Pemilih | Pengguna')
 
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
 @section('content')
 <!-- Title and Top Buttons Start -->
 <div class="page-title-container">
@@ -69,8 +74,8 @@
 
 <div class="data-table-rows slim">
     <!-- Table Start -->
-    <div class="data-table-responsive-wrapper">
-        <table id="data_tps_table" class="data-table w-100">
+    <div class="table-responsive">
+        <table id="data_tps_table" class="table table-striped table-bordered text-center">
             <thead>
                 <tr>
                     <th>No</th>
@@ -81,6 +86,18 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1234567890123451</td>
+                    <td>Linda</td>
+                    <td>Kebonsari</td>
+                    <td>123456789012</td>
+                    <td>
+                        <button class="btn btn-info btn-detail waves-effect waves-light btn-icon mr-1" type="button"><i class="fas fa-eye"></i></button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <!-- Table End -->
@@ -89,5 +106,6 @@
 @endsection
 
 @section('js')
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

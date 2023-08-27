@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\PerbaikanHomeController;
 use App\Http\Controllers\Auth\RazenPolitik\LoginController;
 use App\Http\Controllers\Auth\RazenPolitik\PenggunaLoginController;
 
@@ -32,6 +33,10 @@ Route::get('/solusi', [HomeController::class, 'solusi'])->name('solusi');
 Route::get('/harga', [HomeController::class, 'harga'])->name('harga');
 Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
 Route::get('/bantuan', [HomeController::class, 'bantuan'])->name('bantuan');
+
+Route::prefix('perbaikan')->group(function(){
+    Route::get('/', [PerbaikanHomeController::class, 'beranda']);
+});
 
 Route::get('/login',[LoginController::class, 'showLoginForm'])->name('razen-politik.login');
 Route::post('/login', [LoginController::class, 'login'])->name('razen-politik.login.submit');

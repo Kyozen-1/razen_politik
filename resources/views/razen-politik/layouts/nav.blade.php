@@ -79,10 +79,25 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-politik.admin.pemilu.index'))
+                        <a href="{{ route('razen-politik.admin.pemilu.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-politik.admin.pemilu.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Pemilu</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-politik.master-data.provinsi.index') ||
                     request()->routeIs('razen-politik.master-data.kabupaten-kota.index') ||
                     request()->routeIs('razen-politik.master-data.kecamatan.index') ||
-                    request()->routeIs('razen-politik.master-data.kelurahan.index'))
+                    request()->routeIs('razen-politik.master-data.kelurahan.index') ||
+                    request()->routeIs('razen-politik.master-data.dpt.index') ||
+                    request()->routeIs('razen-politik.master-data.jabatan-pilihan.index') ||
+                    request()->routeIs('razen-politik.master-data.jenis-survey.index') ||
+                    request()->routeIs('razen-politik.master-data.jenis-isu.index') ||
+                    request()->routeIs('razen-politik.master-data.tps.index'))
                     <a href="#master_data" class="active">
                     @else
                     <a href="#master_data">
@@ -91,6 +106,51 @@
                         <span class="label">Master Data</span>
                     </a>
                     <ul id="master_data">
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.jenis-isu.index'))
+                                <a href="{{ route('razen-politik.master-data.jenis-isu.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.jenis-isu.index') }}">
+                            @endif
+                                <span class="label">Jenis Isu</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.jenis-survey.index'))
+                                <a href="{{ route('razen-politik.master-data.jenis-survey.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.jenis-survey.index') }}">
+                            @endif
+                                <span class="label">Jenis Survey</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.jabatan-pilihan.index'))
+                                <a href="{{ route('razen-politik.master-data.jabatan-pilihan.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.jabatan-pilihan.index') }}">
+                            @endif
+                                <span class="label">Jabatan Pilihan</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.dpt.index'))
+                                <a href="{{ route('razen-politik.master-data.dpt.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.dpt.index') }}">
+                            @endif
+                                <span class="label">DPT</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.tps.index'))
+                                <a href="{{ route('razen-politik.master-data.tps.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.tps.index') }}">
+                            @endif
+                                <span class="label">TPS</span>
+                            </a>
+                        </li>
                         <li>
                             @if (request()->routeIs('razen-politik.master-data.provinsi.index'))
                                 <a href="{{ route('razen-politik.master-data.provinsi.index') }}" class="active">

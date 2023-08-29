@@ -12,6 +12,10 @@
 @endsection
 
 @section('content')
+
+@php
+    use Carbon\Carbon;
+@endphp
 <!-- Title and Top Buttons Start -->
 <div class="page-title-container">
     <div class="row">
@@ -59,7 +63,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="cta-3 text-black mb-5">Tanggal Pemilihan</div>
-                            <div class="cta-3 text-black mb-5">-</div>
+                            <div class="cta-3 text-black mb-5">{{ Carbon::parse($pemilu->tgl_pemilihan)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y') }}</div>
                         </div>
                     </div>
                 </div>
@@ -69,8 +73,24 @@
             <div class="card mb-2">
                 <div class="card-body text-center">
                     <h5 class="card-title mb-3">Countdown Pemilihan</h5>
+                    {{-- @php
+                        $targetDate = strtotime($pemilu->tgl_pemilihan);
+                        // dd($targetDate);
+                        $timeLeft = $targetDate - time();
+
+                        $days = floor($timeLeft / (60 * 60 * 24));
+                        $timeLeft %= (60 * 60 * 24);
+
+                        $hours = floor($timeLeft / (60 * 60));
+                        $timeLeft %= (60 * 60);
+
+                        $mins = floor($timeLeft / (60 * 60));
+                        $timeLeft %= (60);
+
+                    @endphp --}}
                     <h5 class="card-title text-danger text-uppercase mb-3">
-                        00:00:00:00
+                        {{-- {{$days}}:{{$hours}}:{{$mins}}:{{$timeLeft}} --}}
+                        <p id="countdown"></p>
                     </h5>
                     <h6 class="card-subtitle mb-3 text-alternate">Hari - Jam - Menit - Detik</h6>
                 </div>
@@ -177,6 +197,32 @@
 @section('js')
 <script src="{{ asset('js/apexcharts.js') }}"></script>
 <script>
+    var countDownDate = "{{strtotime($pemilu->tgl_pemilihan)}}" + "000";
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = days + " : " + hours + " : "
+        + minutes + " : " + seconds;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+        clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
     const map = L.map('map').setView([-7.6565089,111.5463433], 15);
     var popup = L.popup();
             googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{

@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Pengguna;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pemilu;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('pengguna.dashboard.index');
+        $pemilu = Pemilu::latest()->first();
+        return view('pengguna.dashboard.index', [
+            'pemilu' => $pemilu
+        ]);
     }
 }

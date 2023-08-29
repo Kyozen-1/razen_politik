@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\RazenPolitik\MasterData;
+namespace App\Http\Controllers\RazenPolitik\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,10 +14,9 @@ use DataTables;
 use Carbon\Carbon;
 use Auth;
 
-use App\Models\MasterProvinsi;
-use App\Models\MasterDpt;
+use App\Models\Pemilu;
 
-class DptController extends Controller
+class PemiluController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +27,7 @@ class DptController extends Controller
     {
         if(request()->ajax())
         {
-            $data = MasterDpt::latest()->get();
+            $data = Pemilu::latest()->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function($data){
@@ -39,23 +38,13 @@ class DptController extends Controller
                     $button = $button_show . ' ' . $button_edit . ' ' . $button_delete;
                     return $button;
                 })
-                ->editColumn('provinsi_id', function($data){
-                    return $data->provinsi->nama;
-                })
-                ->addColumn('total', function($data){
-                    $jumlah_lk = $data->jumlah_lk;
-                    $jumlah_p = $data->jumlah_p;
-                    $total = $jumlah_lk + $jumlah_p;
-                    return $total;
+                ->editColumn('tgl_pemilihan', function($data){
+                    return Carbon::parse($data->tgl_pemilihan)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y');
                 })
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
-
-        $provinsi = MasterProvinsi::pluck('nama', 'id');
-        return view('razen-politik.master-data.dpt.index', [
-            'provinsi' => $provinsi
-        ]);
+        return view('razen-politik.admin.pemilu.index');
     }
 
     /**
@@ -77,9 +66,8 @@ class DptController extends Controller
     public function store(Request $request)
     {
         $errors = Validator::make($request->all(), [
-            'provinsi_id' => 'required',
-            'jumlah_lk' => 'required',
-            'jumlah_p' => 'required',
+            'nama' => 'required | max:255',
+            'tgl_pemilihan' => 'required | date',
         ]);
 
         if($errors -> fails())
@@ -87,11 +75,10 @@ class DptController extends Controller
             return response()->json(['errors' => $errors->errors()->all()]);
         }
 
-        $master_dpt = new MasterDpt;
-        $master_dpt->provinsi_id = $request->provinsi_id;
-        $master_dpt->jumlah_lk = $request->jumlah_lk;
-        $master_dpt->jumlah_p = $request->jumlah_p;
-        $master_dpt->save();
+        $pemilu = new Pemilu;
+        $pemilu->nama = $request->nama;
+        $pemilu->tgl_pemilihan = $request->tgl_pemilihan;
+        $pemilu->save();
 
         return response()->json(['success' => 'Berhasil menyimpan data']);
     }
@@ -104,9 +91,8 @@ class DptController extends Controller
      */
     public function show($id)
     {
-        $data = MasterDpt::find($id);
-        $data['nama_provinsi'] = $data->provinsi->nama;
-
+        $data = Pemilu::find($id);
+        $data['tgl_pemilihan'] = Carbon::parse($data->tgl_pemilihan)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y');
         return response()->json(['result' => $data]);
     }
 
@@ -118,7 +104,9 @@ class DptController extends Controller
      */
     public function edit($id)
     {
-        return response()->json(['result' => MasterDpt::find($id)]);
+        $data = Pemilu::find($id);
+        $data['tgl_pemilihan'] = date('Y-m-d\TH:i', strtotime($data->tgl_pemilihan));
+        return response()->json(['result' => $data]);
     }
 
     /**
@@ -131,9 +119,8 @@ class DptController extends Controller
     public function update(Request $request)
     {
         $errors = Validator::make($request->all(), [
-            'provinsi_id' => 'required',
-            'jumlah_lk' => 'required',
-            'jumlah_p' => 'required',
+            'nama' => 'required | max:255',
+            'tgl_pemilihan' => 'required | date',
         ]);
 
         if($errors -> fails())
@@ -141,11 +128,10 @@ class DptController extends Controller
             return response()->json(['errors' => $errors->errors()->all()]);
         }
 
-        $master_dpt = MasterDpt::find($request->hidden_id);
-        $master_dpt->provinsi_id = $request->provinsi_id;
-        $master_dpt->jumlah_lk = $request->jumlah_lk;
-        $master_dpt->jumlah_p = $request->jumlah_p;
-        $master_dpt->save();
+        $pemilu = Pemilu::find($request->hidden_id);
+        $pemilu->nama = $request->nama;
+        $pemilu->tgl_pemilihan = $request->tgl_pemilihan;
+        $pemilu->save();
 
         return response()->json(['success' => 'Berhasil menyimpan data']);
     }
@@ -158,6 +144,6 @@ class DptController extends Controller
      */
     public function destroy($id)
     {
-        MasterDpt::find($id)->delete();
+        Pemilu::find($id)->delete();
     }
 }

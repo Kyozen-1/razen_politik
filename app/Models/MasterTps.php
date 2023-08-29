@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MasterTps extends Model
 {
     use HasFactory;
+
+    public function provinsi()
+    {
+        return $this->belongsTo('App\Models\MasterProvinsi', 'provinsi_id');
+    }
 }

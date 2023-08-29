@@ -14,10 +14,9 @@ use DataTables;
 use Carbon\Carbon;
 use Auth;
 
-use App\Models\MasterProvinsi;
-use App\Models\MasterDpt;
+use App\Models\MasterJenisIsu;
 
-class DptController extends Controller
+class JenisIsuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +27,7 @@ class DptController extends Controller
     {
         if(request()->ajax())
         {
-            $data = MasterDpt::latest()->get();
+            $data = MasterJenisIsu::latest()->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function($data){
@@ -39,23 +38,10 @@ class DptController extends Controller
                     $button = $button_show . ' ' . $button_edit . ' ' . $button_delete;
                     return $button;
                 })
-                ->editColumn('provinsi_id', function($data){
-                    return $data->provinsi->nama;
-                })
-                ->addColumn('total', function($data){
-                    $jumlah_lk = $data->jumlah_lk;
-                    $jumlah_p = $data->jumlah_p;
-                    $total = $jumlah_lk + $jumlah_p;
-                    return $total;
-                })
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
-
-        $provinsi = MasterProvinsi::pluck('nama', 'id');
-        return view('razen-politik.master-data.dpt.index', [
-            'provinsi' => $provinsi
-        ]);
+        return view('razen-politik.master-data.jenis-isu.index');
     }
 
     /**
@@ -77,9 +63,7 @@ class DptController extends Controller
     public function store(Request $request)
     {
         $errors = Validator::make($request->all(), [
-            'provinsi_id' => 'required',
-            'jumlah_lk' => 'required',
-            'jumlah_p' => 'required',
+            'nama' => 'required | max:255'
         ]);
 
         if($errors -> fails())
@@ -87,11 +71,9 @@ class DptController extends Controller
             return response()->json(['errors' => $errors->errors()->all()]);
         }
 
-        $master_dpt = new MasterDpt;
-        $master_dpt->provinsi_id = $request->provinsi_id;
-        $master_dpt->jumlah_lk = $request->jumlah_lk;
-        $master_dpt->jumlah_p = $request->jumlah_p;
-        $master_dpt->save();
+        $master_jenis_isu = new MasterJenisIsu;
+        $master_jenis_isu->nama = $request->nama;
+        $master_jenis_isu->save();
 
         return response()->json(['success' => 'Berhasil menyimpan data']);
     }
@@ -104,10 +86,7 @@ class DptController extends Controller
      */
     public function show($id)
     {
-        $data = MasterDpt::find($id);
-        $data['nama_provinsi'] = $data->provinsi->nama;
-
-        return response()->json(['result' => $data]);
+        return response()->json(['result' => MasterJenisIsu::find($id)]);
     }
 
     /**
@@ -118,7 +97,7 @@ class DptController extends Controller
      */
     public function edit($id)
     {
-        return response()->json(['result' => MasterDpt::find($id)]);
+        return response()->json(['result' => MasterJenisIsu::find($id)]);
     }
 
     /**
@@ -131,9 +110,7 @@ class DptController extends Controller
     public function update(Request $request)
     {
         $errors = Validator::make($request->all(), [
-            'provinsi_id' => 'required',
-            'jumlah_lk' => 'required',
-            'jumlah_p' => 'required',
+            'nama' => 'required | max:255'
         ]);
 
         if($errors -> fails())
@@ -141,11 +118,9 @@ class DptController extends Controller
             return response()->json(['errors' => $errors->errors()->all()]);
         }
 
-        $master_dpt = MasterDpt::find($request->hidden_id);
-        $master_dpt->provinsi_id = $request->provinsi_id;
-        $master_dpt->jumlah_lk = $request->jumlah_lk;
-        $master_dpt->jumlah_p = $request->jumlah_p;
-        $master_dpt->save();
+        $master_jenis_isu = MasterJenisIsu::find($request->hidden_id);
+        $master_jenis_isu->nama = $request->nama;
+        $master_jenis_isu->save();
 
         return response()->json(['success' => 'Berhasil menyimpan data']);
     }
@@ -158,6 +133,6 @@ class DptController extends Controller
      */
     public function destroy($id)
     {
-        MasterDpt::find($id)->delete();
+        MasterJenisIsu::find($id)->delete();
     }
 }

@@ -5,6 +5,8 @@ use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\PerbaikanHomeController;
 use App\Http\Controllers\Auth\RazenPolitik\LoginController;
 use App\Http\Controllers\Auth\RazenPolitik\PenggunaLoginController;
+use App\Http\Controllers\Auth\RazenPolitik\KoordinatorLoginController;
+use App\Http\Controllers\Auth\RazenPolitik\RelawanLoginController;
 
 
 /*
@@ -42,18 +44,38 @@ Route::get('/login',[LoginController::class, 'showLoginForm'])->name('razen-poli
 Route::post('/login', [LoginController::class, 'login'])->name('razen-politik.login.submit');
 Route::get('/logout', [LoginController::class, 'logout'])->name('razen-politik.logout');
 
-Route::get('/pengguna/login',[PenggunaLoginController::class, 'showLoginForm'])->name('pengguna.login');
-Route::post('/pengguna/login', [PenggunaLoginController::class, 'login'])->name('pengguna.login.submit');
-Route::get('/pengguna/logout', [PenggunaLoginController::class, 'logout'])->name('pengguna.logout');
-
 Route::prefix('razen-politik')->group(function(){
     Route::group(['middleware' => 'auth:razen_politik'], function(){
         @include('razen-politik.php');
     });
 });
 
+Route::get('/pengguna/login',[PenggunaLoginController::class, 'showLoginForm'])->name('pengguna.login');
+Route::post('/pengguna/login', [PenggunaLoginController::class, 'login'])->name('pengguna.login.submit');
+Route::get('/pengguna/logout', [PenggunaLoginController::class, 'logout'])->name('pengguna.logout');
+
 Route::prefix('pengguna')->group(function(){
     Route::group(['middleware' => 'auth:pengguna'], function(){
         @include('pengguna.php');
+    });
+});
+
+Route::get('/koordinator/login',[KoordinatorLoginController::class, 'showLoginForm'])->name('koordinator.login');
+Route::post('/koordinator/login', [KoordinatorLoginController::class, 'login'])->name('koordinator.login.submit');
+Route::get('/koordinator/logout', [KoordinatorLoginController::class, 'logout'])->name('koordinator.logout');
+
+Route::prefix('koordinator')->group(function(){
+    Route::group(['middleware' => 'auth:koordinator'], function(){
+        @include('koordinator.php');
+    });
+});
+
+Route::get('/relawan/login',[RelawanLoginController::class, 'showLoginForm'])->name('relawan.login');
+Route::post('/relawan/login', [RelawanLoginController::class, 'login'])->name('relawan.login.submit');
+Route::get('/relawan/logout', [RelawanLoginController::class, 'logout'])->name('relawan.logout');
+
+Route::prefix('relawan')->group(function(){
+    Route::group(['middleware' => 'auth:relawan'], function(){
+        @include('relawan.php');
     });
 });

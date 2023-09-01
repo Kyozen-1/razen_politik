@@ -32,6 +32,18 @@ class RedirectIfAuthenticated
                 {
                     return redirect()->route('pengguna.dashboard.index');
                 }
+
+            case 'koordinator':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('koordinator.dashboard.index');
+                }
+
+            case 'relawan':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('relawan.dashboard.index');
+                }
         }
 
         return $next($request);

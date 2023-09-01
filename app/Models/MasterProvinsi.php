@@ -23,4 +23,19 @@ class MasterProvinsi extends Model
     {
         return $this->hasMany('App\Models\MasterTps', 'provinsi_id');
     }
+
+    public function koordinator()
+    {
+        return $this->hasMany('App\Models\Koordinator', 'provinsi_id');
+    }
+
+    public function relawan()
+    {
+        return $this->hasMany('App\Models\Relawan', 'provinsi_id');
+    }
+
+    public function kunjungan_relawan()
+    {
+        return $this->hasMany('App\Models\KunjunganRelawan', 'provinsi_id');
+    }
 }

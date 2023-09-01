@@ -69,6 +69,16 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('pengguna.profil.index'))
+                        <a href="{{ route('pengguna.profil.index') }}" class="active">
+                    @else
+                        <a href="{{ route('pengguna.profil.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Profil</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('pengguna.master-data.tps.index') ||
                     request()->routeIs('pengguna.master-data.jumlah-dpt.index'))
                         <a href="#master_data" class="active">

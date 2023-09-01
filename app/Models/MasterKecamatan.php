@@ -18,4 +18,19 @@ class MasterKecamatan extends Model
     {
         return $this->hasMany('App\Models\MasterKelurahan', 'kecamatan_id');
     }
+
+    public function koordinator()
+    {
+        return $this->hasMany('App\Models\Koordinator', 'kecamatan_id');
+    }
+
+    public function relawan()
+    {
+        return $this->hasMany('App\Models\Relawan', 'kecamatan_id');
+    }
+
+    public function kunjungan_relawan()
+    {
+        return $this->hasMany('App\Models\KunjunganRelawan', 'kecamatan_id');
+    }
 }

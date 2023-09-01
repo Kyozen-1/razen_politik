@@ -29,10 +29,18 @@ use App\Http\Controllers\Pengguna\RealCount\InputDataController as RealCountInpu
 use App\Http\Controllers\Pengguna\RealCount\HasilController as RealCountHasilController;
 use App\Http\Controllers\Pengguna\UserController;
 use App\Http\Controllers\Pengguna\RoleController;
+use App\Http\Controllers\Pengguna\GetDataController;
+use App\Http\Controllers\Pengguna\PenggunaProfilController;
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('pengguna.dashboard.index');
     Route::post('/change', [DashboardController::class, 'change'])->name('pengguna.dashboard.change');
+});
+
+Route::prefix('profil')->group(function(){
+    Route::get('/', [PenggunaProfilController::class, 'index'])->name('pengguna.profil.index');
+    Route::post('/', [PenggunaProfilController::class, 'store'])->name('pengguna.profil.store');
+    Route::post('/ganti-password', [PenggunaProfilController::class, 'ganti_password'])->name('pengguna.profil.ganti-password');
 });
 
 Route::prefix('master-data')->group(function(){
@@ -47,15 +55,30 @@ Route::prefix('master-data')->group(function(){
 
 Route::prefix('koordinator')->group(function(){
     Route::get('/', [KoordinatorController::class, 'index'])->name('pengguna.koordinator.index');
+    Route::get('/detail/{id}', [KoordinatorController::class, 'show'])->name('pengguna.koordinator.show');
+    Route::post('/',[KoordinatorController::class, 'store'])->name('pengguna.koordinator.store');
+    Route::get('/edit/{id}',[KoordinatorController::class, 'edit'])->name('pengguna.koordinator.edit');
+    Route::post('/update',[KoordinatorController::class, 'update'])->name('pengguna.koordinator.update');
+    Route::get('/destroy/{id}',[KoordinatorController::class, 'destroy'])->name('pengguna.koordinator.destroy');
 
     Route::prefix('jadwal-kunjungan-relawan')->group(function(){
         Route::get('/', [JadwalKunjunganRelawanController::class, 'index'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.index');
+        Route::get('/detail/{id}', [JadwalKunjunganRelawanController::class, 'show'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.show');
+        Route::post('/',[JadwalKunjunganRelawanController::class, 'store'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.store');
+        Route::get('/edit/{id}',[JadwalKunjunganRelawanController::class, 'edit'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.edit');
+        Route::post('/update',[JadwalKunjunganRelawanController::class, 'update'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.update');
+        Route::get('/destroy/{id}',[JadwalKunjunganRelawanController::class, 'destroy'])->name('pengguna.koordinator.jadwal-kunjungan-relawan.destroy');
     });
 });
 
 Route::prefix('relawan')->group(function(){
     Route::prefix('list-relawan')->group(function(){
         Route::get('/', [ListRelawanController::class, 'index'])->name('pengguna.relawan.list-relawan.index');
+        Route::get('/detail/{id}', [ListRelawanController::class, 'show'])->name('pengguna.relawan.list-relawan.show');
+        Route::post('/',[ListRelawanController::class, 'store'])->name('pengguna.relawan.list-relawan.store');
+        Route::get('/edit/{id}',[ListRelawanController::class, 'edit'])->name('pengguna.relawan.list-relawan.edit');
+        Route::post('/update',[ListRelawanController::class, 'update'])->name('pengguna.relawan.list-relawan.update');
+        Route::get('/destroy/{id}',[ListRelawanController::class, 'destroy'])->name('pengguna.relawan.list-relawan.destroy');
     });
 
     Route::prefix('riwayat-kunjungan')->group(function(){
@@ -155,4 +178,11 @@ Route::prefix('user')->group(function(){
 
 Route::prefix('role')->group(function(){
     Route::get('/', [RoleController::class, 'index'])->name('pengguna.role.index');
+});
+
+Route::prefix('get-data')->group(function(){
+    Route::post('/kabupaten', [GetDataController::class, 'get_data_kabupaten'])->name('pengguna.get-data.kabupaten');
+    Route::post('/kecamatan', [GetDataController::class, 'get_data_kecamatan'])->name('pengguna.get-data.kecamatan');
+    Route::post('/kelurahan', [GetDataController::class, 'get_data_kelurahan'])->name('pengguna.get-data.kelurahan');
+    Route::post('/relawan', [GetDataController::class, 'get_data_relawan'])->name('pengguna.get-data.relawan');
 });

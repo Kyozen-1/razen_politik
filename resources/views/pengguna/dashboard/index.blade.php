@@ -62,8 +62,8 @@
                 <div class="card-img-overlay d-flex flex-column justify-content-between bg-transparent">
                     <div class="row">
                         <div class="col-8">
-                            <div class="cta-3 text-black mb-5">Tanggal Pemilihan</div>
-                            <div class="cta-3 text-black mb-5">{{ Carbon::parse($pemilu->tgl_pemilihan)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y') }}</div>
+                            <div class="cta-3 mb-5">Tanggal Pemilihan</div>
+                            <div class="cta-3 mb-5">{{ Carbon::parse($pemilu->tgl_pemilihan)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y') }}</div>
                         </div>
                     </div>
                 </div>

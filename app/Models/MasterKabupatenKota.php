@@ -18,4 +18,19 @@ class MasterKabupatenKota extends Model
     {
         return $this->hasMany('App\Models\MasterKecamatan', 'kabupaten_kota_id');
     }
+
+    public function koordinator()
+    {
+        return $this->hasMany('App\Models\Koordinator', 'kabupaten_kota_id');
+    }
+
+    public function relawan()
+    {
+        return $this->hasMany('App\Models\Relawan', 'kabupaten_kota_id');
+    }
+
+    public function kunjungan_relawan()
+    {
+        return $this->hasMany('App\Models\KunjunganRelawan', 'kabupaten_kota_id');
+    }
 }

@@ -13,4 +13,19 @@ class MasterKelurahan extends Model
     {
         return $this->belongsTo('App\Models\MasterKecamatan', 'kecamatan_id');
     }
+
+    public function koordinator()
+    {
+        return $this->hasMany('App\Models\Koordinator', 'kelurahan_id');
+    }
+
+    public function relawan()
+    {
+        return $this->hasMany('App\Models\Relawan', 'kelurahan_id');
+    }
+
+    public function kunjungan_relawan()
+    {
+        return $this->hasMany('App\Models\KunjunganRelawan', 'kelurahan_id');
+    }
 }

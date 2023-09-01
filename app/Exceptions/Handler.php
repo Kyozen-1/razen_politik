@@ -69,6 +69,12 @@ class Handler extends ExceptionHandler
             case 'pengguna':
                 $login = 'pengguna.login';
                 break;
+            case 'koordinator':
+                $login = 'koordinator.login';
+                break;
+            case 'relawan':
+                $login = 'relawan.login';
+                break;
             default:
                 $login = 'razen-politik.login';
                 break;

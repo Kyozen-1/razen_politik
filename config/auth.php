@@ -48,6 +48,14 @@ return [
             'driver' => 'session',
             'provider' => 'penggunas',
         ],
+        'koordinator' => [
+            'driver' => 'session',
+            'provider' => 'koordinators',
+        ],
+        'relawan' => [
+            'driver' => 'session',
+            'provider' => 'relawans',
+        ],
     ],
 
     /*
@@ -75,6 +83,14 @@ return [
         'penggunas' => [
             'driver' => 'eloquent',
             'model' => App\Models\AkunPengguna::class,
+        ],
+        'koordinators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AkunKoordinator::class,
+        ],
+        'relawans' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AkunRelawan::class,
         ]
         // 'users' => [
         //     'driver' => 'database',

@@ -38,4 +38,9 @@ class KunjunganRelawan extends Model
     {
         return $this->belongsTo('App\Models\MasterKelurahan', 'kelurahan_id');
     }
+
+    public function responden_kunjungan()
+    {
+        return $this->hasMany('App\Models\RespondenKunjungan', 'kunjungan_relawan_id');
+    }
 }

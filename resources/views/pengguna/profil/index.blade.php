@@ -38,7 +38,7 @@
             <h1 class="mb-0 pb-0 display-4" id="title"> Profil</h1>
             <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
                 <ul class="breadcrumb pt-0">
-                    <li class="breadcrumb-item"><a href="{{ route('razen-politik.admin.profil.index') }}">Profil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('pengguna.profil.index') }}">Profil</a></li>
                 </ul>
             </nav>
         </div>

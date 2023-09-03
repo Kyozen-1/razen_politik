@@ -38,4 +38,9 @@ class Koordinator extends Model
     {
         return $this->hasMany('App\Models\Relawan', 'koordinator_id');
     }
+
+    public function saksi()
+    {
+        return $this->hasMany('App\Models\Saksi', 'koordinator_id');
+    }
 }

@@ -28,4 +28,9 @@ class MasterKelurahan extends Model
     {
         return $this->hasMany('App\Models\KunjunganRelawan', 'kelurahan_id');
     }
+
+    public function saksi()
+    {
+        return $this->hasMany('App\Models\Saksi', 'kelurahan_id');
+    }
 }

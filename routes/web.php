@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RazenPolitik\LoginController;
 use App\Http\Controllers\Auth\RazenPolitik\PenggunaLoginController;
 use App\Http\Controllers\Auth\RazenPolitik\KoordinatorLoginController;
 use App\Http\Controllers\Auth\RazenPolitik\RelawanLoginController;
+use App\Http\Controllers\Auth\RazenPolitik\SaksiLoginController;
 
 
 /*
@@ -77,5 +78,15 @@ Route::get('/relawan/logout', [RelawanLoginController::class, 'logout'])->name('
 Route::prefix('relawan')->group(function(){
     Route::group(['middleware' => 'auth:relawan'], function(){
         @include('relawan.php');
+    });
+});
+
+Route::get('/saksi/login',[SaksiLoginController::class, 'showLoginForm'])->name('saksi.login');
+Route::post('/saksi/login', [SaksiLoginController::class, 'login'])->name('saksi.login.submit');
+Route::get('/saksi/logout', [SaksiLoginController::class, 'logout'])->name('saksi.logout');
+
+Route::prefix('saksi')->group(function(){
+    Route::group(['middleware' => 'auth:saksi'], function(){
+        @include('saksi.php');
     });
 });

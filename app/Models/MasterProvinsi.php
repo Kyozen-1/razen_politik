@@ -38,4 +38,9 @@ class MasterProvinsi extends Model
     {
         return $this->hasMany('App\Models\KunjunganRelawan', 'provinsi_id');
     }
+
+    public function saksi()
+    {
+        return $this->hasMany('App\Models\Saksi', 'provinsi_id');
+    }
 }

@@ -75,6 +75,9 @@ class Handler extends ExceptionHandler
             case 'relawan':
                 $login = 'relawan.login';
                 break;
+            case 'saksi':
+                $login = 'saksi.login';
+                break;
             default:
                 $login = 'razen-politik.login';
                 break;

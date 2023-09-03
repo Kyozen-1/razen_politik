@@ -44,6 +44,12 @@ class RedirectIfAuthenticated
                 {
                     return redirect()->route('relawan.dashboard.index');
                 }
+
+            case 'saksi':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('saksi.dashboard.index');
+                }
         }
 
         return $next($request);

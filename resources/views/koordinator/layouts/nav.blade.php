@@ -68,6 +68,26 @@
                         <span class="label">Koordinator</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('koordinator.profil.index'))
+                        <a href="{{ route('koordinator.profil.index') }}" class="active">
+                    @else
+                        <a href="{{ route('koordinator.profil.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Profil</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('koordinator.jadwal-kunjungan-relawan.index'))
+                        <a href="{{ route('koordinator.jadwal-kunjungan-relawan.index') }}" class="active">
+                    @else
+                        <a href="{{ route('koordinator.jadwal-kunjungan-relawan.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Jadwal Kunjungan Relawan</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Menu End -->

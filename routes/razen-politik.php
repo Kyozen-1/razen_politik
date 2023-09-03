@@ -14,6 +14,7 @@ use App\Http\Controllers\RazenPolitik\MasterData\ProvinsiController;
 use App\Http\Controllers\RazenPolitik\MasterData\KabupatenKotaController;
 use App\Http\Controllers\RazenPolitik\MasterData\KecamatanController;
 use App\Http\Controllers\RazenPolitik\MasterData\KelurahanController;
+use App\Http\Controllers\RazenPolitik\MasterData\DapilController;
 
 Route::prefix('admin')->group(function(){
     Route::prefix('dashboard')->group(function(){
@@ -128,5 +129,15 @@ Route::prefix('master-data')->group(function(){
         Route::get('/edit/{id}',[JenisIsuController::class, 'edit'])->name('razen-politik.master-data.jenis-isu.edit');
         Route::post('/update',[JenisIsuController::class, 'update'])->name('razen-politik.master-data.jenis-isu.update');
         Route::get('/destroy/{id}',[JenisIsuController::class, 'destroy'])->name('razen-politik.master-data.jenis-isu.destroy');
+    });
+
+    Route::prefix('kelurahan')->group(function(){
+        Route::get('/', [KelurahanController::class, 'index'])->name('razen-politik.master-data.kelurahan.index');
+        Route::get('/detail/{id}', [KelurahanController::class, 'show'])->name('razen-politik.master-data.kelurahan.show');
+        Route::post('/',[KelurahanController::class, 'store'])->name('razen-politik.master-data.kelurahan.store');
+        Route::get('/edit/{id}',[KelurahanController::class, 'edit'])->name('razen-politik.master-data.kelurahan.edit');
+        Route::post('/update',[KelurahanController::class, 'update'])->name('razen-politik.master-data.kelurahan.update');
+        Route::get('/destroy/{id}',[KelurahanController::class, 'destroy'])->name('razen-politik.master-data.kelurahan.destroy');
+        Route::post('/get-kecamatan',[KelurahanController::class, 'get_kecamatan'])->name('razen-politik.master-data.kelurahan.get-kecamatan');
     });
 });

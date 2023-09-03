@@ -33,4 +33,9 @@ class MasterKabupatenKota extends Model
     {
         return $this->hasMany('App\Models\KunjunganRelawan', 'kabupaten_kota_id');
     }
+
+    public function saksi()
+    {
+        return $this->hasMany('App\Models\Saksi', 'kabupaten_kota_id');
+    }
 }

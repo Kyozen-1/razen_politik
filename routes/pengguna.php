@@ -92,6 +92,11 @@ Route::prefix('relawan')->group(function(){
 
 Route::prefix('saksi')->group(function(){
     Route::get('/', [SaksiController::class, 'index'])->name('pengguna.saksi.index');
+    Route::get('/detail/{id}', [SaksiController::class, 'show'])->name('pengguna.saksi.show');
+    Route::post('/',[SaksiController::class, 'store'])->name('pengguna.saksi.store');
+    Route::get('/edit/{id}',[SaksiController::class, 'edit'])->name('pengguna.saksi.edit');
+    Route::post('/update',[SaksiController::class, 'update'])->name('pengguna.saksi.update');
+    Route::get('/destroy/{id}',[SaksiController::class, 'destroy'])->name('pengguna.saksi.destroy');
 });
 
 Route::prefix('data-dpt')->group(function(){

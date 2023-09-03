@@ -59,13 +59,33 @@
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
                 <li>
-                    @if (request()->routeIs('pengguna.dashboard.index'))
-                        <a href="{{ route('pengguna.dashboard.index') }}" class="active">
+                    @if (request()->routeIs('relawan.dashboard.index'))
+                        <a href="{{ route('relawan.dashboard.index') }}" class="active">
                     @else
-                        <a href="{{ route('pengguna.dashboard.index') }}">
+                        <a href="{{ route('relawan.dashboard.index') }}">
                     @endif
                         <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
                         <span class="label">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('relawan.profil.index'))
+                        <a href="{{ route('relawan.profil.index') }}" class="active">
+                    @else
+                        <a href="{{ route('relawan.profil.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Profil</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('relawan.jadwal-kunjungan-relawan.index'))
+                        <a href="{{ route('relawan.jadwal-kunjungan-relawan.index') }}" class="active">
+                    @else
+                        <a href="{{ route('relawan.jadwal-kunjungan-relawan.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Jadwal Kunjungan Relawan</span>
                     </a>
                 </li>
             </ul>

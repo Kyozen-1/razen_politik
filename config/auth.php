@@ -56,6 +56,10 @@ return [
             'driver' => 'session',
             'provider' => 'relawans',
         ],
+        'saksi' => [
+            'driver' => 'session',
+            'provider' => 'saksis',
+        ],
     ],
 
     /*
@@ -91,6 +95,10 @@ return [
         'relawans' => [
             'driver' => 'eloquent',
             'model' => App\Models\AkunRelawan::class,
+        ],
+        'saksis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AkunSaksi::class,
         ]
         // 'users' => [
         //     'driver' => 'database',

@@ -43,4 +43,9 @@ class MasterProvinsi extends Model
     {
         return $this->hasMany('App\Models\Saksi', 'provinsi_id');
     }
+
+    public function dapil()
+    {
+        return $this->hasMany('App\Models\MasterDapil', 'provinsi_id');
+    }
 }

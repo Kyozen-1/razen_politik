@@ -131,13 +131,12 @@ Route::prefix('master-data')->group(function(){
         Route::get('/destroy/{id}',[JenisIsuController::class, 'destroy'])->name('razen-politik.master-data.jenis-isu.destroy');
     });
 
-    Route::prefix('kelurahan')->group(function(){
-        Route::get('/', [KelurahanController::class, 'index'])->name('razen-politik.master-data.kelurahan.index');
-        Route::get('/detail/{id}', [KelurahanController::class, 'show'])->name('razen-politik.master-data.kelurahan.show');
-        Route::post('/',[KelurahanController::class, 'store'])->name('razen-politik.master-data.kelurahan.store');
-        Route::get('/edit/{id}',[KelurahanController::class, 'edit'])->name('razen-politik.master-data.kelurahan.edit');
-        Route::post('/update',[KelurahanController::class, 'update'])->name('razen-politik.master-data.kelurahan.update');
-        Route::get('/destroy/{id}',[KelurahanController::class, 'destroy'])->name('razen-politik.master-data.kelurahan.destroy');
-        Route::post('/get-kecamatan',[KelurahanController::class, 'get_kecamatan'])->name('razen-politik.master-data.kelurahan.get-kecamatan');
+    Route::prefix('dapil')->group(function(){
+        Route::get('/', [DapilController::class, 'index'])->name('razen-politik.master-data.dapil.index');
+        Route::get('/detail/{id}', [DapilController::class, 'show'])->name('razen-politik.master-data.dapil.show');
+        Route::post('/',[DapilController::class, 'store'])->name('razen-politik.master-data.dapil.store');
+        Route::get('/edit/{id}',[DapilController::class, 'edit'])->name('razen-politik.master-data.dapil.edit');
+        Route::post('/update',[DapilController::class, 'update'])->name('razen-politik.master-data.dapil.update');
+        Route::get('/destroy/{id}',[DapilController::class, 'destroy'])->name('razen-politik.master-data.dapil.destroy');
     });
 });

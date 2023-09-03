@@ -97,7 +97,8 @@
                     request()->routeIs('razen-politik.master-data.jabatan-pilihan.index') ||
                     request()->routeIs('razen-politik.master-data.jenis-survey.index') ||
                     request()->routeIs('razen-politik.master-data.jenis-isu.index') ||
-                    request()->routeIs('razen-politik.master-data.tps.index'))
+                    request()->routeIs('razen-politik.master-data.tps.index') ||
+                    request()->routeIs('razen-politik.master-data.dapil.index'))
                     <a href="#master_data" class="active">
                     @else
                     <a href="#master_data">
@@ -149,6 +150,15 @@
                                 <a href="{{ route('razen-politik.master-data.tps.index') }}">
                             @endif
                                 <span class="label">TPS</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.dapil.index'))
+                                <a href="{{ route('razen-politik.master-data.dapil.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.dapil.index') }}">
+                            @endif
+                                <span class="label">Dapil</span>
                             </a>
                         </li>
                         <li>

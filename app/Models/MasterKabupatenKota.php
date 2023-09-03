@@ -38,4 +38,9 @@ class MasterKabupatenKota extends Model
     {
         return $this->hasMany('App\Models\Saksi', 'kabupaten_kota_id');
     }
+
+    public function dapil()
+    {
+        return $this->hasMany('App\Models\MasterDapil', 'kabupaten_kota_id');
+    }
 }

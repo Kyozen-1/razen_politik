@@ -1,0 +1,517 @@
+@extends('razen-politik.layouts.app')
+@section('title', 'Razen Politik | Master | Dapil')
+
+@section('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/font/CS-Interface/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/datatables.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/select2.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/select2-bootstrap4.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/bootstrap-datepicker3.standalone.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/tagify.css') }}" />
+    <link rel="stylesheet" href="{{ asset('acorn/acorn-elearning-portal/css/vendor/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dropify/css/dropify.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .select2-selection__rendered {
+            line-height: 40px !important;
+        }
+        .select2-container .select2-selection--single {
+            height: 41px !important;
+        }
+        .select2-selection__arrow {
+            height: 36px !important;
+        }
+        .modal-dialog{
+            pointer-events: all !important;
+        }
+    </style>
+@endsection
+
+@section('content')
+    <!-- Title and Top Buttons Start -->
+    <div class="page-title-container">
+        <div class="row">
+        <!-- Title Start -->
+        <div class="col-12 col-md-7">
+            <h1 class="mb-0 pb-0 display-4" id="title">Dapil</h1>
+            <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
+                <ul class="breadcrumb pt-0">
+                    <li class="breadcrumb-item"><a href="#">Master Data</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('razen-politik.master-data.dapil.index') }}">Dapil</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Title End -->
+        </div>
+    </div>
+    <!-- Title and Top Buttons End -->
+    <div class="row mb-3">
+        <div class="col-12" style="text-align:right">
+            <button class="btn btn-outline-primary waves-effect waves-light mr-2 item_create" type="button" data-bs-toggle="modal" data-bs-target="#addEditModal" title="Tambah Data" id="create"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="data-table-rows slim">
+        <!-- Table Start -->
+        <div class="data-table-responsive-wrapper">
+            <table id="master_dapil_table" class="data-table w-100">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Provinsi</th>
+                        <th>Kabupaten</th>
+                        <th>Kecamatan</th>
+                        <th>Jabatan Pilihan</th>
+                        <th>Nama</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <!-- Table End -->
+    </div>
+    <!-- Content End -->
+    <div id="addEditModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addEditModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="addEditModalLabel">Tambah Data</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <form class="form-horizontal" id="master_dapil_form" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3 position-relative form-group">
+                            <label for="provinsi_id" class="form-label">Provinsi</label>
+                            <select name="provinsi_id" id="provinsi_id" class="form-control" required>
+                                <option value="">--- Pilih Provinsi ---</option>
+                                @foreach ($provinsi as $id => $nama)
+                                    <option value="{{$id}}">{{$nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="kabupaten_kota_id" class="form-label">Kabupaten Kota</label>
+                            <select name="kabupaten_kota_id" id="kabupaten_kota_id" class="form-control" disabled required>
+                                <option value="">--- Pilih Kabupaten Kota ---</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="kecamatan_id" class="form-label">Kecamatan</label>
+                            <select name="kecamatan_id[]" id="kecamatan_id" class="form-control" disabled multiple required>
+                                <option value="">--- Pilih Kecamatan ---</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="jabatan_pilihan_id" class="form-label">Jabatan Pilihan</label>
+                            <select name="jabatan_pilihan_id" id="jabatan_pilihan_id" class="form-control" required>
+                                <option value="">--- Pilih Jabatan Pilihan ---</option>
+                                @foreach ($jabatan_pilihan as $id => $nama)
+                                    <option value="{{$id}}">{{$nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama" id="nama" required>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light waves-effect width-md waves-light" data-bs-dismiss="modal">Close</button>
+                    <input type="hidden" name="aksi" id="aksi" value="Save">
+                    <input type="hidden" name="hidden_id" id="hidden_id">
+                    <button type="submit" name="aksi_button" id="aksi_button" class="btn btn-primary waves-effect width-md waves-light">Save</button>
+                </div>
+            </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="detail" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="detail-title">Detail Data</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-3 position-relative">
+                        <label for="detail_provinsi" class="form-label">Provinsi</label>
+                        <input type="text" id="detail_provinsi" class="form-control" disabled>
+                    </div>
+                    <div class="form-group mb-3 position-relative">
+                        <label for="detail_kabupaten_kota" class="form-label">Kabupaten / Kota</label>
+                        <input type="text" id="detail_kabupaten_kota" class="form-control" disabled>
+                    </div>
+                    <div class="form-group mb-3 position-relative">
+                        <label for="detail_kecamatan" class="form-label">Kecamatan</label>
+                        <input type="text" id="detail_kecamatan" class="form-control" disabled>
+                    </div>
+                    <div class="form-group mb-3 position-relative">
+                        <label for="detail_jabatan_pilihan" class="form-label">Jabatan Pilihan</label>
+                        <input type="text" id="detail_jabatan_pilihan" class="form-control" disabled>
+                    </div>
+                    <div class="form-group mb-3 position-relative">
+                        <label for="detail_nama" class="form-label">Nama</label>
+                        <input type="text" id="detail_nama" class="form-control" disabled>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirm" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirm">Konfirmasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-center" style="margin: 0;">Apakah anda yakin menghapus?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" name="ok_button" id="ok_button" class="btn btn-danger waves-effect width-md waves-light">Ok</button>
+                    <button class="btn btn-primary waves-effect width-md waves-light" type="button" data-bs-dismiss="modal">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/bootstrap-submenu.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/datatables.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/cs/scrollspy.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/jquery.validate/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/jquery.validate/additional-methods.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/select2.full.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/tagify.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+    <script src="{{ asset('dropify/js/dropify.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/dropzone.min.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/singleimageupload.js') }}"></script>
+    <script src="{{ asset('acorn/acorn-elearning-portal/js/cs/dropzone.templates.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var state_kabupaten_kota_id = '';
+        var state_kecamatan_id = '';
+        $(document).ready(function(){
+            $('.dropify').dropify();
+
+            var dataTables = $('#master_dapil_table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: "{{ route('razen-politik.master-data.dapil.index') }}"
+                },
+                columns: [
+                    {
+                        data: 'DT_RowIndex',
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
+                        data: 'provinsi_id',
+                        name: 'provinsi_id'
+                    },
+                    {
+                        data: 'kabupaten_kota_id',
+                        name: 'kabupaten_kota_id'
+                    },
+                    {
+                        data: 'kecamatan',
+                        name: 'kecamatan'
+                    },
+                    {
+                        data: 'jabatan_pilihan_id',
+                        name: 'jabatan_pilihan_id'
+                    },
+                    {
+                        data: 'nama',
+                        name: 'nama'
+                    },
+                    {
+                        data: 'aksi',
+                        name: 'aksi'
+                    }
+                ]
+            });
+            $('#provinsi_id').select2({
+                dropdownParent: $("#addEditModal")
+            });
+            $('#kabupaten_kota_id').select2({
+                dropdownParent: $("#addEditModal")
+            });
+            $('#kecamatan_id').select2({
+                dropdownParent: $("#addEditModal")
+            });
+            $('#jabatan_pilihan_id').select2({
+                dropdownParent: $("#addEditModal")
+            });
+        });
+
+        $('#provinsi_id').on('change', function(){
+            if($(this).val() != '')
+            {
+                $.ajax({
+                    url: "{{ route('razen-politik.master-data.kecamatan.get-kabupaten') }}",
+                    method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id:$(this).val()
+                    },
+                    success: function(response){
+                        $('#kabupaten_kota_id').empty();
+                        $('#kelurahan_id').empty();
+                        $('#kabupaten_kota_id').prop('disabled', false);
+                        $('#kabupaten_kota_id').append('<option value="">--- Pilih Kabupaten / Kota ---</option>');
+                        $('#kelurahan_id').prop('disabled', true);
+                        $('#kelurahan_id').append('<option value="">--- Pilih Kecamatan ---</option>');
+                        $.each(response, function(id, nama){
+                            $('#kabupaten_kota_id').append(new Option(nama, id));
+                        });
+                        if(state_kabupaten_kota_id != '')
+                        {
+                            $('[name="kabupaten_kota_id"]').val(state_kabupaten_kota_id).trigger('change');
+                        }
+                    }
+                });
+            } else {
+                $('#kabupaten_kota_id').empty();
+                $('#kecamatan_id').empty();
+                $('#kabupaten_kota_id').prop('disabled', true);
+                $('#kabupaten_kota_id').append('<option value="">--- Pilih Kabupaten / Kota ---</option>');
+                $('#kecamatan_id').prop('disabled', true);
+                $('#kecamatan_id').append('<option value="">--- Pilih Kecamatan ---</option>');
+            }
+        });
+
+        $('#kabupaten_kota_id').on('change', function(){
+            if($(this).val() != '')
+            {
+                $.ajax({
+                    url: "{{ route('razen-politik.master-data.kelurahan.get-kecamatan') }}",
+                    method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id:$(this).val()
+                    },
+                    success: function(response){
+                        $('#kecamatan_id').empty();
+                        $('#kecamatan_id').prop('disabled', false);
+                        $('#kecamatan_id').append('<option value="">--- Pilih Kecamatan ---</option>');
+                        $.each(response, function(id, nama){
+                            $('#kecamatan_id').append(new Option(nama, id));
+                        });
+                        if(state_kecamatan_id != '')
+                        {
+                            $('#kecamatan_id').val(state_kecamatan_id).change();
+                        }
+                    }
+                });
+            } else {
+                $('#kecamatan_id').empty();
+                $('#kecamatan_id').prop('disabled', true);
+                $('#kecamatan_id').append('<option value="">--- Pilih Kecamatan ---</option>');
+            }
+        });
+
+        $('#create').click(function(){
+            $("[name='provinsi_id']").val('').trigger('change');
+            $("[name='jabatan_pilihan_id']").val('').trigger('change');
+            $('#master_dapil_form')[0].reset();
+            $('.dropify-clear').click();
+            $('#aksi_button').text('Save');
+            $('#aksi_button').prop('disabled', false);
+            $('.modal-title').text('Add Data');
+            $('#aksi_button').val('Save');
+            $('#aksi').val('Save');
+            $('#form_result').html('');
+            state_kabupaten_kota_id = '';
+            state_kecamatan_id = '';
+        });
+
+        $('#master_dapil_form').on('submit', function(e){
+            e.preventDefault();
+            if($('#aksi').val() == 'Save')
+            {
+                $.ajax({
+                    url: "{{ route('razen-politik.master-data.dapil.store') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: "json",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    beforeSend: function()
+                    {
+                        return new swal({
+                            title: "Checking...",
+                            text: "Harap Menunggu",
+                            imageUrl: "{{ asset('/images/preloader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function(data)
+                    {
+                        var html = '';
+                        if(data.errors)
+                        {
+                            swal.close()
+                            html = '<div class="alert alert-danger">'+data.errors+'</div>';
+                            $('.dropify-clear').click();
+                            $('#aksi_button').prop('disabled', false);
+                            $('#aksi_button').text('Save');
+                        }
+                        if(data.success)
+                        {
+                            swal.close()
+                            html = '<div class="alert alert-success">'+data.success+'</div>';
+                            $('.dropify-clear').click();
+                            $('#aksi_button').prop('disabled', false);
+                            $("[name='provinsi_id']").val('').trigger('change');
+                            $("[name='kabupaten_kota_id']").val('').trigger('change');
+                            $('#master_dapil_form')[0].reset();
+                            $('#aksi_button').text('Save');
+                            $('#master_dapil_table').DataTable().ajax.reload();
+                        }
+
+                        $('#form_result').html(html);
+                    }
+                });
+            }
+            if($('#aksi').val() == 'Edit')
+            {
+                $.ajax({
+                    url: "{{ route('razen-politik.master-data.dapil.update') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: "json",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    beforeSend: function()
+                    {
+                        return new swal({
+                            title: "Checking...",
+                            text: "Harap Menunggu",
+                            imageUrl: "{{ asset('/images/preloader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function(data)
+                    {
+                        var html = '';
+                        if(data.errors)
+                        {
+                            html = '<div class="alert alert-danger">'+data.errors+'</div>';
+                            $('#aksi_button').text('Save');
+                        }
+                        if(data.success)
+                        {
+                            $('#master_dapil_form')[0].reset();
+                            $('#aksi_button').prop('disabled', false);
+                            $('#aksi_button').text('Save');
+                            $('#master_dapil_table').DataTable().ajax.reload();
+                            $('#addEditModal').modal('hide');
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil di ubah',
+                                showConfirmButton: true
+                            });
+                        }
+
+                        $('#form_result').html(html);
+                    }
+                });
+            }
+        });
+
+        $(document.body).on('click', '.detail', function(){
+            var id = $(this).attr('id');
+            var url = "{{ route('razen-politik.master-data.dapil.show', ['id' => ":id"]) }}";
+            url = url.replace(':id', id);
+            $.ajax({
+                url: url,
+                dataType: "json",
+                success: function(data)
+                {
+                    $('#detail-title').text('Detail Data');
+                    $('#detail_provinsi').val(data.result.data_provinsi);
+                    $('#detail_kabupaten_kota').val(data.result.data_kabupaten_kota);
+                    $('#detail_kecamatan').val(data.result.data_kecamatan);
+                    $('#detail_jabatan_pilihan').val(data.result.data_jabatan_pilihan);
+                    $('#detail_nama').val(data.result.nama);
+                    $('#detail').modal('show');
+                }
+            });
+        });
+
+        $(document).on('click', '.edit', function(){
+            var id = $(this).attr('id');
+            $('#form_result').html('');
+            var url = "{{ route('razen-politik.master-data.dapil.edit', ['id' => ":id"]) }}";
+            url = url.replace(':id', id);
+            $.ajax({
+                url: url,
+                dataType: "json",
+                success: function(data)
+                {
+                    $("[name='provinsi_id']").val(data.result.provinsi_id).trigger('change');
+                    $("[name='jabatan_pilihan_id']").val(data.result.jabatan_pilihan_id).trigger('change');
+                    state_kabupaten_kota_id = data.result.kabupaten_kota_id;
+                    state_kecamatan_id = data.result.kecamatan;
+                    $('#nama').val(data.result.nama);
+                    $('#hidden_id').val(id);
+                    $('.modal-title').text('Edit Data');
+                    $('#aksi_button').text('Edit');
+                    $('#aksi_button').prop('disabled', false);
+                    $('#aksi_button').val('Edit');
+                    $('#aksi').val('Edit');
+                    $('#addEditModal').modal('show');
+                }
+            });
+        });
+
+        var user_id;
+        $(document).on('click', '.delete', function(){
+            user_id = $(this).attr('id');
+            $('.modal-title').text('Konfirmasi');
+            $('#ok_button').prop('disabled', false);
+            $('#confirmModal').modal('show');
+            $('#ok_button').text('Ok');
+        });
+
+        $('#ok_button').click(function(){
+            var url = "{{ route('razen-politik.master-data.dapil.destroy', ['id' => ":user_id"]) }}";
+            url = url.replace(":user_id", user_id);
+            $.ajax({
+                url: url,
+                beforeSend: function(){
+                    $('#ok_button').text('Deleting....');
+                    $('#ok_button').prop('disabled', true);
+                },
+                success: function(data)
+                {
+                    $('#ok_button').prop('disabled', false);
+                    $('#confirmModal').modal('hide');
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil di hapus',
+                        showConfirmButton: true
+                    });
+                    $('#master_dapil_table').DataTable().ajax.reload();
+                }
+            });
+        });
+    </script>
+@endsection

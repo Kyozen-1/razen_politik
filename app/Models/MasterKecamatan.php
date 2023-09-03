@@ -38,4 +38,9 @@ class MasterKecamatan extends Model
     {
         return $this->hasMany('App\Models\Saksi', 'kecamatan_id');
     }
+
+    public function pivot_kecamatan_master_dapil()
+    {
+        return $this->hasMany('App\Models\PivotKecamatanMasterDapil', 'kecamatan_id');
+    }
 }

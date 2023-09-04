@@ -1,5 +1,5 @@
-@extends('pengguna.layouts.app')
-@section('title', 'Data DPT | Pengguna')
+@extends('relawan.layouts.app')
+@section('title', 'Data DPT | Relawan')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -134,7 +134,7 @@
             </div>
             <div class="modal-body">
                 <span id="form_result"></span>
-                <form class="form-horizontal" action="{{ route('pengguna.data-dpt.impor') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('relawan.data-dpt.impor') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 col-12">
@@ -334,7 +334,7 @@
                     processing: true,
                     serverSide: true,
                     ajax: {
-                        url: "{{ route('pengguna.data-dpt.index') }}",
+                        url: "{{ route('relawan.data-dpt.index') }}",
                         data: {
                             provinsi_id : provinsi_id,
                             kabupaten_kota_id : kabupaten_kota_id,
@@ -464,7 +464,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kabupaten') }}",
+                    url: "{{ route('relawan.get-data.kabupaten') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -502,7 +502,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kecamatan') }}",
+                    url: "{{ route('relawan.get-data.kecamatan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -537,7 +537,7 @@
                 var dapil_kabupaten_kota_id = $('#kabupaten_kota_id').val();
 
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kelurahan') }}",
+                    url: "{{ route('relawan.get-data.kelurahan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -558,7 +558,7 @@
                 });
 
                 $.ajax({
-                    url: "{{ route('pengguna.data-dpt.get-data-dapil') }}",
+                    url: "{{ route('relawan.data-dpt.get-data-dapil') }}",
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",
@@ -589,7 +589,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kabupaten') }}",
+                    url: "{{ route('relawan.get-data.kabupaten') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -622,7 +622,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kecamatan') }}",
+                    url: "{{ route('relawan.get-data.kecamatan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -651,7 +651,7 @@
                 var dapil_kabupaten_kota_id = $('#impor_kabupaten_kota_id').val();
 
                 $.ajax({
-                    url: "{{ route('pengguna.data-dpt.get-data-dapil') }}",
+                    url: "{{ route('relawan.data-dpt.get-data-dapil') }}",
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",
@@ -677,7 +677,7 @@
 
         $(document.body).on('click', '.detail', function(){
             var id = $(this).attr('id');
-            var url = "{{ route('pengguna.data-dpt.show', ['id' => ":id"]) }}";
+            var url = "{{ route('relawan.data-dpt.show', ['id' => ":id"]) }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -713,7 +713,7 @@
         });
 
         $('#ok_button').click(function(){
-            var url = "{{ route('pengguna.data-dpt.destroy', ['id' => ":user_id"]) }}";
+            var url = "{{ route('relawan.data-dpt.destroy', ['id' => ":user_id"]) }}";
             url = url.replace(":user_id", user_id);
             $.ajax({
                 url: url,

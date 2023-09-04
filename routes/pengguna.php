@@ -101,10 +101,18 @@ Route::prefix('saksi')->group(function(){
 
 Route::prefix('data-dpt')->group(function(){
     Route::get('/', [DataDptController::class, 'index'])->name('pengguna.data-dpt.index');
+    Route::get('/detail/{id}', [DataDptController::class, 'show'])->name('pengguna.data-dpt.show');
+    Route::get('/destroy/{id}',[DataDptController::class, 'destroy'])->name('pengguna.data-dpt.destroy');
+    Route::post('/get-data/dapil',[DataDptController::class, 'get_data_dapil'])->name('pengguna.data-dpt.get-data-dapil');
+    Route::post('/impor', [DataDptController::class, 'impor'])->name('pengguna.data-dpt.impor');
 });
 
 Route::prefix('data-pemilih')->group(function(){
     Route::get('/', [DataPemilihController::class, 'index'])->name('pengguna.data-pemilih.index');
+    Route::get('/detail/{id}', [DataPemilihController::class, 'show'])->name('pengguna.data-pemilih.show');
+    Route::get('/destroy/{id}',[DataPemilihController::class, 'destroy'])->name('pengguna.data-pemilih.destroy');
+    Route::post('/get-data/dapil',[DataPemilihController::class, 'get_data_dapil'])->name('pengguna.data-pemilih.get-data-dapil');
+    Route::post('/impor', [DataPemilihController::class, 'impor'])->name('pengguna.data-pemilih.impor');
 });
 
 Route::prefix('simulasi-kemenangan')->group(function(){

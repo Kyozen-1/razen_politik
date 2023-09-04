@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pengguna extends Model
 {
     use HasFactory;
+
+    public function dpt_manual()
+    {
+        return $this->hasMany('App\Models\DptManual', 'pengguna_id');
+    }
+
 }

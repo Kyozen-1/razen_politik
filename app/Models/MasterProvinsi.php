@@ -48,4 +48,9 @@ class MasterProvinsi extends Model
     {
         return $this->hasMany('App\Models\MasterDapil', 'provinsi_id');
     }
+
+    public function dpt_manual()
+    {
+        return $this->hasMany('App\Models\DptManual', 'provinsi_id');
+    }
 }

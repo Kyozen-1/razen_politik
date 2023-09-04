@@ -28,4 +28,9 @@ class MasterDapil extends Model
     {
         return $this->hasMany('App\Models\PivotKecamatanMasterDapil', 'dapil_id');
     }
+
+    public function dpt_manual()
+    {
+        return $this->hasMany('App\Models\DptManual', 'dapil_id');
+    }
 }

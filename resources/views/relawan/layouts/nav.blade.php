@@ -88,6 +88,26 @@
                         <span class="label">Jadwal Kunjungan Relawan</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('relawan.data-dpt.index'))
+                        <a href="{{ route('relawan.data-dpt.index') }}" class="active">
+                    @else
+                        <a href="{{ route('relawan.data-dpt.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Data DPT</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('relawan.data-pemilih.index'))
+                        <a href="{{ route('relawan.data-pemilih.index') }}" class="active">
+                    @else
+                        <a href="{{ route('relawan.data-pemilih.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Data Pemilih</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Menu End -->

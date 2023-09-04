@@ -3,6 +3,8 @@ use App\Http\Controllers\Koordinator\DashboardController;
 use App\Http\Controllers\Koordinator\KoordinatorProfilController;
 use App\Http\Controllers\Koordinator\GetDataController;
 use App\Http\Controllers\Koordinator\JadwalKunjunganRelawanController;
+use App\Http\Controllers\Koordinator\DataDptController;
+use App\Http\Controllers\Koordinator\DataPemilihController;
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('koordinator.dashboard.index');
@@ -28,4 +30,20 @@ Route::prefix('jadwal-kunjungan-relawan')->group(function(){
     Route::get('/edit/{id}',[JadwalKunjunganRelawanController::class, 'edit'])->name('koordinator.jadwal-kunjungan-relawan.edit');
     Route::post('/update',[JadwalKunjunganRelawanController::class, 'update'])->name('koordinator.jadwal-kunjungan-relawan.update');
     Route::get('/destroy/{id}',[JadwalKunjunganRelawanController::class, 'destroy'])->name('koordinator.jadwal-kunjungan-relawan.destroy');
+});
+
+Route::prefix('data-dpt')->group(function(){
+    Route::get('/', [DataDptController::class, 'index'])->name('koordinator.data-dpt.index');
+    Route::get('/detail/{id}', [DataDptController::class, 'show'])->name('koordinator.data-dpt.show');
+    Route::get('/destroy/{id}',[DataDptController::class, 'destroy'])->name('koordinator.data-dpt.destroy');
+    Route::post('/get-data/dapil',[DataDptController::class, 'get_data_dapil'])->name('koordinator.data-dpt.get-data-dapil');
+    Route::post('/impor', [DataDptController::class, 'impor'])->name('koordinator.data-dpt.impor');
+});
+
+Route::prefix('data-pemilih')->group(function(){
+    Route::get('/', [DataPemilihController::class, 'index'])->name('koordinator.data-pemilih.index');
+    Route::get('/detail/{id}', [DataPemilihController::class, 'show'])->name('koordinator.data-pemilih.show');
+    Route::get('/destroy/{id}',[DataPemilihController::class, 'destroy'])->name('koordinator.data-pemilih.destroy');
+    Route::post('/get-data/dapil',[DataPemilihController::class, 'get_data_dapil'])->name('koordinator.data-pemilih.get-data-dapil');
+    Route::post('/impor', [DataPemilihController::class, 'impor'])->name('koordinator.data-pemilih.impor');
 });

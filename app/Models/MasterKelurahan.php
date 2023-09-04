@@ -33,4 +33,9 @@ class MasterKelurahan extends Model
     {
         return $this->hasMany('App\Models\Saksi', 'kelurahan_id');
     }
+
+    public function kelurahan()
+    {
+        return $this->hasMany('App\Models\MasterKelurahan', 'kelurahan_id');
+    }
 }

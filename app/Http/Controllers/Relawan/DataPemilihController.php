@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pengguna;
+namespace App\Http\Controllers\Relawan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,15 +20,15 @@ use App\Models\MasterProvinsi;
 use App\Models\DptManual;
 use App\Models\MasterDapil;
 use App\Models\PivotKecamatanMasterDapil;
-use App\Imports\DptManualImpor;
+use App\Imports\RelawanDataPemilihImpor;
 
-class DataDptController extends Controller
+class DataPemilihController extends Controller
 {
     public function index()
     {
         if(request()->ajax())
         {
-            $data = DptManual::where('pengguna_id', Auth::user()->pengguna_id);
+            $data = DptManual::where('pengguna_id', Auth::user()->relawan->koordinator->pengguna_id);
             if(request()->provinsi_id)
             {
                 $data = $data->where('provinsi_id', request()->provinsi_id);
@@ -49,6 +49,7 @@ class DataDptController extends Controller
             {
                 $data = $data->where('dapil_id', request()->dapil_id);
             }
+            $data = $data->where('status_pemilih', '1');
             $data = $data->latest()->get();
             return DataTables::of($data)
                 ->addIndexColumn()
@@ -77,20 +78,9 @@ class DataDptController extends Controller
         }
 
         $provinsi = MasterProvinsi::pluck('nama', 'id');
-        return view('pengguna.data-dpt.index', [
+        return view('relawan.data-pemilih.index', [
             'provinsi' => $provinsi
         ]);
-    }
-
-    public function get_data_dapil(Request $request)
-    {
-        $dapil = MasterDapil::where('provinsi_id', $request->provinsi_id)
-                    ->where('kabupaten_kota_id', $request->kabupaten_kota_id)
-                    ->whereHas('pivot_kecamatan_master_dapil', function($q) use ($request){
-                        $q->where('kecamatan_id', $request->kecamatan_id);
-                    })
-                    ->pluck('nama','id');
-        return response()->json($dapil);
     }
 
     public function impor(Request $request)
@@ -98,16 +88,16 @@ class DataDptController extends Controller
         $dapil_id = $request->impor_dapil_id;
         $file = $request->file('file_excel');
         // import data
-        Excel::import(new DptManualImpor($dapil_id), $file);
+        Excel::import(new RelawanDataPemilihImpor($dapil_id), $file);
 
         $msg = [session('import_status'), session('import_message')];
 
         if ($msg[0]) {
             Alert::success('Berhasil', $msg[1]);
-            return redirect()->route('pengguna.data-dpt.index');
+            return redirect()->route('relawan.data-pemilih.index');
         } else {
             Alert::error('Gagal', $msg[1]);
-            return redirect()->route('pengguna.data-dpt.index');
+            return redirect()->route('relawan.data-pemilih.index');
         }
     }
 

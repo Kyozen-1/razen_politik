@@ -1,5 +1,5 @@
-@extends('pengguna.layouts.app')
-@section('title', 'Data DPT | Pengguna')
+@extends('relawan.layouts.app')
+@section('title', 'Data Pemilih | Relawan')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,10 +35,10 @@
     <div class="row">
     <!-- Title Start -->
     <div class="col-12 col-md-7">
-        <h1 class="mb-0 pb-0 display-4" id="title">Data DPT</h1>
+        <h1 class="mb-0 pb-0 display-4" id="title">Data Pemilih / Dukungan Terkumpul</h1>
         <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
             <ul class="breadcrumb pt-0">
-                <li class="breadcrumb-item"><a href="#">Data DPT</a></li>
+                <li class="breadcrumb-item"><a href="#">Data Pemilih</a></li>
             </ul>
         </nav>
     </div>
@@ -100,7 +100,7 @@
 
 <div class="row mb-3">
     <div class="col-12" style="text-align:right">
-        <a href="{{ asset('template/template_impor_dpt_manual.xlsx') }}" class="btn btn-outline-secondary waves-effect waves-light" title="File Template"><i class="fas fa-file-excel"></i></a>
+        <a href="{{ asset('template/template_impor_pemilih.xlsx') }}" class="btn btn-outline-secondary waves-effect waves-light" title="File Template"><i class="fas fa-file-excel"></i></a>
         <button class="btn btn-outline-success waves-effect waves-light" type="button" data-bs-toggle="modal" data-bs-target="#imporModal" title="Impor Data"><i class="fas fa-file excel"></i></button>
     </div>
 </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="modal-body">
                 <span id="form_result"></span>
-                <form class="form-horizontal" action="{{ route('pengguna.data-dpt.impor') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('relawan.data-pemilih.impor') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 col-12">
@@ -234,12 +234,6 @@
                             <input type="text" id="detail_nik" class="form-control" disabled>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
-                        <div class="form-group mb-3 position-relative">
-                            <label for="detail_status_pemilih" class="form-label">Status Pemilih</label>
-                            <input type="text" id="detail_status_pemilih" class="form-control" disabled>
-                        </div>
-                    </div>
                 </div>
                 <hr>
                 <label class="form-label">Alamat</label>
@@ -327,14 +321,14 @@
         $(document).ready(function(){
             $('.dropify').dropify();
 
-            dpt_datatable();
-            function dpt_datatable(provinsi_id = '', kabupaten_kota_id = '', kecamatan_id = '', kelurahan_id = '', dapil_id = '')
+            data_pemilih_datatable();
+            function data_pemilih_datatable(provinsi_id = '', kabupaten_kota_id = '', kecamatan_id = '', kelurahan_id = '', dapil_id = '')
             {
                 var dataTables = $('#dpt_table').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: {
-                        url: "{{ route('pengguna.data-dpt.index') }}",
+                        url: "{{ route('relawan.data-pemilih.index') }}",
                         data: {
                             provinsi_id : provinsi_id,
                             kabupaten_kota_id : kabupaten_kota_id,
@@ -412,7 +406,7 @@
                 var dapil_id = $('#dapil_id').val();
 
                 $('#dpt_table').DataTable().destroy();
-                dpt_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
+                data_pemilih_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
             });
 
             $('#kabupaten_kota_id').change(function(){
@@ -423,7 +417,7 @@
                 var dapil_id = $('#dapil_id').val();
 
                 $('#dpt_table').DataTable().destroy();
-                dpt_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
+                data_pemilih_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
             });
 
             $('#kecamatan_id').change(function(){
@@ -434,7 +428,7 @@
                 var dapil_id = $('#dapil_id').val();
 
                 $('#dpt_table').DataTable().destroy();
-                dpt_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
+                data_pemilih_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
             });
 
             $('#kelurahan_id').change(function(){
@@ -445,7 +439,7 @@
                 var dapil_id = $('#dapil_id').val();
 
                 $('#dpt_table').DataTable().destroy();
-                dpt_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
+                data_pemilih_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
             });
 
             $('#dapil_id').change(function(){
@@ -456,7 +450,7 @@
                 var dapil_id = $('#dapil_id').val();
 
                 $('#dpt_table').DataTable().destroy();
-                dpt_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
+                data_pemilih_datatable(provinsi_id, kabupaten_kota_id, kecamatan_id, kelurahan_id, dapil_id);
             });
         });
 
@@ -464,7 +458,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kabupaten') }}",
+                    url: "{{ route('relawan.get-data.kabupaten') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -502,7 +496,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kecamatan') }}",
+                    url: "{{ route('relawan.get-data.kecamatan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -537,7 +531,7 @@
                 var dapil_kabupaten_kota_id = $('#kabupaten_kota_id').val();
 
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kelurahan') }}",
+                    url: "{{ route('relawan.get-data.kelurahan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -558,7 +552,7 @@
                 });
 
                 $.ajax({
-                    url: "{{ route('pengguna.data-dpt.get-data-dapil') }}",
+                    url: "{{ route('relawan.data-dpt.get-data-dapil') }}",
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",
@@ -589,7 +583,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kabupaten') }}",
+                    url: "{{ route('relawan.get-data.kabupaten') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -622,7 +616,7 @@
             if($(this).val() != '')
             {
                 $.ajax({
-                    url: "{{ route('pengguna.get-data.kecamatan') }}",
+                    url: "{{ route('relawan.get-data.kecamatan') }}",
                     method: 'POST',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -651,7 +645,7 @@
                 var dapil_kabupaten_kota_id = $('#impor_kabupaten_kota_id').val();
 
                 $.ajax({
-                    url: "{{ route('pengguna.data-dpt.get-data-dapil') }}",
+                    url: "{{ route('relawan.data-dpt.get-data-dapil') }}",
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",
@@ -677,7 +671,7 @@
 
         $(document.body).on('click', '.detail', function(){
             var id = $(this).attr('id');
-            var url = "{{ route('pengguna.data-dpt.show', ['id' => ":id"]) }}";
+            var url = "{{ route('relawan.data-pemilih.show', ['id' => ":id"]) }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -713,7 +707,7 @@
         });
 
         $('#ok_button').click(function(){
-            var url = "{{ route('pengguna.data-dpt.destroy', ['id' => ":user_id"]) }}";
+            var url = "{{ route('relawan.data-pemilih.destroy', ['id' => ":user_id"]) }}";
             url = url.replace(":user_id", user_id);
             $.ajax({
                 url: url,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pengguna;
+namespace App\Http\Controllers\Relawan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ use App\Models\MasterProvinsi;
 use App\Models\DptManual;
 use App\Models\MasterDapil;
 use App\Models\PivotKecamatanMasterDapil;
-use App\Imports\DptManualImpor;
+use App\Imports\RelawanDptManualImpor;
 
 class DataDptController extends Controller
 {
@@ -28,7 +28,7 @@ class DataDptController extends Controller
     {
         if(request()->ajax())
         {
-            $data = DptManual::where('pengguna_id', Auth::user()->pengguna_id);
+            $data = DptManual::where('pengguna_id', Auth::user()->relawan->koordinator->pengguna_id);
             if(request()->provinsi_id)
             {
                 $data = $data->where('provinsi_id', request()->provinsi_id);
@@ -77,7 +77,7 @@ class DataDptController extends Controller
         }
 
         $provinsi = MasterProvinsi::pluck('nama', 'id');
-        return view('pengguna.data-dpt.index', [
+        return view('relawan.data-dpt.index', [
             'provinsi' => $provinsi
         ]);
     }
@@ -98,16 +98,16 @@ class DataDptController extends Controller
         $dapil_id = $request->impor_dapil_id;
         $file = $request->file('file_excel');
         // import data
-        Excel::import(new DptManualImpor($dapil_id), $file);
+        Excel::import(new RelawanDptManualImpor($dapil_id), $file);
 
         $msg = [session('import_status'), session('import_message')];
 
         if ($msg[0]) {
             Alert::success('Berhasil', $msg[1]);
-            return redirect()->route('pengguna.data-dpt.index');
+            return redirect()->route('relawan.data-dpt.index');
         } else {
             Alert::error('Gagal', $msg[1]);
-            return redirect()->route('pengguna.data-dpt.index');
+            return redirect()->route('relawan.data-dpt.index');
         }
     }
 

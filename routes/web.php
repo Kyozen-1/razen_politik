@@ -39,6 +39,10 @@ Route::get('/bantuan', [HomeController::class, 'bantuan'])->name('bantuan');
 
 Route::prefix('perbaikan')->group(function(){
     Route::get('/', [PerbaikanHomeController::class, 'beranda']);
+    Route::get('/tentang-kami', [PerbaikanHomeController::class, 'tentang_kami']);
+    Route::get('/harga', [PerbaikanHomeController::class, 'harga']);
+    Route::get('/artikel', [PerbaikanHomeController::class, 'artikel']);
+    Route::get('/bantuan', [PerbaikanHomeController::class, 'bantuan']);
 });
 
 Route::get('/login',[LoginController::class, 'showLoginForm'])->name('razen-politik.login');

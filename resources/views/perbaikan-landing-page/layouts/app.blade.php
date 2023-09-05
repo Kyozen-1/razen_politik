@@ -124,122 +124,20 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
                         <ul class="navbar-nav political">
-                            <li class="menu-item-has-children current-menu-item">
-                            <a href="#">Home</a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">Home 01</a></li>
-                                <li><a href="index-02.html">Home 02</a></li>
-                                <li><a href="index-03.html">Home 03</a></li>
-                                <li><a href="index-04.html">Home 04</a></li>
-                                <li><a href="index-05.html">Home 05</a></li>
-                                <li><a href="index-06.html">Home 06</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
+                            <li class="current-menu-item">
+                                <a href="{{ url('/perbaikan') }}">Beranda</a>
                             </li>
-                            <li class="menu-item-has-children">
-                            <a href="#0">About</a>
-                            <ul class="sub-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="about-two.html">About Two</a></li>
-                                <li><a href="department.html">Department</a></li>
-                                <li><a href="department-two.html">Department Two</a></li>
-                                <li><a href="department-single.html">Department Single</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
+                            <li>
+                                <a href="{{ url('/perbaikan/tentang-kami') }}">Tentang Kami</a>
                             </li>
-                            <li class="menu-item-has-children">
-                            <a href="#">Contribute</a>
-                            <ul class="sub-menu">
-                                <li><a href="donation.html">Donation</a></li>
-                                <li><a href="donation-two.html">Donation Two</a></li>
-                                <li><a href="donation-three.html">Donation Three</a></li>
-                                <li><a href="donation-single.html">Donation Single</a></li>
-                                <li><a href="donation-single-two.html">Donation Single Two</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
+                            <li>
+                                <a href="{{ url('/perbaikan/harga') }}">Harga</a>
                             </li>
-                            <li class="menu-item-has-children">
-                            <a href="#">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="history.html">History</a></li>
-                                <li><a href="principle.html">Principles</a></li>
-                                <li><a href="team.html">Team</a></li>
-                                <li><a href="team-two.html">Team Two</a></li>
-                                <li><a href="media.html">Media</a></li>
-                                <li><a href="issues.html">Issues</a></li>
-                                <li><a href="issue-two.html">Issues Two</a></li>
-                                <li><a href="issues-three.html">Issues Three</a></li>
-                                <li><a href="issues-single.html">Issues Single</a></li>
-                                <li><a href="issues-single-two.html">Issues Single Two</a></li>
-                                <li><a href="volunteer.html">Volunteer</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="services-two.html">Services Two</a></li>
-                                <li><a href="services-single.html">Services Single</a></li>
-                                <li><a href="faq.html">Help & Faq</a></li>
-                                <li><a href="error.html">Error</a></li>
-                                <li><a href="comming-soon.html">Comming Soon</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
+                            <li>
+                                <a href="{{ url('/perbaikan/artikel') }}">Artikel</a>
                             </li>
-                            <li class="menu-item-has-children">
-                            <a href="#">Events</a>
-                            <ul class="sub-menu">
-                                <li><a href="event.html">Event</a></li>
-                                <li><a href="event-two.html">Event Two</a></li>
-                                <li><a href="event-three.html">Event Three</a></li>
-                                <li><a href="event-four.html">Event Four</a></li>
-                                <li><a href="event-five.html">Event Five</a></li>
-                                <li><a href="event-single.html">Event Single</a></li>
-                                <li><a href="event-single-two.html">Event Single Two</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                            <a href="#">News</a>
-                            <ul class="sub-menu">
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="news-two.html">News Two</a></li>
-                                <li><a href="news-three.html">News Three</a></li>
-                                <li><a href="news-four.html">News Four</a></li>
-                                <li><a href="news-single.html">News Single</a></li>
-                            </ul>
-                            <div class="line style-01">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                            <a href="#0">Contact</a>
-                            <ul class="sub-menu">
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="contact-two.html">Contact Two</a></li>
-                            </ul>
-                            <div class="line">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot style-02"></span>
-                            </div>
+                            <li>
+                                <a href="{{ url('/perbaikan/bantuan') }}">Bantuan</a>
                             </li>
                         </ul>
                     </div>
@@ -258,6 +156,104 @@
         <!-- Header-top-end -->
 
         @yield('content')
+
+        <!-- Testimonial Section Start -->
+        <div class="testimonial-section-area testimonial-bg margin-top-120"
+            style="background-image: url({{asset('landing-page/assets/img/team.png')}});">
+            <div class="shapes">
+                <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
+                <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
+                <div class="shape-03"></div>
+                <div class="shape-04"></div>
+            </div>
+            <div class="shapes style-01">
+                <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
+                <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
+                <div class="shape-03"></div>
+                <div class="shape-04"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="testimonial-carousel-area">
+                            <div class="testimonial-carousel-three">
+                                <div class="party-single-item style-02">
+                                    <div class="content">
+                                    <div class="subtitle">
+                                        <p>Public Comments</p>
+                                        <div class="icon">
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        </div>
+                                    </div>
+                                    <h4 class="title">People's Say About us</h4>
+                                    <div class="quotes">
+                                        <p class="description">"The theories largely focus on the development of agriculture, and the population and organizational pressure that followed and resulted in state formation. One of the most prominent theories of early and primary state formation is the hydraulic hypothesis"</p>
+                                        <i class="icon-quotes"></i>
+                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
+                                    </div>
+                                    <div class="author-meta">
+                                        <span class="author-name">William Smith</span>
+                                        <span class="line"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="party-single-item style-02">
+                                    <div class="content">
+                                    <div class="subtitle">
+                                        <p>Public Comments</p>
+                                        <div class="icon">
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        </div>
+                                    </div>
+                                    <h4 class="title">People's Say About us</h4>
+                                    <div class="quotes">
+                                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
+                                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
+                                        <i class="icon-quotes"></i>
+                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
+                                    </div>
+                                    <div class="author-meta">
+                                        <span class="author-name">William Smith</span>
+                                        <span class="line"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="party-single-item style-02">
+                                    <div class="content">
+                                    <div class="subtitle">
+                                        <p>Public Comments</p>
+                                        <div class="icon">
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        </div>
+                                    </div>
+                                    <h4 class="title">People's Say About us</h4>
+                                    <div class="quotes">
+                                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
+                                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
+                                        <i class="icon-quotes"></i>
+                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
+                                    </div>
+                                    <div class="author-meta">
+                                        <span class="author-name">William Smith</span>
+                                        <span class="line"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Secition End -->
 
         @include('perbaikan-landing-page.layouts.footer')
 

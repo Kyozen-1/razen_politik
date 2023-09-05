@@ -1,5 +1,5 @@
 @extends('perbaikan-landing-page.layouts.app')
-@section('title', 'Home | Razen Politik')
+@section('title', 'Beranda | Razen Politik')
 
 @section('content')
     <!-- Header section Start -->
@@ -608,103 +608,88 @@
     </div>
     <!-- Counter Section End -->
 
-    <!-- Testimonial Section Start -->
-    <div class="testimonial-section-area testimonial-bg margin-top-120"
-        style="background-image: url({{asset('landing-page/assets/img/team.png')}});">
-        <div class="shapes">
-        <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
-        <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
-        <div class="shape-03"></div>
-        <div class="shape-04"></div>
-        </div>
-        <div class="shapes style-01">
-        <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
-        <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
-        <div class="shape-03"></div>
-        <div class="shape-04"></div>
-        </div>
+    <!-- Event items Section Start Here -->
+    <div class="issues-around-us-section">
         <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-            <div class="testimonial-carousel-area">
-                <div class="testimonial-carousel-three">
-                <div class="party-single-item style-02">
+            <div class="col-lg-6">
+                <div class="event-single-items">
                     <div class="content">
-                    <div class="subtitle">
-                        <p>Public Comments</p>
-                        <div class="icon">
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
+                        <div class="post-mate">
+                            <h2 class="post-date">21</h2>
+                            <div class="post-month">jan</div>
+                        </div>
+                        <div class="subtitle">
+                            <div class="location">
+                                <div class="icon">
+                                    <i class="icon-location"></i>
+                                </div>
+                                <p>684 Ann St.  FL 34608</p>
+                            </div>
+                            <div class="time">
+                                <div class="icon">
+                                    <i class="icon-clock"></i>
+                                </div>
+                                <p>12:00 am</p>
+                            </div>
+                        </div>
+                        <h4 class="title"><a href="event-single.html">The Economy of the US: What are the Weakest Spots?</a></h4>
+                        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                        <div class="btn-wrapper">
+                            <a href="event-single.html" class="boxed-btn event-btn"><i class="fas fa-arrow-right"></i>Read More</a>
                         </div>
                     </div>
-                    <h4 class="title">People's Say About us</h4>
-                    <div class="quotes">
-                        <p class="description">"The theories largely focus on the development of agriculture, and the population and organizational pressure that followed and resulted in state formation. One of the most prominent theories of early and primary state formation is the hydraulic hypothesis"</p>
-                        <i class="icon-quotes"></i>
-                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                    </div>
-                    <div class="author-meta">
-                        <span class="author-name">William Smith</span>
-                        <span class="line"></span>
-                    </div>
-                    </div>
-                </div>
-                <div class="party-single-item style-02">
-                    <div class="content">
-                    <div class="subtitle">
-                        <p>Public Comments</p>
-                        <div class="icon">
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        </div>
-                    </div>
-                    <h4 class="title">People's Say About us</h4>
-                    <div class="quotes">
-                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
-                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
-                        <i class="icon-quotes"></i>
-                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                    </div>
-                    <div class="author-meta">
-                        <span class="author-name">William Smith</span>
-                        <span class="line"></span>
-                    </div>
-                    </div>
-                </div>
-                <div class="party-single-item style-02">
-                    <div class="content">
-                    <div class="subtitle">
-                        <p>Public Comments</p>
-                        <div class="icon">
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        </div>
-                    </div>
-                    <h4 class="title">People's Say About us</h4>
-                    <div class="quotes">
-                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
-                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
-                        <i class="icon-quotes"></i>
-                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                    </div>
-                    <div class="author-meta">
-                        <span class="author-name">William Smith</span>
-                        <span class="line"></span>
-                    </div>
-                    </div>
-                </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="event-single-items">
+                    <div class="content">
+                        <div class="post-mate">
+                            <h2 class="post-date">04</h2>
+                            <div class="post-month">feb</div>
+                        </div>
+                        <div class="subtitle">
+                            <div class="location">
+                                <div class="icon">
+                                    <i class="icon-location"></i>
+                                </div>
+                                <p>684 Ann St.  FL 34608</p>
+                            </div>
+                            <div class="time">
+                                <div class="icon">
+                                    <i class="icon-clock"></i>
+                                </div>
+                                <p>12:00 am</p>
+                            </div>
+                        </div>
+                        <h4 class="title"><a href="event-single.html">The Economy of the US: What are the Weakest Spots?</a></h4>
+                        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                        <div class="btn-wrapper">
+                            <a href="event-single.html" class="boxed-btn event-btn"><i class="fas fa-arrow-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-9 col-9">
+                <div class="blog-pagination style-01">
+                    <div class="blog-pagination style-01 margin-top-30">
+                        <ul>
+                            <li><span>PREV</span></li>
+                            <li><a class="page-numbers" href="#">01</a></li>
+                            <li><a class="page-numbers current" href="#">02</a></li>
+                            <li><a class="page-numbers" href="#">03</a></li>
+                            <li><a class="page-numbers" href="#">04</a></li>
+                            <li><span class="next">NEXT</span> </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
     </div>
-    <!-- Testimonial Secition End -->
+    <!-- Event Items Section Start Here -->
 
     <!-- News Section Start -->
     <div class="news-section-start">

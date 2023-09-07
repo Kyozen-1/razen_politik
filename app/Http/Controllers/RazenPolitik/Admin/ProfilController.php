@@ -122,7 +122,8 @@ class ProfilController extends Controller
             'no_hp' => 'required',
             'email' => 'required',
             'alamat' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'svg_ikon' => 'required',
         ]);
         if($errors -> fails())
         {
@@ -165,6 +166,7 @@ class ProfilController extends Controller
         $profil->email = $request->email;
         $profil->alamat = $request->alamat;
         $profil->deskripsi = $request->deskripsi;
+        $profil->svg_ikon = $request->svg_ikon;
 
         if($request->logo)
         {

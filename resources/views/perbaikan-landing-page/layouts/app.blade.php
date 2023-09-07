@@ -1,3 +1,8 @@
+@php
+    use App\Models\Profil;
+
+    $profil = Profil::first();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
     @include('perbaikan-landing-page.layouts.head')
@@ -7,7 +12,8 @@
         <div class="preloader" id="preloader">
             <div class="preloader-inner">
                 <div class="loader">
-                    <svg
+                    {!!$profil->svg_ikon!!}
+                    {{-- <svg
                     id="eJPpT6qIRLO1"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -55,7 +61,7 @@
                         stroke-width="1"
                         />
                     </g>
-                    </svg>
+                    </svg> --}}
                 </div>
             </div>
         </div>
@@ -68,18 +74,11 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="top-social">
                             <ul class="top-social-share">
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                                </li>
+                                @foreach ($profil->pivot_profil_media_sosial as $item)
+                                    <li>
+                                        <a href="{{$item->tautan}}" target="blank"><i class="{{$item->media_sosial->kode_ikon}}"></i></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -90,7 +89,7 @@
                                     <i class="icon-phone"></i>
                                 </div>
                                 <div class="content">
-                                    <h5 class="title">009-215-5599</h5>
+                                    <h5 class="title">{{$profil->no_hp}}</h5>
                                 </div>
                             </div>
                             <div class="top-single-item">
@@ -98,7 +97,7 @@
                                     <i class="icon-envelope"></i>
                                 </div>
                                 <div class="content">
-                                    <h5 class="title">info@gmail.com</h5>
+                                    <h5 class="title">{{$profil->email}}</h5>
                                 </div>
                             </div>
                         </div>
@@ -113,8 +112,8 @@
                 <div class="container nav-container">
                     <div class="responsive-mobile-menu">
                         <div class="logo-wrapper">
-                            <a href="index.html" class="logo">
-                            <img src="{{ asset('landing-page/assets/img/logo.png') }}" alt="" />
+                            <a href="{{ url('/perbaikan') }}" class="logo">
+                            <img src="{{ asset('images/razen-politik/logo/'.$profil->logo) }}" alt="" height="50rem" />
                             </a>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bizcoxx_main_menu"
@@ -143,7 +142,7 @@
                     </div>
                     <div class="nav-right-content">
                         <div class="btn-wrapper">
-                            <a href="#" class="boxed-btn btn-sanatory">
+                            <a href="{{ route('pengguna.login') }}" class="boxed-btn btn-sanatory">
                             Login Sekarang
                             <i class="icon-paper-plan"></i>
                             </a>

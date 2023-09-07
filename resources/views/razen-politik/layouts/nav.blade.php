@@ -98,7 +98,8 @@
                     request()->routeIs('razen-politik.master-data.jenis-survey.index') ||
                     request()->routeIs('razen-politik.master-data.jenis-isu.index') ||
                     request()->routeIs('razen-politik.master-data.tps.index') ||
-                    request()->routeIs('razen-politik.master-data.dapil.index'))
+                    request()->routeIs('razen-politik.master-data.dapil.index') ||
+                    request()->routeIs('razen-politik.master-data.media-sosial.index'))
                     <a href="#master_data" class="active">
                     @else
                     <a href="#master_data">
@@ -107,6 +108,15 @@
                         <span class="label">Master Data</span>
                     </a>
                     <ul id="master_data">
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.media-sosial.index'))
+                                <a href="{{ route('razen-politik.master-data.media-sosial.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.media-sosial.index') }}">
+                            @endif
+                                <span class="label">Media Sosial</span>
+                            </a>
+                        </li>
                         <li>
                             @if (request()->routeIs('razen-politik.master-data.jenis-isu.index'))
                                 <a href="{{ route('razen-politik.master-data.jenis-isu.index') }}" class="active">
@@ -195,6 +205,27 @@
                                 <a href="{{ route('razen-politik.master-data.kelurahan.index') }}">
                             @endif
                                 <span class="label">Kelurahan</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    @if (request()->routeIs('razen-politik.landing-page.beranda.index'))
+                    <a href="#landing_page" class="active">
+                    @else
+                    <a href="#landing_page">
+                    @endif
+                        <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Landing Page</span>
+                    </a>
+                    <ul id="landing_page">
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.beranda.index'))
+                                <a href="{{ route('razen-politik.landing-page.beranda.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.beranda.index') }}">
+                            @endif
+                                <span class="label">Beranda</span>
                             </a>
                         </li>
                     </ul>

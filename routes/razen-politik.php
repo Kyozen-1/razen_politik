@@ -15,6 +15,10 @@ use App\Http\Controllers\RazenPolitik\MasterData\KabupatenKotaController;
 use App\Http\Controllers\RazenPolitik\MasterData\KecamatanController;
 use App\Http\Controllers\RazenPolitik\MasterData\KelurahanController;
 use App\Http\Controllers\RazenPolitik\MasterData\DapilController;
+use App\Http\Controllers\RazenPolitik\MasterData\MediaSosialController;
+
+// Landing Page
+use App\Http\Controllers\RazenPolitik\LandingPage\BerandaController;
 
 Route::prefix('admin')->group(function(){
     Route::prefix('dashboard')->group(function(){
@@ -138,5 +142,20 @@ Route::prefix('master-data')->group(function(){
         Route::get('/edit/{id}',[DapilController::class, 'edit'])->name('razen-politik.master-data.dapil.edit');
         Route::post('/update',[DapilController::class, 'update'])->name('razen-politik.master-data.dapil.update');
         Route::get('/destroy/{id}',[DapilController::class, 'destroy'])->name('razen-politik.master-data.dapil.destroy');
+    });
+
+    Route::prefix('media-sosial')->group(function(){
+        Route::get('/', [MediaSosialController::class, 'index'])->name('razen-politik.master-data.media-sosial.index');
+        Route::get('/detail/{id}', [MediaSosialController::class, 'show'])->name('razen-politik.master-data.media-sosial.show');
+        Route::post('/',[MediaSosialController::class, 'store'])->name('razen-politik.master-data.media-sosial.store');
+        Route::get('/edit/{id}',[MediaSosialController::class, 'edit'])->name('razen-politik.master-data.media-sosial.edit');
+        Route::post('/update',[MediaSosialController::class, 'update'])->name('razen-politik.master-data.media-sosial.update');
+        Route::get('/destroy/{id}',[MediaSosialController::class, 'destroy'])->name('razen-politik.master-data.media-sosial.destroy');
+    });
+});
+
+Route::prefix('landing-page')->group(function(){
+    Route::prefix('beranda')->group(function(){
+        Route::get('/', [BerandaController::class, 'index'])->name('razen-politik.landing-page.beranda.index');
     });
 });

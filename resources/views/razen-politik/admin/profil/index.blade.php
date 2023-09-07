@@ -20,9 +20,9 @@
         .select2-container .select2-selection--single {
             height: 41px !important;
         }
-        .select2-selection__arrow {
-            height: 36px !important;
-        }
+        /* .select2-selection__arrow {
+            height: 10px !important;
+        } */
         .modal-dialog{
             pointer-events: all !important;
         }
@@ -85,6 +85,10 @@
                         <div class="mb-3 position-relative form-group">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
                             <textarea name="deskripsi" id="deskripsi" rows="5" class="form-control" required>{{$profil->deskripsi}}</textarea>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="svg_ikon" class="form-label">SVG Ikon</label>
+                            <textarea name="svg_ikon" id="svg_ikon" rows="5" class="form-control" required>{{$profil->svg_ikon}}</textarea>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">

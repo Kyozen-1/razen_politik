@@ -19,6 +19,9 @@ use App\Http\Controllers\RazenPolitik\MasterData\MediaSosialController;
 
 // Landing Page
 use App\Http\Controllers\RazenPolitik\LandingPage\BerandaController;
+use App\Http\Controllers\RazenPolitik\LandingPage\TentangKamiController;
+use App\Http\Controllers\RazenPolitik\LandingPage\TestimoniController;
+use App\Http\Controllers\RazenPolitik\LandingPage\FooterController;
 
 Route::prefix('admin')->group(function(){
     Route::prefix('dashboard')->group(function(){
@@ -157,5 +160,28 @@ Route::prefix('master-data')->group(function(){
 Route::prefix('landing-page')->group(function(){
     Route::prefix('beranda')->group(function(){
         Route::get('/', [BerandaController::class, 'index'])->name('razen-politik.landing-page.beranda.index');
+
+        Route::post('/store/section-1', [BerandaController::class, 'store_section_1'])->name('razen-politik.landing-page.beranda.store.section-1');
+        Route::post('/store/section-2', [BerandaController::class, 'store_section_2'])->name('razen-politik.landing-page.beranda.store.section-2');
+        Route::post('/store/section-3', [BerandaController::class, 'store_section_3'])->name('razen-politik.landing-page.beranda.store.section-3');
+        Route::post('/store/section-4', [BerandaController::class, 'store_section_4'])->name('razen-politik.landing-page.beranda.store.section-4');
+        Route::post('/store/section-5', [BerandaController::class, 'store_section_5'])->name('razen-politik.landing-page.beranda.store.section-5');
+        Route::post('/store/section-6', [BerandaController::class, 'store_section_6'])->name('razen-politik.landing-page.beranda.store.section-6');
+    });
+
+    Route::prefix('tentang-kami')->group(function(){
+        Route::get('/', [TentangKamiController::class, 'index'])->name('razen-politik.landing-page.tentang-kami.index');
+    });
+
+    Route::prefix('testimoni')->group(function(){
+        Route::get('/', [TestimoniController::class, 'index'])->name('razen-politik.landing-page.testimoni.index');
+
+        Route::post('/store/testimoni', [TestimoniController::class, 'store_testimoni'])->name('razen-politik.landing-page.testimoni.store.testimoni');
+    });
+
+    Route::prefix('footer')->group(function(){
+        Route::get('/', [FooterController::class, 'index'])->name('razen-politik.landing-page.footer.index');
+
+        Route::post('/store/footer', [FooterController::class, 'store_footer'])->name('razen-politik.landing-page.footer.store.footer');
     });
 });

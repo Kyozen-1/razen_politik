@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="donate-bg" style="background-image: url({{asset('landing-page/assets/img/Asset-01.png')}})">
+                    <div class="donate-bg" >
                         <div class="donate-bg-02" style="background-image: url({{asset('landing-page/assets/img/donation.png')}})"></div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
     <!-- Volunteer Section End -->
 
     <!-- Event items Section Start Here -->
-    <div id="section_6" class="issues-around-us-section">
+    <div class="issues-around-us-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -279,7 +279,7 @@
     <!-- Event Items Section Start Here -->
 
     <!-- News Section Start -->
-    <div id="section_7" class="news-section-start">
+    <div id="section_6" class="news-section-start">
         <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">

@@ -30,6 +30,18 @@
 @endsection
 
 @section('content')
+    @php
+        use App\Models\LandingPageBeranda;
+
+        $beranda = LandingPageBeranda::first();
+
+        $section_1 = json_decode($beranda->section_1, true);
+        $section_2 = json_decode($beranda->section_2, true);
+        $section_3 = json_decode($beranda->section_3, true);
+        $section_4 = json_decode($beranda->section_4, true);
+        $section_5 = json_decode($beranda->section_5, true);
+        $section_6 = json_decode($beranda->section_6, true);
+    @endphp
     <!-- Title and Top Buttons Start -->
     <div class="page-title-container">
         <div class="row">
@@ -67,7 +79,34 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-1') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$section_1['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" id="dekripsi_section_1" required>{{$section_1['deskripsi']}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Gambar</label>
+                            @if ($section_1)
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" data-default-file="{{ asset('images/razen-politik/beranda/'.$section_1['gambar']) }}" required>
+                            @else
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" required>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
@@ -90,7 +129,24 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-2') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Gambar</label>
+                            @if ($section_2)
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" data-default-file="{{ asset('images/razen-politik/beranda/'.$section_2['gambar']) }}" required>
+                            @else
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" required>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
@@ -113,7 +169,38 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-3') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$section_3['sub_judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$section_3['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" id="dekripsi_section_1" required>{{$section_3['deskripsi']}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Gambar</label>
+                            @if ($section_1)
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" data-default-file="{{ asset('images/razen-politik/beranda/'.$section_3['gambar']) }}" required>
+                            @else
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" required>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
@@ -136,7 +223,38 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-4') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$section_4['sub_judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$section_4['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" id="dekripsi_section_1" required>{{$section_4['deskripsi']}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Gambar</label>
+                            @if ($section_1)
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" data-default-file="{{ asset('images/razen-politik/beranda/'.$section_4['gambar']) }}" required>
+                            @else
+                            <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg" data-show-errors="true" required>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
@@ -159,7 +277,28 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-5') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$section_5['sub_judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$section_5['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" id="dekripsi_section_1" required>{{$section_5['deskripsi']}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
@@ -182,35 +321,29 @@
                 </div>
             </div>
             {{-- Form Start --}}
-
+            <form action="{{ route('razen-politik.landing-page.beranda.store.section-6') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$section_6['sub_judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$section_6['judul']}}" required>
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right">
+                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                    </div>
+                </div>
+            </form>
             {{-- Form End --}}
         </div>
     </div>
 
     {{-- Section 6 End --}}
-
-    {{-- Section 7 Start --}}
-
-    <div class="card mb-5">
-        <div class="card-body">
-            <div class="row mb-3">
-                <div class="col-6 mb-3">
-                    <h2 class="small-title">Edit Section 7</h2>
-                </div>
-                <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
-                </div>
-                <div class="col-12">
-                    <img src="{{ asset('images/razen-politik/beranda/section_7.png') }}" alt="" class="img-fluid rounded">
-                </div>
-            </div>
-            {{-- Form Start --}}
-
-            {{-- Form End --}}
-        </div>
-    </div>
-
-    {{-- Section 7 End --}}
 @endsection
 
 @section('js')
@@ -230,4 +363,9 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $('.dropify').dropify();
+        });
+    </script>
 @endsection

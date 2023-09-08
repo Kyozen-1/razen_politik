@@ -210,7 +210,10 @@
                     </ul>
                 </li>
                 <li>
-                    @if (request()->routeIs('razen-politik.landing-page.beranda.index'))
+                    @if (request()->routeIs('razen-politik.landing-page.beranda.index') ||
+                    request()->routeIs('razen-politik.landing-page.tentang-kami.index') ||
+                    request()->routeIs('razen-politik.landing-page.testimoni.index') ||
+                    request()->routeIs('razen-politik.landing-page.footer.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -226,6 +229,33 @@
                                 <a href="{{ route('razen-politik.landing-page.beranda.index') }}">
                             @endif
                                 <span class="label">Beranda</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.tentang-kami.index'))
+                                <a href="{{ route('razen-politik.landing-page.tentang-kami.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.tentang-kami.index') }}">
+                            @endif
+                                <span class="label">Tentang Kami</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.testimoni.index'))
+                                <a href="{{ route('razen-politik.landing-page.testimoni.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.testimoni.index') }}">
+                            @endif
+                                <span class="label">Testimoni</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.footer.index'))
+                                <a href="{{ route('razen-politik.landing-page.footer.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.footer.index') }}">
+                            @endif
+                                <span class="label">Footer</span>
                             </a>
                         </li>
                     </ul>

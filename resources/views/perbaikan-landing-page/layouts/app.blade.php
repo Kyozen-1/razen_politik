@@ -8,6 +8,13 @@
     @include('perbaikan-landing-page.layouts.head')
 
     <body>
+        @php
+            use App\Models\LandingPageTestimoni;
+
+            $beranda = LandingPageTestimoni::first();
+
+            $testimoni = json_decode($beranda->testimoni, true);
+        @endphp
         <!-- preloader area start -->
         <div class="preloader" id="preloader">
             <div class="preloader-inner">
@@ -158,16 +165,16 @@
 
         <!-- Testimonial Section Start -->
         <div class="testimonial-section-area testimonial-bg margin-top-120"
-            style="background-image: url({{asset('landing-page/assets/img/team.png')}});">
+            style="background-image: url({{ asset('images/razen-politik/testimoni/'.$testimoni['gambar_background']) }});">
             <div class="shapes">
-                <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
-                <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
+                <img src="{{ asset('images/razen-politik/testimoni/'.$testimoni['gambar_kecil']) }}" class="shape-01" alt="">
+                <img src="{{ asset('images/razen-politik/testimoni/'.$testimoni['gambar_kecil']) }}" class="shape-02" alt="">
                 <div class="shape-03"></div>
                 <div class="shape-04"></div>
             </div>
             <div class="shapes style-01">
-                <img src="{{ asset('landing-page/assets/img/shape-04.png') }}" class="shape-01" alt="">
-                <img src="{{ asset('landing-page/assets/img/shape-03.png') }}" class="shape-02" alt="">
+                <img src="{{ asset('images/razen-politik/testimoni/'.$testimoni['gambar_kecil']) }}" class="shape-01" alt="">
+                <img src="{{ asset('images/razen-politik/testimoni/'.$testimoni['gambar_kecil']) }}" class="shape-02" alt="">
                 <div class="shape-03"></div>
                 <div class="shape-04"></div>
             </div>

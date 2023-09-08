@@ -8,12 +8,12 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-6 col-8">
                     <div class="about-inner">
-                        <h1 class="title wow animate__animated animate__fadeInUp">About Us</h1>
+                        <h1 class="title wow animate__animated animate__fadeInUp">Tentang Kami</h1>
                     </div>
                     <div class="breadcrumbs wow animate__animated animate__fadeInUp animate__delay-1s">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="{{ route('beranda') }}">Beranda</a></li>
+                            <li><a href="{{ route('tentang-kami') }}">Tentang Kami</a></li>
                         </ul>
                     </div>
                 </div>
@@ -57,16 +57,6 @@
                                 <li>There are several ways in which approaching politics.</li>
                                 <li>Some perspectives on politics view it empirically.</li>
                             </ul>
-                        </div>
-                        <div class="feedback wow animate__animated animate__fadeInUp">
-                            <div class="feedback-single">
-                                <span>99.8%</span>
-                                <p>Positive Feedback From Peoples</p>
-                            </div>
-                            <div class="feedback-single">
-                                <span>103</span>
-                                <p>Board Member of Senatory</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,51 +303,4 @@
         </div>
     </div>
     <!-- faq section end here -->
-
-    <!-- Counter Section Start -->
-    <div class="counter-section-area style-01">
-        <div class="container">
-            <div class="counter-section-inner">
-                <img src="{{ asset('landing-page/assets/img/party-shape.png') }}" class="counter-shape" alt="Shape">
-                <img src="{{ asset('landing-page/assets/img/party-shape.png') }}" class="counter-shape-01" alt="Shape">
-                <img src="{{ asset('landing-page/assets/img/party-shape-02.png') }}" class="counter-shape-02" alt="Shape">
-                <img src="{{ asset('landing-page/assets/img/party-shape-02.png') }}" class="counter-shape-03" alt="Shape">
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-counterup-01 style-04">
-                            <div class="content">
-                            <div class="count-wrap"><span class="count-num">40</span>k+</div>
-                            <h4 class="title">Total Volunteer</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-counterup-01 style-02">
-                            <div class="content">
-                            <div class="count-wrap"><span class="count-num">23</span>k+</div>
-                            <h4 class="title">Campaigns</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-counterup-01 style-04">
-                            <div class="content">
-                            <div class="count-wrap"><span class="count-num">35</span>k+</div>
-                            <h4 class="title">Vote Paper</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-counterup-01 style-01">
-                            <div class="content">
-                            <div class="count-wrap"><span class="count-num">66</span>k+</div>
-                            <h4 class="title">Coverage Area</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Counter Section End -->
 @endsection

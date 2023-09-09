@@ -20,6 +20,8 @@ use App\Http\Controllers\RazenPolitik\MasterData\MediaSosialController;
 // Landing Page
 use App\Http\Controllers\RazenPolitik\LandingPage\BerandaController;
 use App\Http\Controllers\RazenPolitik\LandingPage\TentangKamiController;
+use App\Http\Controllers\RazenPolitik\LandingPage\HargaController;
+use App\Http\Controllers\RazenPolitik\LandingPage\ArtikelController;
 use App\Http\Controllers\RazenPolitik\LandingPage\TestimoniController;
 use App\Http\Controllers\RazenPolitik\LandingPage\FooterController;
 
@@ -171,6 +173,33 @@ Route::prefix('landing-page')->group(function(){
 
     Route::prefix('tentang-kami')->group(function(){
         Route::get('/', [TentangKamiController::class, 'index'])->name('razen-politik.landing-page.tentang-kami.index');
+
+        Route::post('/store/section-1', [TentangKamiController::class, 'store_section_1'])->name('razen-politik.landing-page.tentang-kami.store.section-1');
+        Route::post('/store/section-2', [TentangKamiController::class, 'store_section_2'])->name('razen-politik.landing-page.tentang-kami.store.section-2');
+        Route::post('/store/section-2/konten', [TentangKamiController::class, 'store_section_2_konten'])->name('razen-politik.landing-page.tentang-kami.store.section-2.konten');
+        Route::post('/hapus/section-2/konten', [TentangKamiController::class, 'hapus_section_2_konten'])->name('razen-politik.landing-page.tentang-kami.hapus.section-2.konten');
+        Route::post('/store/section-3', [TentangKamiController::class, 'store_section_3'])->name('razen-politik.landing-page.tentang-kami.store.section-3');
+        Route::post('/store/section-3/konten', [TentangKamiController::class, 'store_section_3_konten'])->name('razen-politik.landing-page.tentang-kami.store.section-3.konten');
+        Route::post('/hapus/section-3/konten', [TentangKamiController::class, 'hapus_section_3_konten'])->name('razen-politik.landing-page.tentang-kami.hapus.section-3.konten');
+        Route::post('/store/section-4', [TentangKamiController::class, 'store_section_4'])->name('razen-politik.landing-page.tentang-kami.store.section-4');
+        Route::post('/store/section-5', [TentangKamiController::class, 'store_section_5'])->name('razen-politik.landing-page.tentang-kami.store.section-5');
+        Route::post('/store/section-5/konten', [TentangKamiController::class, 'store_section_5_konten'])->name('razen-politik.landing-page.tentang-kami.store.section-5.konten');
+        Route::post('/hapus/section-5/konten', [TentangKamiController::class, 'hapus_section_5_konten'])->name('razen-politik.landing-page.tentang-kami.hapus.section-5.konten');
+    });
+
+    Route::prefix('harga')->group(function(){
+        Route::get('/', [HargaController::class, 'index'])->name('razen-politik.landing-page.harga.index');
+
+        Route::post('/store/section-1', [HargaController::class, 'store_section_1'])->name('razen-politik.landing-page.harga.store.section-1');
+        Route::post('/store/section-2', [HargaController::class, 'store_section_2'])->name('razen-politik.landing-page.harga.store.section-2');
+        Route::post('/store/section-2/konten', [HargaController::class, 'store_section_2_konten'])->name('razen-politik.landing-page.harga.store.section-2.konten');
+        Route::post('/hapus/section-2/konten', [HargaController::class, 'hapus_section_2_konten'])->name('razen-politik.landing-page.harga.hapus.section-2.konten');
+    });
+
+    Route::prefix('artikel')->group(function(){
+        Route::get('/', [ArtikelController::class, 'index'])->name('razen-politik.landing-page.artikel.index');
+
+        Route::post('/store/section-1', [ArtikelController::class, 'store_section_1'])->name('razen-politik.landing-page.artikel.store.section-1');
     });
 
     Route::prefix('testimoni')->group(function(){

@@ -212,6 +212,8 @@
                 <li>
                     @if (request()->routeIs('razen-politik.landing-page.beranda.index') ||
                     request()->routeIs('razen-politik.landing-page.tentang-kami.index') ||
+                    request()->routeIs('razen-politik.landing-page.harga.index') ||
+                    request()->routeIs('razen-politik.landing-page.artikel.index') ||
                     request()->routeIs('razen-politik.landing-page.testimoni.index') ||
                     request()->routeIs('razen-politik.landing-page.footer.index'))
                     <a href="#landing_page" class="active">
@@ -238,6 +240,24 @@
                                 <a href="{{ route('razen-politik.landing-page.tentang-kami.index') }}">
                             @endif
                                 <span class="label">Tentang Kami</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.harga.index'))
+                                <a href="{{ route('razen-politik.landing-page.harga.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.harga.index') }}">
+                            @endif
+                                <span class="label">Harga</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.artikel.index'))
+                                <a href="{{ route('razen-politik.landing-page.artikel.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.artikel.index') }}">
+                            @endif
+                                <span class="label">Artikel</span>
                             </a>
                         </li>
                         <li>

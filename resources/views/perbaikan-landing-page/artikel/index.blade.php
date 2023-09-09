@@ -8,12 +8,12 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-6 col-8">
                     <div class="about-inner">
-                        <h1 class="title wow animate__animated animate__fadeInUp">About Us</h1>
+                        <h1 class="title wow animate__animated animate__fadeInUp">Artikel</h1>
                     </div>
                     <div class="breadcrumbs wow animate__animated animate__fadeInUp animate__delay-1s">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="{{route('beranda')}}">Beranda</a></li>
+                            <li><a href="#">Artikel</a></li>
                         </ul>
                     </div>
                 </div>

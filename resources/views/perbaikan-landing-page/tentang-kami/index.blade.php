@@ -78,33 +78,30 @@
                     <div class="single-items-wrapper">
                         <div class="why-choose-single-items wow animate__animated animate__fadeInUp">
                             <div class="icon">
-                                <i class="icon-tips-bulb"></i>
+                                <i class="fas fa-plus"></i>
                             </div>
                             <div class="content">
                                 <h4 class="title">Smart Thinking</h4>
                                 <p>Every pleasures is to welcomed pain avoided owing to the dutythe obligations of business</p>
                             </div>
-                            <img src="{{ asset('landing-page/assets/img/setting-shape.png') }}" class="shape" alt="">
                         </div>
                         <div class="why-choose-single-items wow animate__animated animate__fadeInUp animate__delay-1s">
                             <div class="icon">
-                                <i class="icon-crown"></i>
+                                <i class="fas fa-plus"></i>
                             </div>
                             <div class="content">
                                 <h4 class="title">Smart Thinking</h4>
                                 <p>Every pleasures is to welcomed pain avoided owing to the dutythe obligations of business</p>
                             </div>
-                            <img src="{{ asset('landing-page/assets/img/setting-shape.png') }}" class="shape" alt="">
                         </div>
                         <div class="why-choose-single-items wow animate__animated animate__fadeInUp animate__delay-2s">
                             <div class="icon">
-                                <i class="icon-hand-shake"></i>
+                                <i class="fas fa-plus"></i>
                             </div>
                             <div class="content">
                                 <h4 class="title">Smart Thinking</h4>
                                 <p>Every pleasures is to welcomed pain avoided owing to the dutythe obligations of business</p>
                             </div>
-                            <img src="{{ asset('landing-page/assets/img/setting-shape.png') }}" class="shape" alt="">
                         </div>
                     </div>
                 </div>

@@ -12,8 +12,8 @@
                     </div>
                     <div class="breadcrumbs wow animate__animated animate__fadeInUp animate__delay-1s">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="{{ route('beranda') }}">Home</a></li>
+                            <li><a href="#">Tentang Kami</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="princilple-single-items margin-bottom-60 wow animate__animated animate__fadeInUp">
                         <div class="icon">
-                            <i class="icon-vallot"></i>
+                            <i class="fas fa-plus"></i>
                         </div>
                         <div class="content">
                             <h4 class="title">Democracy</h4>

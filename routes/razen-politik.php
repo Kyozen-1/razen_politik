@@ -3,6 +3,7 @@ use App\Http\Controllers\RazenPolitik\Admin\DashboardController;
 // Admin
 use App\Http\Controllers\RazenPolitik\Admin\ProfilController;
 use App\Http\Controllers\RazenPolitik\Admin\PemiluController;
+use App\Http\Controllers\RazenPolitik\Admin\TestimoniController as AdminTestimoniController;
 
 // Master Data
 use App\Http\Controllers\RazenPolitik\MasterData\JenisIsuController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\RazenPolitik\LandingPage\BerandaController;
 use App\Http\Controllers\RazenPolitik\LandingPage\TentangKamiController;
 use App\Http\Controllers\RazenPolitik\LandingPage\HargaController;
 use App\Http\Controllers\RazenPolitik\LandingPage\ArtikelController;
+use App\Http\Controllers\RazenPolitik\LandingPage\BantuanController;
 use App\Http\Controllers\RazenPolitik\LandingPage\TestimoniController;
 use App\Http\Controllers\RazenPolitik\LandingPage\FooterController;
 
@@ -49,6 +51,15 @@ Route::prefix('admin')->group(function(){
         Route::get('/edit/{id}',[PemiluController::class, 'edit'])->name('razen-politik.admin.pemilu.edit');
         Route::post('/update',[PemiluController::class, 'update'])->name('razen-politik.admin.pemilu.update');
         Route::get('/destroy/{id}',[PemiluController::class, 'destroy'])->name('razen-politik.admin.pemilu.destroy');
+    });
+
+    Route::prefix('testimoni')->group(function(){
+        Route::get('/', [AdminTestimoniController::class, 'index'])->name('razen-politik.admin.testimoni.index');
+        Route::get('/detail/{id}', [AdminTestimoniController::class, 'show'])->name('razen-politik.admin.testimoni.show');
+        Route::post('/',[AdminTestimoniController::class, 'store'])->name('razen-politik.admin.testimoni.store');
+        Route::get('/edit/{id}',[AdminTestimoniController::class, 'edit'])->name('razen-politik.admin.testimoni.edit');
+        Route::post('/update',[AdminTestimoniController::class, 'update'])->name('razen-politik.admin.testimoni.update');
+        Route::get('/destroy/{id}',[AdminTestimoniController::class, 'destroy'])->name('razen-politik.admin.testimoni.destroy');
     });
 });
 
@@ -200,6 +211,15 @@ Route::prefix('landing-page')->group(function(){
         Route::get('/', [ArtikelController::class, 'index'])->name('razen-politik.landing-page.artikel.index');
 
         Route::post('/store/section-1', [ArtikelController::class, 'store_section_1'])->name('razen-politik.landing-page.artikel.store.section-1');
+    });
+
+    Route::prefix('bantuan')->group(function(){
+        Route::get('/', [BantuanController::class, 'index'])->name('razen-politik.landing-page.bantuan.index');
+
+        Route::post('/store/section-1', [BantuanController::class, 'store_section_1'])->name('razen-politik.landing-page.bantuan.store.section-1');
+        Route::post('/store/section-2', [BantuanController::class, 'store_section_2'])->name('razen-politik.landing-page.bantuan.store.section-2');
+        Route::post('/store/section-3', [BantuanController::class, 'store_section_3'])->name('razen-politik.landing-page.bantuan.store.section-3');
+        Route::post('/store/section-4', [BantuanController::class, 'store_section_4'])->name('razen-politik.landing-page.bantuan.store.section-4');
     });
 
     Route::prefix('testimoni')->group(function(){

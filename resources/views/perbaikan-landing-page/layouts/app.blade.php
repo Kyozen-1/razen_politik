@@ -186,14 +186,13 @@
                                 <div class="party-single-item style-02">
                                     <div class="content">
                                     <div class="subtitle">
-                                        <p>Public Comments</p>
+                                        <p>Testimoni</p>
                                         <div class="icon">
                                         <i class="icon-star"></i>
                                         <i class="icon-star"></i>
                                         <i class="icon-star"></i>
                                         </div>
                                     </div>
-                                    <h4 class="title">People's Say About us</h4>
                                     <div class="quotes">
                                         <p class="description">"The theories largely focus on the development of agriculture, and the population and organizational pressure that followed and resulted in state formation. One of the most prominent theories of early and primary state formation is the hydraulic hypothesis"</p>
                                         <i class="icon-quotes"></i>

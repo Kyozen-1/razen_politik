@@ -89,6 +89,16 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-politik.admin.testimoni.index'))
+                        <a href="{{ route('razen-politik.admin.testimoni.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-politik.admin.testimoni.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Testimoni</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-politik.master-data.provinsi.index') ||
                     request()->routeIs('razen-politik.master-data.kabupaten-kota.index') ||
                     request()->routeIs('razen-politik.master-data.kecamatan.index') ||
@@ -214,6 +224,7 @@
                     request()->routeIs('razen-politik.landing-page.tentang-kami.index') ||
                     request()->routeIs('razen-politik.landing-page.harga.index') ||
                     request()->routeIs('razen-politik.landing-page.artikel.index') ||
+                    request()->routeIs('razen-politik.landing-page.bantuan.index') ||
                     request()->routeIs('razen-politik.landing-page.testimoni.index') ||
                     request()->routeIs('razen-politik.landing-page.footer.index'))
                     <a href="#landing_page" class="active">
@@ -258,6 +269,15 @@
                                 <a href="{{ route('razen-politik.landing-page.artikel.index') }}">
                             @endif
                                 <span class="label">Artikel</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.landing-page.bantuan.index'))
+                                <a href="{{ route('razen-politik.landing-page.bantuan.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.bantuan.index') }}">
+                            @endif
+                                <span class="label">Bantuan</span>
                             </a>
                         </li>
                         <li>

@@ -48,4 +48,9 @@ class MasterKecamatan extends Model
     {
         return $this->hasMany('App\Models\MasterKecamatan', 'kecamatan_id');
     }
+
+    public function laporan_isu()
+    {
+        return $this->hasMany('App\Models\LaporanIsu', 'kecamatan_id');
+    }
 }

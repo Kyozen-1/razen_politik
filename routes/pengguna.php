@@ -121,6 +121,11 @@ Route::prefix('simulasi-kemenangan')->group(function(){
 
 Route::prefix('monitoring-isu')->group(function(){
     Route::get('/', [MonitoringIsuController::class, 'index'])->name('pengguna.monitoring-isu.index');
+    Route::get('/detail/{id}', [MonitoringIsuController::class, 'show'])->name('pengguna.monitoring-isu.show');
+    Route::post('/',[MonitoringIsuController::class, 'store'])->name('pengguna.monitoring-isu.store');
+    Route::get('/edit/{id}',[MonitoringIsuController::class, 'edit'])->name('pengguna.monitoring-isu.edit');
+    Route::post('/update',[MonitoringIsuController::class, 'update'])->name('pengguna.monitoring-isu.update');
+    Route::get('/destroy/{id}',[MonitoringIsuController::class, 'destroy'])->name('pengguna.monitoring-isu.destroy');
 });
 
 Route::prefix('logistik')->group(function(){

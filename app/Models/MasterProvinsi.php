@@ -53,4 +53,9 @@ class MasterProvinsi extends Model
     {
         return $this->hasMany('App\Models\DptManual', 'provinsi_id');
     }
+
+    public function laporan_isu()
+    {
+        return $this->hasMany('App\Models\LaporanIsu', 'provinsi_id');
+    }
 }

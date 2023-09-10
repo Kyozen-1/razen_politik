@@ -14,4 +14,8 @@ class Pengguna extends Model
         return $this->hasMany('App\Models\DptManual', 'pengguna_id');
     }
 
+    public function laporan_isu()
+    {
+        return $this->hasMany('App\Models\LaporanIsu', 'pengguna_id');
+    }
 }

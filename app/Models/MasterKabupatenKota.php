@@ -48,4 +48,9 @@ class MasterKabupatenKota extends Model
     {
         return $this->hasMany('App\Models\DptManual', 'kabupaten_kota_id');
     }
+
+    public function laporan_isu()
+    {
+        return $this->hasMany('App\Models\LaporanIsu', 'kabupaten_kota_id');
+    }
 }

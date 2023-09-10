@@ -1,5 +1,5 @@
 @extends('razen-politik.layouts.app')
-@section('title', 'Testimoni | Admin | Razen Politik')
+@section('title', 'Tim | Admin | Razen Politik')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,11 +35,11 @@
         <div class="row">
         <!-- Title Start -->
         <div class="col-12 col-md-7">
-            <h1 class="mb-0 pb-0 display-4" id="title"> Testimoni</h1>
+            <h1 class="mb-0 pb-0 display-4" id="title"> Tim</h1>
             <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
                 <ul class="breadcrumb pt-0">
                     <li class="breadcrumb-item"><a href="{{ route('razen-politik.admin.dashboard.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('razen-politik.admin.testimoni.index') }}">Testimoni</a></li>
+                    <li class="breadcrumb-item"><a href="#">Tim</a></li>
                 </ul>
             </nav>
         </div>
@@ -51,6 +51,7 @@
     <!-- Content Start -->
     <div class="row mb-3">
         <div class="col-12" style="text-align:right">
+            <a href="{{ route('tentang-kami') }}#section_tim" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
             <button class="btn btn-outline-primary waves-effect waves-light mr-2 item_create" type="button" data-bs-toggle="modal" data-bs-target="#addEditModal" title="Tambah Data" id="create"><i class="fas fa-plus"></i></button>
         </div>
     </div>
@@ -58,12 +59,12 @@
     <div class="data-table-rows slim">
         <!-- Table Start -->
         <div class="data-table-responsive-wrapper">
-            <table id="testimoni_table" class="data-table w-100">
+            <table id="tim_table" class="data-table w-100">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Deskripsi</th>
+                        <th>Jabatan</th>
                         <th>Foto</th>
                         <th>Aksi</th>
                     </tr>
@@ -82,15 +83,15 @@
                 </div>
                 <div class="modal-body">
                     <span id="form_result"></span>
-                    <form class="form-horizontal" id="testimoni_form" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="jabatan_form" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3 position-relative form-group">
                             <label for="nama" class="control-label">Nama</label>
                             <input type="text" class="form-control" name="nama" id="nama" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
-                            <label for="deskripsi" class="control-label">Deskripsi</label>
-                            <textarea name="deskripsi" id="deskripsi" rows="5" class="form-control" required></textarea>
+                            <label for="jabatan" class="control-label">Jabatan</label>
+                            <input type="text" class="form-control" name="jabatan" id="jabatan" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <label for="foto" class="control-label">Foto</label>
@@ -121,8 +122,8 @@
                         <input type="text" id="detail_nama" class="form-control" disabled>
                     </div>
                     <div class="form-group mb-3 position-relative">
-                        <label for="detail_deskripsi" class="control-label">Deskripsi</label>
-                        <p id="detail_deskripsi"></p>
+                        <label for="detail_jabatan" class="control-label">Jabatan</label>
+                        <input type="text" id="detail_jabatan" class="form-control" disabled>
                     </div>
                     <div class="form-group mb-3 position-relative">
                         <label for="detail_foto" class="control-label">Foto</label>
@@ -173,11 +174,11 @@
         $(document).ready(function(){
             $('.dropify').dropify();
 
-            var dataTables = $('#testimoni_table').DataTable({
+            var dataTables = $('#tim_table').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('razen-politik.admin.testimoni.index') }}"
+                    url: "{{ route('razen-politik.admin.tim.index') }}"
                 },
                 columns: [
                     {
@@ -190,8 +191,8 @@
                         name: 'nama'
                     },
                     {
-                        data: 'deskripsi',
-                        name: 'deskripsi'
+                        data: 'jabatan',
+                        name: 'jabatan'
                     },
                     {
                         data: 'foto',
@@ -206,7 +207,7 @@
         });
 
         $('#create').click(function(){
-            $('#testimoni_form')[0].reset();
+            $('#jabatan_form')[0].reset();
             $('.dropify-clear').click();
             $('#aksi_button').text('Save');
             $('#aksi_button').prop('disabled', false);
@@ -216,12 +217,12 @@
             $('#form_result').html('');
         });
 
-        $('#testimoni_form').on('submit', function(e){
+        $('#jabatan_form').on('submit', function(e){
             e.preventDefault();
             if($('#aksi').val() == 'Save')
             {
                 $.ajax({
-                    url: "{{ route('razen-politik.admin.testimoni.store') }}",
+                    url: "{{ route('razen-politik.admin.tim.store') }}",
                     method: "POST",
                     data: new FormData(this),
                     dataType: "json",
@@ -243,9 +244,9 @@
                             html = '<div class="alert alert-success">'+data.success+'</div>';
                             $('.dropify-clear').click();
                             $('#aksi_button').prop('disabled', false);
-                            $('#testimoni_form')[0].reset();
+                            $('#jabatan_form')[0].reset();
                             $('#aksi_button').text('Save');
-                            $('#testimoni_table').DataTable().ajax.reload();
+                            $('#tim_table').DataTable().ajax.reload();
                         }
 
                         $('#form_result').html(html);
@@ -255,7 +256,7 @@
             if($('#aksi').val() == 'Edit')
             {
                 $.ajax({
-                    url: "{{ route('razen-politik.admin.testimoni.update') }}",
+                    url: "{{ route('razen-politik.admin.tim.update') }}",
                     method: "POST",
                     data: new FormData(this),
                     dataType: "json",
@@ -272,10 +273,10 @@
                         }
                         if(data.success)
                         {
-                            $('#testimoni_form')[0].reset();
+                            $('#jabatan_form')[0].reset();
                             $('#aksi_button').prop('disabled', false);
                             $('#aksi_button').text('Save');
-                            $('#testimoni_table').DataTable().ajax.reload();
+                            $('#tim_table').DataTable().ajax.reload();
                             $('#addEditModal').modal('hide');
                             Swal.fire({
                                 icon: 'success',
@@ -292,7 +293,7 @@
 
         $(document.body).on('click', '.detail', function(){
             var id = $(this).attr('id');
-            var url = "{{ route('razen-politik.admin.testimoni.show', ['id' => ":id"]) }}";
+            var url = "{{ route('razen-politik.admin.tim.show', ['id' => ":id"]) }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -301,8 +302,8 @@
                 {
                     $('#detail-title').text('Detail Data');
                     $('#detail_nama').val(data.result.nama);
-                    $('#detail_deskripsi').text(data.result.deskripsi);
-                    $('#detail_foto').attr('src', "{{ asset('images/razen-politik/testimoni') }}" + '/' + data.result.foto);
+                    $('#detail_jabatan').val(data.result.jabatan);
+                    $('#detail_foto').attr('src', "{{ asset('images/razen-politik/tim') }}" + '/' + data.result.foto);
                     $('#detail').modal('show');
                 }
             });
@@ -311,7 +312,7 @@
         $(document).on('click', '.edit', function(){
             var id = $(this).attr('id');
             $('#form_result').html('');
-            var url = "{{ route('razen-politik.admin.testimoni.edit', ['id' => ":id"]) }}";
+            var url = "{{ route('razen-politik.admin.tim.edit', ['id' => ":id"]) }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -319,8 +320,8 @@
                 success: function(data)
                 {
                     $('#nama').val(data.result.nama);
-                    $('#deskripsi').val(data.result.deskripsi);
-                    var lokasi_foto = "{{ asset('images/razen-politik/testimoni') }}"+'/'+data.result.foto;
+                    $('#jabatan').val(data.result.jabatan);
+                    var lokasi_foto = "{{ asset('images/razen-politik/tim') }}"+'/'+data.result.foto;
                     var fileDropperFoto = $("#foto").dropify();
 
                     fileDropperFoto = fileDropperFoto.data('dropify');
@@ -350,7 +351,7 @@
         });
 
         $('#ok_button').click(function(){
-            var url = "{{ route('razen-politik.admin.testimoni.destroy', ['id' => ":id"]) }}";
+            var url = "{{ route('razen-politik.admin.tim.destroy', ['id' => ":id"]) }}";
             url = url.replace(":id", id);
             $.ajax({
                 url: url,
@@ -367,7 +368,7 @@
                         title: 'Berhasil di hapus',
                         showConfirmButton: true
                     });
-                    $('#testimoni_table').DataTable().ajax.reload();
+                    $('#tim_table').DataTable().ajax.reload();
                 }
             });
         });

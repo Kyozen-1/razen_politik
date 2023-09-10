@@ -99,6 +99,16 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-politik.admin.tim.index'))
+                        <a href="{{ route('razen-politik.admin.tim.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-politik.admin.tim.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Tim</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-politik.master-data.provinsi.index') ||
                     request()->routeIs('razen-politik.master-data.kabupaten-kota.index') ||
                     request()->routeIs('razen-politik.master-data.kecamatan.index') ||

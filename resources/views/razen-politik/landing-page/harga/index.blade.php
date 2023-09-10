@@ -68,7 +68,7 @@
                     <h2 class="small-title">Edit Section 1</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('harga') }}#section_1" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/harga/section_1.png') }}" alt="" class="img-fluid rounded">
@@ -116,7 +116,7 @@
                     <h2 class="small-title">Edit Section 2</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('harga') }}#section_2" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/harga/section_2.png') }}" alt="" class="img-fluid rounded">

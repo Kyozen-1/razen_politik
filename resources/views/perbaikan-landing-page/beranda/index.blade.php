@@ -2,21 +2,30 @@
 @section('title', 'Beranda | Razen Politik')
 
 @section('content')
+    @php
+        use App\Models\LandingPageBeranda;
+
+        $beranda = LandingPageBeranda::first();
+
+        $section_1 = json_decode($beranda->section_1, true);
+        $section_2 = json_decode($beranda->section_2, true);
+        $section_3 = json_decode($beranda->section_3, true);
+        $section_4 = json_decode($beranda->section_4, true);
+        $section_5 = json_decode($beranda->section_5, true);
+        $section_6 = json_decode($beranda->section_6, true);
+    @endphp
     <!-- Header section Start -->
-    <div id="section_1" class="header-area header-sanatory header-bg" style="background-image:url({{asset('landing-page/assets/img/header-bg.png')}});">
+    <div id="section_1" class="header-area header-sanatory header-bg" style="background-image:url({{ asset('images/razen-politik/beranda/'.$section_1['gambar']) }});">
         <div class="container nav-container">
             <div class="row">
                 <div class="col-lg-8">
                     <!-- header inner -->
                     <div class="header-inner">
                         <h1 class="title">
-                            Together we can make Better world
+                            {{$section_1['judul']}}
                         </h1>
                         <p>
-                            President represented Delaware for 36 years in the U.S. Senate
-                            before becoming the 47th Vice President of the United States. As
-                            President, Harison will restore America’s leadership and build
-                            our communities back better.
+                            {{$section_1['deskripsi']}}
                         </p>
                     </div>
                     <!-- //.header inner -->
@@ -27,7 +36,7 @@
     <!-- Header section End -->
 
     <!-- Header bottom Section Start -->
-    <div id="section_2" class="header-bottom-area padding-top-120 padding-bottom-70" style="background-image: url({{asset('landing-page/assets/img/dotted-shape.png')}})">
+    <div id="section_2" class="header-bottom-area padding-top-120 padding-bottom-70" style="background-image: url({{ asset('images/razen-politik/beranda/'.$section_2['gambar']) }})">
         <div class="container">
             <div class="row">
                 <div class="testimonial-carousel">
@@ -78,7 +87,7 @@
 
     <!-- Our party section start -->
     <div id="section_3" class="our-party-section-area">
-        <div class="party-bg" style="background-image: url({{asset('landing-page/assets/img/leader-01.png')}})"></div>
+        <div class="party-bg" style="background-image: url({{ asset('images/razen-politik/beranda/'.$section_3['gambar']) }})"></div>
         <div class="party-shape-02"></div>
         <div class="party-shape-03"></div>
         <div class="container">
@@ -87,25 +96,20 @@
                     <div class="party-single-item vision">
                         <div class="content">
                             <div class="subtitle wow animate__animated animate__fadeInUp">
-                                <p>Tentang Perusahaan</p>
+                                <p>{{$section_3['sub_judul']}}</p>
                                 <div class="icon">
                                 <i class="icon-star"></i>
                                 <i class="icon-star"></i>
                                 <i class="icon-star"></i>
                                 </div>
                             </div>
-                            <h4 class="title wow animate__animated animate__fadeInUp">Join The Fight for Our Freedom</h4>
+                            <h4 class="title wow animate__animated animate__fadeInUp">{{$section_3['judul']}}</h4>
                             <p class="description wow animate__animated animate__fadeInUp">
-                                Every pleasures is to welcomed pain avoided owing to the duty the obligations of business it will frequently occur that pleasures have to.
-                            </p>
-                            <p class="description none wow animate__animated animate__fadeInUp">
-                                How all this mistaken idea of denouncing pleasure and praising
-                                pain was born & we will give you a complete account of the
-                                system.
+                                {{$section_3['deskripsi']}}
                             </p>
                         </div>
                         <div class="  btn-wrapper margin-top-35  wow animate__animated animate__fadeInUp">
-                            <a href="about.html" class="boxed-btn btn-sanatory style-02"><i class="fas fa-arrow-right"></i>Read More Us</a>
+                            <a href="{{ route('tentang-kami') }}" class="boxed-btn btn-sanatory style-02"><i class="fas fa-arrow-right"></i>Lebih Banyak Tentang Kami</a>
                         </div>
                     </div>
                 </div>
@@ -122,25 +126,23 @@
                     <div class="party-single-item margin-bottom-50">
                         <div class="content">
                             <div class="subtitle wow animate__animated animate__fadeInUp">
-                                <p>Koordinasi</p>
+                                <p>{{$section_4['sub_judul']}}</p>
                                 <div class="icon">
                                     <i class="icon-star"></i>
                                     <i class="icon-star"></i>
                                     <i class="icon-star"></i>
                                 </div>
                             </div>
-                            <h4 class="title style-01 wow animate__animated animate__fadeInUp">Make A Donation For Your Country</h4>
+                            <h4 class="title style-01 wow animate__animated animate__fadeInUp">{{$section_4['judul']}}</h4>
                             <p class="description style-01 wow animate__animated animate__fadeInUp">
-                                Every pleasures is to welcomed pain avoided owing to the duty
-                                the obligations of business it will frequently occur that
-                                pleasures have to be repudiated.
+                                {{$section_4['deskripsi']}}
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="donate-bg" >
-                        <div class="donate-bg-02" style="background-image: url({{asset('landing-page/assets/img/donation.png')}})"></div>
+                        <div class="donate-bg-02" style="background-image: url({{ asset('images/razen-politik/beranda/'.$section_4['gambar']) }})"></div>
                     </div>
                 </div>
             </div>
@@ -160,17 +162,16 @@
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
                         </div>
-                        <p>Become A Volunteer</p>
+                        <p>{{$section_5['sub_judul']}}</p>
                         <div class="icon">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
                         </div>
                         </div>
-                        <h4 class="title wow animate__animated animate__fadeInUp">Meet Our Party Volunteer</h4>
+                        <h4 class="title wow animate__animated animate__fadeInUp">{{$section_5['judul']}}</h4>
                         <p class="description wow animate__animated animate__fadeInUp">
-                        Every pleasures is to welcomed pain avoided owing to the duty
-                        the obligations of business it will frequently.
+                            {{$section_5['deskripsi']}}
                         </p>
                     </div>
                 </div>
@@ -290,14 +291,14 @@
                     <span class="icon-star"></span>
                     <span class="icon-star"></span>
                 </div>
-                <p>Our News</p>
+                <p>{{$section_6['sub_judul']}}</p>
                 <div class="icon">
                     <span class="icon-star"></span>
                     <span class="icon-star"></span>
                     <span class="icon-star"></span>
                 </div>
                 </div>
-                <h4 class="title wow animate__animated animate__fadeInUp">Latest News & Articles</h4>
+                <h4 class="title wow animate__animated animate__fadeInUp">{{$section_6['judul']}}</h4>
             </div>
             </div>
         </div>

@@ -13,9 +13,9 @@ use Validator;
 use DataTables;
 use Carbon\Carbon;
 use Auth;
-use App\Models\Testimoni;
+use App\Models\Tim;
 
-class TestimoniController extends Controller
+class TimController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class TestimoniController extends Controller
     {
         if(request()->ajax())
         {
-            $data = Testimoni::latest()->get();
+            $data = Tim::latest()->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function($data){
@@ -38,15 +38,12 @@ class TestimoniController extends Controller
                     return $button;
                 })
                 ->editColumn('foto', function($data) {
-                    return '<img src="'.asset('images/razen-politik/testimoni/'.$data->foto).'" style="height:5rem;">';
-                })
-                ->editColumn('deskripsi', function($data) {
-                    return strip_tags(substr($data->deskripsi,0, 20)) . '...';
+                    return '<img src="'.asset('images/razen-politik/tim/'.$data->foto).'" style="height:5rem;">';
                 })
                 ->rawColumns(['aksi', 'foto'])
                 ->make(true);
         }
-        return view('razen-politik.admin.testimoni.index');
+        return view('razen-politik.admin.tim.index');
     }
 
     /**
@@ -70,7 +67,7 @@ class TestimoniController extends Controller
         $errors = Validator::make($request->all(), [
             'nama' => 'required | max:255',
             'foto' => 'required | mimes:png,jpg,jpeg,webp',
-            'deskripsi' => 'required'
+            'jabatan' => 'required | max:255'
         ]);
 
         if($errors -> fails())
@@ -81,16 +78,16 @@ class TestimoniController extends Controller
         $fotoExtension = $request->foto->extension();
         $fotoName =  uniqid().'-'.date("ymd").'.'.$fotoExtension;
         $foto = Image::make($request->foto);
-        $fotoSize = public_path('images/razen-politik/testimoni/'.$fotoName);
+        $fotoSize = public_path('images/razen-politik/tim/'.$fotoName);
         $foto->save($fotoSize, 60);
 
-        $testimoni = new Testimoni;
-        $testimoni->nama = $request->nama;
-        $testimoni->deskripsi = $request->deskripsi;
-        $testimoni->foto = $fotoName;
-        $testimoni->save();
+        $tim = new Tim;
+        $tim->nama = $request->nama;
+        $tim->jabatan = $request->jabatan;
+        $tim->foto = $fotoName;
+        $tim->save();
 
-        return response()->json(['success' => 'Berhasil menambahkan Testimoni']);
+        return response()->json(['success' => 'Berhasil menambahkan tim']);
     }
 
     /**
@@ -101,7 +98,7 @@ class TestimoniController extends Controller
      */
     public function show($id)
     {
-        return response()->json(['result' => Testimoni::find($id)]);
+        return response()->json(['result' => Tim::find($id)]);
     }
 
     /**
@@ -112,7 +109,7 @@ class TestimoniController extends Controller
      */
     public function edit($id)
     {
-        return response()->json(['result' => Testimoni::find($id)]);
+        return response()->json(['result' => Tim::find($id)]);
     }
 
     /**
@@ -126,7 +123,7 @@ class TestimoniController extends Controller
     {
         $errors = Validator::make($request->all(), [
             'nama' => 'required | max:255',
-            'deskripsi' => 'required'
+            'jabatan' => 'required | max:255'
         ]);
 
         if($errors -> fails())
@@ -134,24 +131,24 @@ class TestimoniController extends Controller
             return response()->json(['errors' => $errors->errors()->all()]);
         }
 
-        $testimoni = Testimoni::find($request->hidden_id);
-        $testimoni->nama = $request->nama;
-        $testimoni->deskripsi = $request->deskripsi;
+        $tim = Tim::find($request->hidden_id);
+        $tim->nama = $request->nama;
+        $tim->jabatan = $request->jabatan;
         if($request->foto)
         {
-            File::delete(public_path('images/razen-politik/testimoni/'.$testimoni->foto));
+            File::delete(public_path('images/razen-politik/tim/'.$tim->foto));
 
             $fotoExtension = $request->foto->extension();
             $fotoName =  uniqid().'-'.date("ymd").'.'.$fotoExtension;
             $foto = Image::make($request->foto);
-            $fotoSize = public_path('images/razen-politik/testimoni/'.$fotoName);
+            $fotoSize = public_path('images/razen-politik/tim/'.$fotoName);
             $foto->save($fotoSize, 60);
 
-            $testimoni->foto = $fotoName;
+            $tim->foto = $fotoName;
         }
-        $testimoni->save();
+        $tim->save();
 
-        return response()->json(['success' => 'Berhasil menambahkan Testimoni']);
+        return response()->json(['success' => 'Berhasil menambahkan tim']);
     }
 
     /**
@@ -162,10 +159,10 @@ class TestimoniController extends Controller
      */
     public function destroy($id)
     {
-        $testimoni = Testimoni::find($id);
+        $tim = Tim::find($id);
 
-        File::delete(public_path('images/razen-politik/testimoni/'.$testimoni->foto));
+        File::delete(public_path('images/razen-politik/tim/'.$tim->foto));
 
-        $testimoni->delete();
+        $tim->delete();
     }
 }

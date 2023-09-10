@@ -71,7 +71,7 @@
                     <h2 class="small-title">Edit Section 1</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('tentang-kami') }}#section_1" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/tentang-kami/section_1.png') }}" alt="" class="img-fluid rounded">
@@ -119,7 +119,7 @@
                     <h2 class="small-title">Edit Section 2</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('tentang-kami') }}#section_2" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/tentang-kami/section_2.png') }}" alt="" class="img-fluid rounded">
@@ -243,7 +243,7 @@
                     <h2 class="small-title">Edit Section 3</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('tentang-kami') }}#section_3" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/tentang-kami/section_3.png') }}" alt="" class="img-fluid rounded">
@@ -355,7 +355,7 @@
                     <h2 class="small-title">Edit Section 4</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('tentang-kami') }}#section_4" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/tentang-kami/section_4.png') }}" alt="" class="img-fluid rounded">
@@ -369,15 +369,15 @@
                     <div class="col-12">
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Sub Judul</label>
-                            <input type="text" class="form-control" name="sub_judul"  required>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$section_4['sub_judul']}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Judul</label>
-                            <input type="text" class="form-control" name="judul"  required>
+                            <input type="text" class="form-control" name="judul" value="{{$section_4['judul']}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                            <textarea name="deskripsi" rows="5" class="form-control" required>{{$section_4['deskripsi']}}</textarea>
                         </div>
                     </div>
                     <div class="col-12" style="text-align: right">
@@ -401,7 +401,7 @@
                     <h2 class="small-title">Edit Section 5</h2>
                 </div>
                 <div class="col-6 mb-3" style="text-align: right;">
-                    <a href="#" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
+                    <a href="{{ route('tentang-kami') }}#section_5" class="btn btn-icon waves-effect waves-light btn-secondary" target="blank"><i class="fas fa-pager"></i> Preview</a>
                 </div>
                 <div class="col-12">
                     <img src="{{ asset('images/razen-politik/tentang-kami/section_5.png') }}" alt="" class="img-fluid rounded">

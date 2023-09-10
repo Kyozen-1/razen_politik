@@ -30,21 +30,28 @@ use App\Http\Controllers\Auth\RazenPolitik\SaksiLoginController;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes(['register' => false, 'login' => false]);
-Route::get('/', [HomeController::class, 'beranda'])->name('beranda');
-Route::get('/tentang-kami', [HomeController::class, 'tentang_kami'])->name('tentang-kami');
-Route::get('/solusi', [HomeController::class, 'solusi'])->name('solusi');
-Route::get('/harga', [HomeController::class, 'harga'])->name('harga');
-Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
-Route::get('/bantuan', [HomeController::class, 'bantuan'])->name('bantuan');
+// Route::get('/', [HomeController::class, 'beranda'])->name('beranda');
+// Route::get('/tentang-kami', [HomeController::class, 'tentang_kami'])->name('tentang-kami');
+// Route::get('/solusi', [HomeController::class, 'solusi'])->name('solusi');
+// Route::get('/harga', [HomeController::class, 'harga'])->name('harga');
+// Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
+// Route::get('/bantuan', [HomeController::class, 'bantuan'])->name('bantuan');
 
-Route::prefix('perbaikan')->group(function(){
-    Route::get('/', [PerbaikanHomeController::class, 'beranda']);
-    Route::get('/tentang-kami', [PerbaikanHomeController::class, 'tentang_kami']);
-    Route::get('/harga', [PerbaikanHomeController::class, 'harga']);
-    Route::get('/artikel', [PerbaikanHomeController::class, 'artikel']);
-    Route::get('/bantuan', [PerbaikanHomeController::class, 'bantuan']);
-    Route::post('/kontak-kami',[PerbaikanHomeController::class, 'kontak_kami'])->name('kontak-kami');
-});
+Route::get('/', [PerbaikanHomeController::class, 'beranda'])->name('beranda');
+Route::get('/tentang-kami', [PerbaikanHomeController::class, 'tentang_kami'])->name('tentang-kami');
+Route::get('/harga', [PerbaikanHomeController::class, 'harga'])->name('harga');
+Route::get('/artikel', [PerbaikanHomeController::class, 'artikel'])->name('artikel');
+Route::get('/bantuan', [PerbaikanHomeController::class, 'bantuan'])->name('bantuan');
+Route::post('/kontak-kami',[PerbaikanHomeController::class, 'kontak_kami'])->name('kontak-kami');
+
+// Route::prefix('perbaikan')->group(function(){
+//     Route::get('/', [PerbaikanHomeController::class, 'beranda']);
+//     Route::get('/tentang-kami', [PerbaikanHomeController::class, 'tentang_kami']);
+//     Route::get('/harga', [PerbaikanHomeController::class, 'harga']);
+//     Route::get('/artikel', [PerbaikanHomeController::class, 'artikel']);
+//     Route::get('/bantuan', [PerbaikanHomeController::class, 'bantuan']);
+//     Route::post('/kontak-kami',[PerbaikanHomeController::class, 'kontak_kami'])->name('kontak-kami');
+// });
 
 Route::get('/login',[LoginController::class, 'showLoginForm'])->name('razen-politik.login');
 Route::post('/login', [LoginController::class, 'login'])->name('razen-politik.login.submit');

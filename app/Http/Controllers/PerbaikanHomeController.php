@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+use App\Models\Tim;
 
 class PerbaikanHomeController extends Controller
 {
@@ -14,7 +15,10 @@ class PerbaikanHomeController extends Controller
 
     public function tentang_kami()
     {
-        return view('perbaikan-landing-page.tentang-kami.index');
+        $tims = Tim::latest()->get();
+        return view('perbaikan-landing-page.tentang-kami.index', [
+            'tims' => $tims
+        ]);
     }
 
     public function harga()

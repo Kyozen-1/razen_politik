@@ -4,6 +4,7 @@ use App\Http\Controllers\RazenPolitik\Admin\DashboardController;
 use App\Http\Controllers\RazenPolitik\Admin\ProfilController;
 use App\Http\Controllers\RazenPolitik\Admin\PemiluController;
 use App\Http\Controllers\RazenPolitik\Admin\TestimoniController as AdminTestimoniController;
+use App\Http\Controllers\RazenPolitik\Admin\TimController;
 
 // Master Data
 use App\Http\Controllers\RazenPolitik\MasterData\JenisIsuController;
@@ -60,6 +61,15 @@ Route::prefix('admin')->group(function(){
         Route::get('/edit/{id}',[AdminTestimoniController::class, 'edit'])->name('razen-politik.admin.testimoni.edit');
         Route::post('/update',[AdminTestimoniController::class, 'update'])->name('razen-politik.admin.testimoni.update');
         Route::get('/destroy/{id}',[AdminTestimoniController::class, 'destroy'])->name('razen-politik.admin.testimoni.destroy');
+    });
+
+    Route::prefix('tim')->group(function(){
+        Route::get('/', [TimController::class, 'index'])->name('razen-politik.admin.tim.index');
+        Route::get('/detail/{id}', [TimController::class, 'show'])->name('razen-politik.admin.tim.show');
+        Route::post('/',[TimController::class, 'store'])->name('razen-politik.admin.tim.store');
+        Route::get('/edit/{id}',[TimController::class, 'edit'])->name('razen-politik.admin.tim.edit');
+        Route::post('/update',[TimController::class, 'update'])->name('razen-politik.admin.tim.update');
+        Route::get('/destroy/{id}',[TimController::class, 'destroy'])->name('razen-politik.admin.tim.destroy');
     });
 });
 

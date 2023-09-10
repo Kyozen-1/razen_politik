@@ -10,10 +10,13 @@
     <body>
         @php
             use App\Models\LandingPageTestimoni;
+            use App\Models\Testimoni;
 
             $beranda = LandingPageTestimoni::first();
 
             $testimoni = json_decode($beranda->testimoni, true);
+
+            $get_testimonis = Testimoni::latest()->get();
         @endphp
         <!-- preloader area start -->
         <div class="preloader" id="preloader">
@@ -119,7 +122,7 @@
                 <div class="container nav-container">
                     <div class="responsive-mobile-menu">
                         <div class="logo-wrapper">
-                            <a href="{{ url('/perbaikan') }}" class="logo">
+                            <a href="{{ route('beranda') }}" class="logo">
                             <img src="{{ asset('images/razen-politik/logo/'.$profil->logo) }}" alt="" height="50rem" />
                             </a>
                         </div>
@@ -130,20 +133,44 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
                         <ul class="navbar-nav political">
+                            @if (request()->routeIs('beranda'))
+                                <li class="current-menu-item">
+                            @else
+                                <li>
+                            @endif
+                                <a href="{{ route('beranda') }}">Beranda</a>
+                            </li>
+
+                            @if (request()->routeIs('tentang-kami'))
                             <li class="current-menu-item">
-                                <a href="{{ url('/perbaikan') }}">Beranda</a>
-                            </li>
+                            @else
                             <li>
-                                <a href="{{ url('/perbaikan/tentang-kami') }}">Tentang Kami</a>
+                            @endif
+                                <a href="{{ route('tentang-kami') }}">Tentang Kami</a>
                             </li>
+
+                            @if (request()->routeIs('harga'))
+                            <li class="current-menu-item">
+                            @else
                             <li>
-                                <a href="{{ url('/perbaikan/harga') }}">Harga</a>
+                            @endif
+                                <a href="{{ route('harga') }}">Harga</a>
                             </li>
+
+                            @if (request()->routeIs('artikel'))
+                            <li class="current-menu-item">
+                            @else
                             <li>
-                                <a href="{{ url('/perbaikan/artikel') }}">Artikel</a>
+                            @endif
+                                <a href="{{ route('artikel') }}">Artikel</a>
                             </li>
+
+                            @if (request()->routeIs('bantuan'))
+                            <li class="current-menu-item">
+                            @else
                             <li>
-                                <a href="{{ url('/perbaikan/bantuan') }}">Bantuan</a>
+                            @endif
+                                <a href="{{ route('bantuan', ['id'=>1]) }}">Bantuan</a>
                             </li>
                         </ul>
                     </div>
@@ -183,75 +210,29 @@
                     <div class="col-lg-12">
                         <div class="testimonial-carousel-area">
                             <div class="testimonial-carousel-three">
-                                <div class="party-single-item style-02">
-                                    <div class="content">
-                                    <div class="subtitle">
-                                        <p>Testimoni</p>
-                                        <div class="icon">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
+                                @foreach ($get_testimonis as $get_testimoni)
+                                    <div class="party-single-item style-02">
+                                        <div class="content">
+                                            <div class="subtitle">
+                                                <p>Testimoni</p>
+                                                <div class="icon">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="quotes">
+                                                <p class="description">"{{$get_testimoni->deskripsi}}"</p>
+                                                <i class="icon-quotes"></i>
+                                                <img src="{{ asset('images/razen-politik/testimoni/'.$get_testimoni->foto) }}" class="quotes-shape" alt="">
+                                            </div>
+                                            <div class="author-meta">
+                                                <span class="author-name">{{$get_testimoni->foto}}</span>
+                                                <span class="line"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="quotes">
-                                        <p class="description">"The theories largely focus on the development of agriculture, and the population and organizational pressure that followed and resulted in state formation. One of the most prominent theories of early and primary state formation is the hydraulic hypothesis"</p>
-                                        <i class="icon-quotes"></i>
-                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <span class="author-name">William Smith</span>
-                                        <span class="line"></span>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="party-single-item style-02">
-                                    <div class="content">
-                                    <div class="subtitle">
-                                        <p>Public Comments</p>
-                                        <div class="icon">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        </div>
-                                    </div>
-                                    <h4 class="title">People's Say About us</h4>
-                                    <div class="quotes">
-                                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
-                                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
-                                        <i class="icon-quotes"></i>
-                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <span class="author-name">William Smith</span>
-                                        <span class="line"></span>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="party-single-item style-02">
-                                    <div class="content">
-                                    <div class="subtitle">
-                                        <p>Public Comments</p>
-                                        <div class="icon">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        </div>
-                                    </div>
-                                    <h4 class="title">People's Say About us</h4>
-                                    <div class="quotes">
-                                        <p class="description">" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum Occaecat cupidatat non proident,sunt in culpa qui officia
-                                        deserunt mollit anim id, sint occaecat cupidatat non proident, sunt in culpa qui "</p>
-                                        <i class="icon-quotes"></i>
-                                        <img src="{{ asset('landing-page/assets/img/shape-02.png') }}" class="quotes-shape" alt="">
-                                    </div>
-                                    <div class="author-meta">
-                                        <span class="author-name">William Smith</span>
-                                        <span class="line"></span>
-                                    </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

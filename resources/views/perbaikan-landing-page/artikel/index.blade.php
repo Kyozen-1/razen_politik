@@ -2,13 +2,20 @@
 @section('title', 'Artikel | Razen Politik')
 
 @section('content')
+    @php
+        use App\Models\LandingPageArtikel;
+
+        $artikel = LandingPageArtikel::first();
+
+        $section_1 = json_decode($artikel->section_1, true);
+    @endphp
     <!-- About Us section start here -->
-    <div class="about-us-section-area about-bg margin-bottom-120" style="background-image: url({{asset('landing-page/assets/img/about-bg.png')}});">
+    <div id="section_1" class="about-us-section-area about-bg margin-bottom-120" style="background-image: url({{ asset('images/razen-politik/artikel/'.$section_1['gambar']) }});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-6 col-8">
                     <div class="about-inner">
-                        <h1 class="title wow animate__animated animate__fadeInUp">Artikel</h1>
+                        <h1 class="title wow animate__animated animate__fadeInUp">{{$section_1['judul']}}</h1>
                     </div>
                     <div class="breadcrumbs wow animate__animated animate__fadeInUp animate__delay-1s">
                         <ul>

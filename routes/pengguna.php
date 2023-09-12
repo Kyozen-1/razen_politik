@@ -131,18 +131,27 @@ Route::prefix('monitoring-isu')->group(function(){
 Route::prefix('logistik')->group(function(){
     Route::prefix('stok')->group(function(){
         Route::get('/', [StokController::class, 'index'])->name('pengguna.logistik.stok.index');
+        Route::get('/detail/{id}', [StokController::class, 'show'])->name('pengguna.logistik.stok.show');
     });
 
     Route::prefix('pemesanan')->group(function(){
         Route::get('/', [PemesananController::class, 'index'])->name('pengguna.logistik.pemesanan.index');
+        Route::get('/detail/{id}', [PemesananController::class, 'show'])->name('pengguna.logistik.pemesanan.show');
+        Route::post('/',[PemesananController::class, 'store'])->name('pengguna.logistik.pemesanan.store');
+        Route::get('/edit/{id}',[PemesananController::class, 'edit'])->name('pengguna.logistik.pemesanan.edit');
+        Route::post('/update',[PemesananController::class, 'update'])->name('pengguna.logistik.pemesanan.update');
+        Route::get('/destroy/{id}',[PemesananController::class, 'destroy'])->name('pengguna.logistik.pemesanan.destroy');
     });
 
     Route::prefix('penerimaan')->group(function(){
         Route::get('/', [PenerimaanController::class, 'index'])->name('pengguna.logistik.penerimaan.index');
+        Route::get('/detail/{id}', [PenerimaanController::class, 'show'])->name('pengguna.logistik.penerimaan.show');
     });
 
     Route::prefix('pengeluaran')->group(function(){
         Route::get('/', [PengeluaranController::class, 'index'])->name('pengguna.logistik.pengeluaran.index');
+        Route::get('/detail/{id}', [PengeluaranController::class, 'show'])->name('pengguna.logistik.pengeluaran.show');
+        Route::post('/',[PengeluaranController::class, 'store'])->name('pengguna.logistik.pengeluaran.store');
     });
 });
 

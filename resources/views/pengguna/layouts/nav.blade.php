@@ -426,12 +426,12 @@
                             @else
                                 <a href="{{ route('pengguna.real-count.hasil.index') }}">
                             @endif
-                                <span class="label">Hasil Real Login</span>
+                                <span class="label">Hasil Real Count</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     @if (request()->routeIs('pengguna.user.index'))
                         <a href="#user_hak_akses"class="active">
                     @else
@@ -472,7 +472,7 @@
                         <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
                         <span class="label">Pengaturan Tim</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <!-- Menu End -->

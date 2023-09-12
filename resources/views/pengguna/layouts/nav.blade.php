@@ -340,7 +340,7 @@
                                 <span class="label">Pemilih / Pendukung</span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             @if (request()->routeIs('pengguna.rekapitulasi.dpt.index'))
                                 <a href="{{ route('pengguna.rekapitulasi.dpt.index') }}" class="active">
                             @else
@@ -348,7 +348,7 @@
                             @endif
                                 <span class="label">DPT</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             @if (request()->routeIs('pengguna.rekapitulasi.dpt-manual.index'))
                                 <a href="{{ route('pengguna.rekapitulasi.dpt-manual.index') }}" class="active">
@@ -358,7 +358,7 @@
                                 <span class="label">DPT Manual</span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             @if (request()->routeIs('pengguna.rekapitulasi.tps.index'))
                                 <a href="{{ route('pengguna.rekapitulasi.tps.index') }}" class="active">
                             @else
@@ -366,7 +366,7 @@
                             @endif
                                 <span class="label">TPS</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li>

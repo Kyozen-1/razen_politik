@@ -31,7 +31,7 @@
                 <div class="col-6 ps-1 pe-1">
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#">Info Pengguna</a>
+                            <a href="#">Info Saksi</a>
                         </li>
                     </ul>
                 </div>

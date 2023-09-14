@@ -236,7 +236,8 @@
                     request()->routeIs('razen-politik.landing-page.artikel.index') ||
                     request()->routeIs('razen-politik.landing-page.bantuan.index') ||
                     request()->routeIs('razen-politik.landing-page.testimoni.index') ||
-                    request()->routeIs('razen-politik.landing-page.footer.index'))
+                    request()->routeIs('razen-politik.landing-page.footer.index') ||
+                    request()->routeIs('razen-politik.landing-page.produk-lain.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -300,12 +301,42 @@
                             </a>
                         </li>
                         <li>
+                            @if (request()->routeIs('razen-politik.landing-page.produk-lain.index'))
+                                <a href="{{ route('razen-politik.landing-page.produk-lain.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.landing-page.produk-lain.index') }}">
+                            @endif
+                                <span class="label">Produk Lain</span>
+                            </a>
+                        </li>
+                        <li>
                             @if (request()->routeIs('razen-politik.landing-page.footer.index'))
                                 <a href="{{ route('razen-politik.landing-page.footer.index') }}" class="active">
                             @else
                                 <a href="{{ route('razen-politik.landing-page.footer.index') }}">
                             @endif
                                 <span class="label">Footer</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    @if (request()->routeIs('razen-politik.penawaran.produk-lain.index'))
+                    <a href="#penawaran" class="active">
+                    @else
+                    <a href="#penawaran">
+                    @endif
+                        <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Penawaran</span>
+                    </a>
+                    <ul id="penawaran">
+                        <li>
+                            @if (request()->routeIs('razen-politik.penawaran.produk-lain.index'))
+                                <a href="{{ route('razen-politik.penawaran.produk-lain.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.penawaran.produk-lain.index') }}">
+                            @endif
+                                <span class="label">Produk Lain</span>
                             </a>
                         </li>
                     </ul>

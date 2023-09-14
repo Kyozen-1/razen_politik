@@ -1,5 +1,5 @@
-@extends('relawan.layouts.app')
-@section('title', 'Dashboard | Relawan')
+@extends('saksi.layouts.app')
+@section('title', 'Dashboard | Saksi')
 
 @section('css')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
@@ -21,10 +21,10 @@
     <div class="row">
     <!-- Title Start -->
     <div class="col-12 col-md-7">
-        <h1 class="mb-0 pb-0 display-4" id="title">Dashboard | Relawan</h1>
+        <h1 class="mb-0 pb-0 display-4" id="title">Dashboard</h1>
         <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
             <ul class="breadcrumb pt-0">
-                <li class="breadcrumb-item"><a href="{{ route('pengguna.dashboard.index') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('saksi.dashboard.index') }}">Dashboard</a></li>
             </ul>
         </nav>
     </div>

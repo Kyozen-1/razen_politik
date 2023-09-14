@@ -27,6 +27,10 @@ use App\Http\Controllers\RazenPolitik\LandingPage\ArtikelController;
 use App\Http\Controllers\RazenPolitik\LandingPage\BantuanController;
 use App\Http\Controllers\RazenPolitik\LandingPage\TestimoniController;
 use App\Http\Controllers\RazenPolitik\LandingPage\FooterController;
+use App\Http\Controllers\RazenPolitik\LandingPage\ProdukLainController as LandingPageProdukLainController;
+
+// Penawaran
+use App\Http\Controllers\RazenPolitik\Penawaran\ProdukLainController;
 
 Route::prefix('admin')->group(function(){
     Route::prefix('dashboard')->group(function(){
@@ -242,5 +246,22 @@ Route::prefix('landing-page')->group(function(){
         Route::get('/', [FooterController::class, 'index'])->name('razen-politik.landing-page.footer.index');
 
         Route::post('/store/footer', [FooterController::class, 'store_footer'])->name('razen-politik.landing-page.footer.store.footer');
+    });
+
+    Route::prefix('produk-lain')->group(function(){
+        Route::get('/', [LandingPageProdukLainController::class, 'index'])->name('razen-politik.landing-page.produk-lain.index');
+
+        Route::post('/store/produk-lain', [LandingPageProdukLainController::class, 'store_produk_lain'])->name('razen-politik.landing-page.produk-lain.store.produk-lain');
+    });
+});
+
+Route::prefix('penawaran')->group(function(){
+    Route::prefix('produk-lain')->group(function(){
+        Route::get('/', [ProdukLainController::class, 'index'])->name('razen-politik.penawaran.produk-lain.index');
+        Route::get('/detail/{id}', [ProdukLainController::class, 'show'])->name('razen-politik.penawaran.produk-lain.show');
+        Route::post('/',[ProdukLainController::class, 'store'])->name('razen-politik.penawaran.produk-lain.store');
+        Route::get('/edit/{id}',[ProdukLainController::class, 'edit'])->name('razen-politik.penawaran.produk-lain.edit');
+        Route::post('/update',[ProdukLainController::class, 'update'])->name('razen-politik.penawaran.produk-lain.update');
+        Route::get('/destroy/{id}',[ProdukLainController::class, 'destroy'])->name('razen-politik.penawaran.produk-lain.destroy');
     });
 });

@@ -13,4 +13,9 @@ class MasterJabatanPilihan extends Model
     {
         return $this->hasMany('App\Models\MasterDapil', 'jabatan_pilihan_id');
     }
+
+    public function pivot_paket()
+    {
+        return $this->hasMany('App\Models\PivotPaket', 'jabatan_pilihan_id');
+    }
 }

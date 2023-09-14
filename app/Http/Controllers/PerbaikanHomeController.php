@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use App\Models\Tim;
+use App\Models\MasterJabatanPilihan;
+use App\Models\ProdukLain;
 
 class PerbaikanHomeController extends Controller
 {
     public function beranda()
     {
-        return view('perbaikan-landing-page.beranda.index');
+        $jabatan_pilihan = MasterJabatanPilihan::pluck('nama', 'id');
+        $produkLains = ProdukLain::all();
+        return view('perbaikan-landing-page.beranda.index', [
+            'jabatan_pilihan' => $jabatan_pilihan,
+            'produkLains' => $produkLains
+        ]);
     }
 
     public function tentang_kami()

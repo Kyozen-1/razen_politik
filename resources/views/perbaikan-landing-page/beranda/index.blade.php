@@ -4,6 +4,7 @@
 @section('content')
     @php
         use App\Models\LandingPageBeranda;
+        use App\Models\LandingPageProdukLain;
 
         $beranda = LandingPageBeranda::first();
 
@@ -13,6 +14,10 @@
         $section_4 = json_decode($beranda->section_4, true);
         $section_5 = json_decode($beranda->section_5, true);
         $section_6 = json_decode($beranda->section_6, true);
+
+        $produk_lain = LandingPageProdukLain::first();
+
+        $produk_lain = json_decode($produk_lain->produk_lain, true);
     @endphp
     <!-- Header section Start -->
     <div id="section_1" class="header-area header-sanatory header-bg" style="background-image:url({{ asset('images/razen-politik/beranda/'.$section_1['gambar']) }});">
@@ -264,12 +269,9 @@
                     <div class="blog-pagination style-01">
                         <div class="blog-pagination style-01 margin-top-30">
                             <ul>
-                                <li><a class="page-numbers" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">DPR RI</a></li>
-                                <li><a class="page-numbers current" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">DPRD</a></li>
-                                <li><a class="page-numbers" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">DPD RI</a></li>
-                                <li><a class="page-numbers" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">Bupati</a></li>
-                                <li><a class="page-numbers" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">Walikota</a></li>
-                                <li><a class="page-numbers" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">Gubernur</a></li>
+                                @foreach ($jabatan_pilihan as $id => $nama)
+                                    <li><a class="page-numbers @if($loop->first) current @endif" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">{{$nama}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -278,6 +280,56 @@
         </div>
     </div>
     <!-- Event Items Section Start Here -->
+
+    <!-- Volunteer Section Start -->
+    <div class="volunteer-section-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-9">
+                    <div class="section-title">
+                        <div class="subtitle wow animate__ animate__fadeInUp">
+                            <div class="icon">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                            <p>{{$produk_lain['sub_judul']}}</p>
+                            <div class="icon">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                        </div>
+                        <h4 class="title wow animate__animated animate__fadeInUp">{{$produk_lain['judul']}}</h4>
+                        <p class="description wow animate__animated animate__fadeInUp">
+                            {{$produk_lain['deskripsi']}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="testimonial-carousel-two">
+                    @foreach ($produkLains as $produkLain)
+                        <div class="volunteer-single-items">
+                            <div class="thum">
+                            <img src="{{ asset('images/produk-lain/'.$produkLain->foto) }}" alt="" />
+                            </div>
+                            <div class="content">
+                                <div class="author-meta">
+                                    <span class="author-name">{{$produkLain->nama}}</span>
+                                    <p class="designation">{{$produkLain->deskripsi}}</p>
+                                </div>
+                                <a href="#" class="btn btn-danger waves-effect waves-light"></i>Beli Paket</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Volunteer Section End -->
 
     <!-- News Section Start -->
     <div id="section_6" class="news-section-start">

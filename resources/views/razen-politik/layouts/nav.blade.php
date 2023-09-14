@@ -109,6 +109,16 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-politik.admin.paket.index'))
+                        <a href="{{ route('razen-politik.admin.paket.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-politik.admin.paket.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Paket</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-politik.master-data.provinsi.index') ||
                     request()->routeIs('razen-politik.master-data.kabupaten-kota.index') ||
                     request()->routeIs('razen-politik.master-data.kecamatan.index') ||
@@ -119,7 +129,10 @@
                     request()->routeIs('razen-politik.master-data.jenis-isu.index') ||
                     request()->routeIs('razen-politik.master-data.tps.index') ||
                     request()->routeIs('razen-politik.master-data.dapil.index') ||
-                    request()->routeIs('razen-politik.master-data.media-sosial.index'))
+                    request()->routeIs('razen-politik.master-data.media-sosial.index') ||
+                    request()->routeIs('razen-politik.master-data.role.index') ||
+                    request()->routeIs('razen-politik.master-data.paket.index') ||
+                    request()->routeIs('razen-politik.master-data.fitur.index'))
                     <a href="#master_data" class="active">
                     @else
                     <a href="#master_data">
@@ -128,6 +141,33 @@
                         <span class="label">Master Data</span>
                     </a>
                     <ul id="master_data">
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.fitur.index'))
+                                <a href="{{ route('razen-politik.master-data.fitur.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.fitur.index') }}">
+                            @endif
+                                <span class="label">Fitur</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.paket.index'))
+                                <a href="{{ route('razen-politik.master-data.paket.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.paket.index') }}">
+                            @endif
+                                <span class="label">Paket</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-politik.master-data.role.index'))
+                                <a href="{{ route('razen-politik.master-data.role.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-politik.master-data.role.index') }}">
+                            @endif
+                                <span class="label">Role</span>
+                            </a>
+                        </li>
                         <li>
                             @if (request()->routeIs('razen-politik.master-data.media-sosial.index'))
                                 <a href="{{ route('razen-politik.master-data.media-sosial.index') }}" class="active">

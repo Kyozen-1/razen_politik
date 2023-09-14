@@ -5,6 +5,7 @@ use App\Http\Controllers\RazenPolitik\Admin\ProfilController;
 use App\Http\Controllers\RazenPolitik\Admin\PemiluController;
 use App\Http\Controllers\RazenPolitik\Admin\TestimoniController as AdminTestimoniController;
 use App\Http\Controllers\RazenPolitik\Admin\TimController;
+use App\Http\Controllers\RazenPolitik\Admin\PaketController;
 
 // Master Data
 use App\Http\Controllers\RazenPolitik\MasterData\JenisIsuController;
@@ -18,6 +19,9 @@ use App\Http\Controllers\RazenPolitik\MasterData\KecamatanController;
 use App\Http\Controllers\RazenPolitik\MasterData\KelurahanController;
 use App\Http\Controllers\RazenPolitik\MasterData\DapilController;
 use App\Http\Controllers\RazenPolitik\MasterData\MediaSosialController;
+use App\Http\Controllers\RazenPolitik\MasterData\MasterRoleController;
+use App\Http\Controllers\RazenPolitik\MasterData\MasterPaketController;
+use App\Http\Controllers\RazenPolitik\MasterData\MasterFiturController;
 
 // Landing Page
 use App\Http\Controllers\RazenPolitik\LandingPage\BerandaController;
@@ -74,6 +78,16 @@ Route::prefix('admin')->group(function(){
         Route::get('/edit/{id}',[TimController::class, 'edit'])->name('razen-politik.admin.tim.edit');
         Route::post('/update',[TimController::class, 'update'])->name('razen-politik.admin.tim.update');
         Route::get('/destroy/{id}',[TimController::class, 'destroy'])->name('razen-politik.admin.tim.destroy');
+    });
+
+    Route::prefix('paket')->group(function(){
+        Route::get('/', [PaketController::class, 'index'])->name('razen-politik.admin.paket.index');
+        Route::get('/atur-fitur/{id}', [PaketController::class, 'atur_fitur'])->name('razen-politik.admin.paket.atur-fitur');
+        Route::get('/detail/{id}', [PaketController::class, 'show'])->name('razen-politik.admin.paket.show');
+        Route::post('/',[PaketController::class, 'store'])->name('razen-politik.admin.paket.store');
+        Route::get('/edit/{id}',[PaketController::class, 'edit'])->name('razen-politik.admin.paket.edit');
+        Route::post('/update',[PaketController::class, 'update'])->name('razen-politik.admin.paket.update');
+        Route::get('/destroy/{id}',[PaketController::class, 'destroy'])->name('razen-politik.admin.paket.destroy');
     });
 });
 
@@ -181,6 +195,33 @@ Route::prefix('master-data')->group(function(){
         Route::get('/edit/{id}',[MediaSosialController::class, 'edit'])->name('razen-politik.master-data.media-sosial.edit');
         Route::post('/update',[MediaSosialController::class, 'update'])->name('razen-politik.master-data.media-sosial.update');
         Route::get('/destroy/{id}',[MediaSosialController::class, 'destroy'])->name('razen-politik.master-data.media-sosial.destroy');
+    });
+
+    Route::prefix('role')->group(function(){
+        Route::get('/', [MasterRoleController::class, 'index'])->name('razen-politik.master-data.role.index');
+        Route::get('/detail/{id}', [MasterRoleController::class, 'show'])->name('razen-politik.master-data.role.show');
+        Route::post('/',[MasterRoleController::class, 'store'])->name('razen-politik.master-data.role.store');
+        Route::get('/edit/{id}',[MasterRoleController::class, 'edit'])->name('razen-politik.master-data.role.edit');
+        Route::post('/update',[MasterRoleController::class, 'update'])->name('razen-politik.master-data.role.update');
+        Route::get('/destroy/{id}',[MasterRoleController::class, 'destroy'])->name('razen-politik.master-data.role.destroy');
+    });
+
+    Route::prefix('paket')->group(function(){
+        Route::get('/', [MasterPaketController::class, 'index'])->name('razen-politik.master-data.paket.index');
+        Route::get('/detail/{id}', [MasterPaketController::class, 'show'])->name('razen-politik.master-data.paket.show');
+        Route::post('/',[MasterPaketController::class, 'store'])->name('razen-politik.master-data.paket.store');
+        Route::get('/edit/{id}',[MasterPaketController::class, 'edit'])->name('razen-politik.master-data.paket.edit');
+        Route::post('/update',[MasterPaketController::class, 'update'])->name('razen-politik.master-data.paket.update');
+        Route::get('/destroy/{id}',[MasterPaketController::class, 'destroy'])->name('razen-politik.master-data.paket.destroy');
+    });
+
+    Route::prefix('fitur')->group(function(){
+        Route::get('/', [MasterFiturController::class, 'index'])->name('razen-politik.master-data.fitur.index');
+        Route::get('/detail/{id}', [MasterFiturController::class, 'show'])->name('razen-politik.master-data.fitur.show');
+        Route::post('/',[MasterFiturController::class, 'store'])->name('razen-politik.master-data.fitur.store');
+        Route::get('/edit/{id}',[MasterFiturController::class, 'edit'])->name('razen-politik.master-data.fitur.edit');
+        Route::post('/update',[MasterFiturController::class, 'update'])->name('razen-politik.master-data.fitur.update');
+        Route::get('/destroy/{id}',[MasterFiturController::class, 'destroy'])->name('razen-politik.master-data.fitur.destroy');
     });
 });
 

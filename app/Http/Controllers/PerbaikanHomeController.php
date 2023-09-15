@@ -59,10 +59,15 @@ class PerbaikanHomeController extends Controller
             $html .= '</div>';
         }
 
+        $client = new Client();
+        $url = 'https://berita-indo-api.vercel.app/v1/antara-news/politik';
+        $response = json_decode($client->get($url, ['verify' => false])->getBody())->data;
+
         return view('perbaikan-landing-page.beranda.index', [
             'jabatan_pilihan' => $jabatan_pilihan,
             'produkLains' => $produkLains,
-            'html' => $html
+            'html' => $html,
+            'beritas' => $response
         ]);
     }
 

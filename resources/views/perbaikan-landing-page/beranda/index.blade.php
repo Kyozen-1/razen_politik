@@ -6,6 +6,7 @@
         use App\Models\LandingPageBeranda;
         use App\Models\LandingPageProdukLain;
         use App\Models\Profil;
+        use Carbon\Carbon;
 
         $beranda = LandingPageBeranda::first();
 
@@ -308,63 +309,61 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-            <div class="news-single-items wow animate__animated animate__fadeInUp">
-                <div class="news-bg" style="background-image: url({{asset('landing-page/assets/img/businessmen-shaking-hands.png')}});">
-                <span class="even">Event</span>
-                <div class="content">
-                    <a href="news-single.html"><h4 class="title">Many important brands have given us their trust</h4></a>
-                    <div class="author-meta">
-                    <p class="author-name">By:Smith Roy</p>
-                    <p>24th March,2021</p>
+                <div class="news-single-items wow animate__animated animate__fadeInUp">
+                    <div class="news-bg" style="background-image: url({{$beritas[0]->image}});">
+                        <span class="even">Politik</span>
+                        <div class="content">
+                            <a href="{{$beritas[0]->link}}" target="blank"><h4 class="title">{{$beritas[0]->title}}</h4></a>
+                            <div class="author-meta">
+                                <p>{{Carbon::parse($beritas[0]->isoDate)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y ; h:i a')}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
             <div class="col-lg-4 col-md-6">
-            <div class="news-single-items wow animate__animated animate__fadeInUp animate__delay-1s">
-                <div class="news-bg" style="background-image: url({{asset('landing-page/assets/img/partners-shaking-hands.png')}});">
-                <span class="even">Event</span>
-                <div class="content">
-                    <a href="news-single.html"><h4 class="title">Many important brands have given us their trust</h4></a>
-                    <div class="author-meta">
-                    <p class="author-name">By:Smith Roy</p>
-                    <p>24th March,2021</p>
+                <div class="news-single-items wow animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="news-bg" style="background-image: url({{$beritas[1]->image}});">
+                        <span class="even">Politik</span>
+                        <div class="content">
+                            <a href="{{$beritas[1]->link}}" target="blank"><h4 class="title">{{$beritas[1]->title}}</h4></a>
+                            <div class="author-meta">
+                                <p>{{Carbon::parse($beritas[1]->isoDate)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y ; h:i a')}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
             <div class="col-lg-4 col-md-12">
-            <ul class="news-single-list wow animate__animated animate__fadeInRight animate__delay-2s">
-                <li class="news-single-list-items">
-                <div class="thumb">
-                    <img src="{{ asset('landing-page/assets/img/cheking-sheet.png') }}" alt="">
-                </div>
-                <div class="content">
-                    <span class="date">24th March,2021</span>
-                    <a href="news-single.html"><h4 class="title">Many important brands have given us their</h4></a>
-                </div>
-                </li>
-                <li class="news-single-list-items">
-                <div class="thumb">
-                    <img src="{{ asset('landing-page/assets/img/busisess-women.png') }}" alt="">
-                </div>
-                <div class="content">
-                    <span class="date">24th March,2021</span>
-                    <a href="news-single.html"><h4 class="title">Many important brands have given us their</h4></a>
-                </div>
-                </li>
-                <li class="news-single-list-items">
-                <div class="thumb">
-                    <img src="{{ asset('landing-page/assets/img/discussion.png') }}" alt="">
-                </div>
-                <div class="content">
-                    <span class="date">24th March,2021</span>
-                    <a href="news-single.html"><h4 class="title">Many important brands have given us their</h4></a>
-                </div>
-                </li>
-            </ul>
+                <ul class="news-single-list wow animate__animated animate__fadeInRight animate__delay-2s">
+                    <li class="news-single-list-items">
+                        <div class="thumb">
+                            <img src="{{$beritas[2]->image}}" alt="">
+                        </div>
+                        <div class="content">
+                            <span class="date">{{Carbon::parse($beritas[2]->isoDate)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y')}}</span>
+                            <a href="{{$beritas[2]->link}}"><h4 class="title">{{$beritas[2]->title}}</h4></a>
+                        </div>
+                    </li>
+                    <li class="news-single-list-items">
+                        <div class="thumb">
+                            <img src="{{$beritas[3]->image}}" alt="">
+                        </div>
+                        <div class="content">
+                            <span class="date">{{Carbon::parse($beritas[3]->isoDate)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y')}}</span>
+                            <a href="{{$beritas[3]->link}}"><h4 class="title">{{$beritas[3]->title}}</h4></a>
+                        </div>
+                    </li>
+                    <li class="news-single-list-items">
+                        <div class="thumb">
+                            <img src="{{$beritas[4]->image}}" alt="">
+                        </div>
+                        <div class="content">
+                            <span class="date">{{Carbon::parse($beritas[4]->isoDate)->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y')}}</span>
+                            <a href="{{$beritas[4]->link}}"><h4 class="title">{{$beritas[4]->title}}</h4></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         </div>

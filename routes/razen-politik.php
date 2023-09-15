@@ -83,6 +83,7 @@ Route::prefix('admin')->group(function(){
     Route::prefix('paket')->group(function(){
         Route::get('/', [PaketController::class, 'index'])->name('razen-politik.admin.paket.index');
         Route::get('/atur-fitur/{id}', [PaketController::class, 'atur_fitur'])->name('razen-politik.admin.paket.atur-fitur');
+        Route::post('/atur-fitur/{id}', [PaketController::class, 'atur_fitur_store'])->name('razen-politik.admin.paket.atur-fitur.store');
         Route::get('/detail/{id}', [PaketController::class, 'show'])->name('razen-politik.admin.paket.show');
         Route::post('/',[PaketController::class, 'store'])->name('razen-politik.admin.paket.store');
         Route::get('/edit/{id}',[PaketController::class, 'edit'])->name('razen-politik.admin.paket.edit');

@@ -16,6 +16,6 @@ class PivotPaketFitur extends Model
 
     public function fitur()
     {
-        return $this->hasMany('App\Models\MasterFitur', 'fitur_id');
+        return $this->belongsTo('App\Models\MasterFitur', 'fitur_id');
     }
 }

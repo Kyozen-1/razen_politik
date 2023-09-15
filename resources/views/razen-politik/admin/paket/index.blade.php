@@ -162,6 +162,9 @@
                         <label for="detail_lama_waktu" class="form-label">Lama Waktu</label>
                         <input type="text" id="detail_lama_waktu" class="form-control" disabled>
                     </div>
+                    <hr>
+                    <h2 class="small-title">Fitur</h2>
+                    <ul id="detail_fitur"></ul>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -382,6 +385,7 @@
                     $('#detail_harga').val(data.result.harga);
                     $('#detail_tipe_waktu').val(data.result.tipe_waktu);
                     $('#detail_lama_waktu').val(data.result.lama_waktu);
+                    $('#detail_fitur').html(data.result.fitur);
                     $('#detail').modal('show');
                 }
             });

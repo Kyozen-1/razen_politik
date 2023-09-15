@@ -13,6 +13,8 @@ use Validator;
 use DataTables;
 use Carbon\Carbon;
 use Auth;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 use App\Models\MasterPaket;
 use App\Models\PivotPaket;
@@ -31,7 +33,7 @@ class PaketController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('aksi', function($data){
-                    $button_atur_fitur = '<a class="btn btn-warning waves-effect waves-light" href="'.route('razen-politik.admin.paket.atur-fitur', ['id' => $data->id]).'" title="Atur Fitur"><i class="fas fa-right-long"></i></a>';
+                    $button_atur_fitur = '<a class="btn btn-warning waves-effect waves-light" href="'.route('razen-politik.admin.paket.atur-fitur', ['id' => Crypt::encryptString($data->id)]).'" title="Atur Fitur"><i class="fas fa-right-long"></i></a>';
                     $button_show = '<button type="button" name="detail" id="'.$data->id.'" class="detail btn btn-icon waves-effect btn-info" title="Detail Data"><i class="fas fa-eye"></i></button>';
                     $button_edit = '<button type="button" name="edit" id="'.$data->id.'"
                     class="edit btn btn-icon waves-effect btn-warning" title="Edit Data"><i class="fas fa-edit"></i></button>';
@@ -90,6 +92,19 @@ class PaketController extends Controller
         $data = PivotPaket::find($id);
         $data['nama_paket'] = $data->paket->nama;
         $data['nama_jabatan_pilihan'] = $data->jabatan_pilihan->nama;
+
+        if($data->pivot_paket_fitur)
+        {
+            $html = '';
+            foreach ($data->pivot_paket_fitur as $item) {
+                $html .= '<li>'.$item->fitur->role->nama.':'.$item->fitur->nama.'</li>';
+            }
+
+            $data['fitur'] = $html;
+        } else {
+            $data['fitur'] = '<li>Tidak ada</li>';
+        }
+
         return response()->json(['result' => $data]);
     }
 
@@ -136,6 +151,46 @@ class PaketController extends Controller
 
     public function atur_fitur($id)
     {
+        try {
+            $id = Crypt::decryptString($id);
+            $data = PivotPaket::find($id);
+            $data['encrypt_id'] = Crypt::encryptString($data->id);
+            $roles = MasterRole::all();
 
+            return view('razen-politik.admin.paket.atur-fitur', [
+                'data' => $data,
+                'roles' => $roles
+            ]);
+        } catch (\Throwable $th) {
+            Alert::error('Gagal!', 'Tidak Dapat Mendekripsi Token');
+            return redirect()->route('razen-politik.admin.paket.index');
+        }
+    }
+
+    public function atur_fitur_store(Request $request, $id)
+    {
+        $errors = Validator::make($request->all(), [
+            'fitur' => 'required | array',
+            'fitur.*' => 'required | distinct'
+        ]);
+
+        if($errors -> fails())
+        {
+            Alert::error('Gagal!', $errors->errors()->all());
+            return redirect()->route('razen-politik.admin.paket.atur-fitur', ['id' => $id]);
+        }
+
+        $pivot_paket_id = Crypt::decryptString($id);
+
+        $fitur = $request->fitur;
+        for ($i=0; $i < count($fitur); $i++) {
+            $pivot_paket_fitur = new PivotPaketFitur;
+            $pivot_paket_fitur->pivot_paket_id = $pivot_paket_id;
+            $pivot_paket_fitur->fitur_id = $fitur[$i];
+            $pivot_paket_fitur->save();
+        }
+
+        Alert::success('Berhasil!', 'Berhasil mengatur fitur');
+        return redirect()->route('razen-politik.admin.paket.atur-fitur', ['id' => Crypt::encryptString($pivot_paket_id)]);
     }
 }

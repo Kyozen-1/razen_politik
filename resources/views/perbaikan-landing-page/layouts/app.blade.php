@@ -227,12 +227,13 @@
                                                 <img src="{{ asset('images/razen-politik/testimoni/'.$get_testimoni->foto) }}" class="quotes-shape" alt="">
                                             </div>
                                             <div class="author-meta">
-                                                <span class="author-name">{{$get_testimoni->foto}}</span>
+                                                <span class="author-name">{{$get_testimoni->nama}}</span>
                                                 <span class="line"></span>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
+
                             </div>
                         </div>
                     </div>

@@ -43,6 +43,7 @@ Route::get('/harga', [PerbaikanHomeController::class, 'harga'])->name('harga');
 Route::get('/artikel', [PerbaikanHomeController::class, 'artikel'])->name('artikel');
 Route::get('/bantuan', [PerbaikanHomeController::class, 'bantuan'])->name('bantuan');
 Route::post('/kontak-kami',[PerbaikanHomeController::class, 'kontak_kami'])->name('kontak-kami');
+Route::get('/get-paket/{id}',[PerbaikanHomeController::class, 'get_paket'])->name('get-paket');
 
 // Route::prefix('perbaikan')->group(function(){
 //     Route::get('/', [PerbaikanHomeController::class, 'beranda']);

@@ -5,6 +5,7 @@
     @php
         use App\Models\LandingPageBeranda;
         use App\Models\LandingPageProdukLain;
+        use App\Models\Profil;
 
         $beranda = LandingPageBeranda::first();
 
@@ -18,6 +19,8 @@
         $produk_lain = LandingPageProdukLain::first();
 
         $produk_lain = json_decode($produk_lain->produk_lain, true);
+
+        $profil = Profil::first();
     @endphp
     <!-- Header section Start -->
     <div id="section_1" class="header-area header-sanatory header-bg" style="background-image:url({{ asset('images/razen-politik/beranda/'.$section_1['gambar']) }});">
@@ -205,64 +208,8 @@
     <!-- Event items Section Start Here -->
     <div class="issues-around-us-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="event-single-items">
-                        <div class="content">
-                            <div class="post-mate" style="width: fit-content; height: fit-content;">
-                                <h2 class="post-date">Biasa</h2>
-                            </div>
-                            <div class="subtitle">
-                                <div class="location">
-                                    <h4 class="title">Rp. 49.000.000,00 / 6 Bulan</h4>
-                                </div>
-                            </div>
-                            <h4>
-                                <ul>
-                                    <li>50.000 maksimum relawan</li>
-                                    <li>Dasbor</li>
-                                    <li>Master Data TPS dan DPT</li>
-                                    <li>Pasangan Calon</li>
-                                    <li>Manajemen Donasi</li>
-                                    <li>Manajemen Koordinator</li>
-                                    <li>Manajemen Relawan Terbatas</li>
-                                </ul>
-                            </h4>
-                            <div class="btn-wrapper">
-                                <a href="event-single.html" class="boxed-btn event-btn"><i class="fas fa-arrow-right"></i>Beli Paket</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="event-single-items">
-                        <div class="content">
-                            <div class="post-mate" style="width: fit-content; height: fit-content;">
-                                <h2 class="post-date">Pro</h2>
-                            </div>
-                            <div class="subtitle">
-                                <div class="location">
-                                    <h4 class="title">Rp. 69.000.000,00 / 6 Bulan</h4>
-                                </div>
-                            </div>
-                            <h4>
-                                <ul>
-                                    <li>50.000 maksimum relawan</li>
-                                    <li>Dasbor</li>
-                                    <li>Master Data TPS dan DPT</li>
-                                    <li>Pasangan Calon</li>
-                                    <li>Manajemen Donasi</li>
-                                    <li>Manajemen Koordinator</li>
-                                    <li>Manajemen Partai</li>
-                                    <li>Manajemen Relawan Terbatas</li>
-                                </ul>
-                            </h4>
-                            <div class="btn-wrapper">
-                                <a href="event-single.html" class="boxed-btn event-btn"><i class="fas fa-arrow-right"></i>Beli Paket</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="row_pivot_paket_fitur">
+                {!! $html !!}
             </div>
             <div class="row justify-content-center text-center">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -270,7 +217,7 @@
                         <div class="blog-pagination style-01 margin-top-30">
                             <ul>
                                 @foreach ($jabatan_pilihan as $id => $nama)
-                                    <li><a class="page-numbers @if($loop->first) current @endif" style="width: fit-content; padding-left: 10px; padding-right: 10px;" href="#">{{$nama}}</a></li>
+                                    <li><a class="page-numbers @if($loop->first) current @endif btn-jabatan-pilihan" style="width: fit-content; padding-left: 10px; padding-right: 10px;" id="btn_jabatan_pilihan_{{$id}}" data-id="{{$id}}">{{$nama}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -321,7 +268,12 @@
                                     <span class="author-name">{{$produkLain->nama}}</span>
                                     <p class="designation">{{$produkLain->deskripsi}}</p>
                                 </div>
-                                <a href="#" class="btn btn-danger waves-effect waves-light"></i>Beli Paket</a>
+                                @php
+                                    $text_produk_lain = urlencode('Halo...
+                                            Saya ingin menggunakan berlangganan Produk Lainnya di Razen Politik.
+                                            Nama: '.$produkLain->nama);
+                                @endphp
+                                <a href="https://api.whatsapp.com/send?phone={{$profil->no_hp}}&text={{$text_produk_lain}}" class="btn btn-danger waves-effect waves-light"></i>Beli Paket</a>
                             </div>
                         </div>
                     @endforeach
@@ -418,4 +370,27 @@
         </div>
     </div>
     <!-- News Section End  -->
+@endsection
+
+@section('js')
+    <script>
+        $('.btn-jabatan-pilihan').click(function(){
+            $('.btn-jabatan-pilihan').removeClass('current');
+            var id = $(this).attr('data-id');
+            $('.btn-jabatan-pilihan#btn_jabatan_pilihan_'+id).addClass('current');
+
+            $('#row_pivot_paket_fitur').empty();
+
+            var url = "{{route('get-paket', ['id' => ":id"])}}";
+            url = url.replace(":id", id);
+            $.ajax({
+                url : url,
+                dataType: "json",
+                success: function(data)
+                {
+                    $('#row_pivot_paket_fitur').html(data);
+                }
+            });
+        });
+    </script>
 @endsection
